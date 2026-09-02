@@ -1,29 +1,22 @@
-```javascript
 // ==========================================
 // SHASHANK & JYOTI WEDDING INVITATION
 // ==========================================
 
 document.addEventListener("DOMContentLoaded", function () {
 
-
     // ==========================================
     // ELEMENTS
     // ==========================================
 
-    const opening =
-        document.getElementById("opening");
+    const opening = document.getElementById("opening");
 
-    const mainContent =
-        document.getElementById("mainContent");
+    const mainContent = document.getElementById("mainContent");
 
-    const openButton =
-        document.getElementById("openInvitation");
+    const openButton = document.getElementById("openInvitation");
 
-    const music =
-        document.getElementById("backgroundMusic");
+    const music = document.getElementById("backgroundMusic");
 
-    const musicToggle =
-        document.getElementById("musicToggle");
+    const musicToggle = document.getElementById("musicToggle");
 
 
     // ==========================================
@@ -60,30 +53,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         musicToggle.innerHTML = "🎵";
 
-        musicToggle.style.position = "fixed";
-
-        musicToggle.style.right = "20px";
-
-        musicToggle.style.bottom = "20px";
-
-        musicToggle.style.width = "50px";
-
-        musicToggle.style.height = "50px";
-
-        musicToggle.style.borderRadius = "50%";
-
-        musicToggle.style.border = "none";
-
-        musicToggle.style.cursor = "pointer";
-
-        musicToggle.style.zIndex = "99999";
-
-        musicToggle.style.fontSize = "22px";
-
-        musicToggle.style.background = "#ffffff";
-
-        musicToggle.style.boxShadow =
-            "0 5px 20px rgba(0,0,0,0.20)";
+        musicToggle.setAttribute(
+            "aria-label",
+            "Turn music on or off"
+        );
 
     }
 
@@ -94,107 +67,129 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (openButton) {
 
-        openButton.addEventListener(
-            "click",
-            function () {
+        openButton.addEventListener("click", function () {
+
+            console.log("OPEN INVITATION clicked");
 
 
-                // Prevent double click
+            // --------------------------------------
+            // Prevent double click
+            // --------------------------------------
 
-                openButton.disabled = true;
+            openButton.disabled = true;
 
 
-                // ==================================
-                // START MUSIC
-                // ==================================
+            // --------------------------------------
+            // START MUSIC
+            // --------------------------------------
 
-                if (music) {
+            if (music) {
+
+                try {
 
                     music.currentTime = 0;
 
-                    music.play()
-                        .then(function () {
+                    const playPromise = music.play();
 
-                            console.log(
-                                "Wedding music started successfully."
-                            );
+                    if (playPromise !== undefined) {
 
-                            if (musicToggle) {
+                        playPromise
+                            .then(function () {
 
-                                musicToggle.innerHTML =
-                                    "🎵";
+                                console.log(
+                                    "Wedding music started."
+                                );
 
-                            }
+                                if (musicToggle) {
+                                    musicToggle.innerHTML = "🎵";
+                                }
 
-                        })
-                        .catch(function (error) {
+                            })
+                            .catch(function (error) {
 
-                            console.log(
-                                "Music playback error:",
-                                error
-                            );
+                                console.log(
+                                    "Music could not start:",
+                                    error
+                                );
 
-                        });
+                                /*
+                                 * IMPORTANT:
+                                 * Music error will NOT stop
+                                 * invitation from opening.
+                                 */
+
+                            });
+
+                    }
+
+                } catch (error) {
+
+                    console.log(
+                        "Music error:",
+                        error
+                    );
 
                 }
 
+            }
 
-                // ==================================
-                // OPENING FADE + ZOOM
-                // ==================================
+
+            // --------------------------------------
+            // OPENING FADE
+            // --------------------------------------
+
+            if (opening) {
+
+                opening.style.transition =
+                    "opacity 1.2s ease, transform 1.2s ease";
+
+                opening.style.opacity = "0";
+
+                opening.style.transform =
+                    "scale(1.04)";
+
+            }
+
+
+            // --------------------------------------
+            // SHOW MAIN CONTENT
+            // --------------------------------------
+
+            setTimeout(function () {
 
                 if (opening) {
 
-                    opening.style.transition =
-                        "opacity 1.5s ease, transform 1.5s ease";
-
-                    opening.style.opacity = "0";
-
-                    opening.style.transform =
-                        "scale(1.04)";
+                    opening.style.display = "none";
 
                 }
 
 
-                // ==================================
-                // SHOW MAIN CONTENT
-                // ==================================
+                if (mainContent) {
 
-                setTimeout(function () {
+                    mainContent.style.visibility =
+                        "visible";
 
+                    mainContent.style.transition =
+                        "opacity 1s ease";
 
-                    if (opening) {
+                    /*
+                     * Force browser to process
+                     * visibility before opacity.
+                     */
 
-                        opening.style.display =
-                            "none";
+                    requestAnimationFrame(function () {
 
-                    }
+                        mainContent.style.opacity = "1";
 
+                        mainContent.classList.add("show");
 
-                    if (mainContent) {
+                    });
 
-                        mainContent.style.visibility =
-                            "visible";
+                }
 
+            }, 1200);
 
-                        setTimeout(function () {
-
-                            mainContent.style.transition =
-                                "opacity 1.5s ease";
-
-                            mainContent.style.opacity =
-                                "1";
-
-                        }, 100);
-
-                    }
-
-
-                }, 1500);
-
-
-            }
-        );
+        });
 
     }
 
@@ -209,33 +204,44 @@ document.addEventListener("DOMContentLoaded", function () {
             "click",
             function () {
 
-
                 if (!music) {
+
+                    console.log(
+                        "backgroundMusic element not found."
+                    );
+
                     return;
+
                 }
 
 
+                // ----------------------------------
                 // MUSIC OFF
+                // ----------------------------------
 
                 if (!music.paused) {
 
                     music.pause();
 
-                    musicToggle.innerHTML =
-                        "🔇";
+                    musicToggle.innerHTML = "🔇";
+
+                    return;
 
                 }
 
 
+                // ----------------------------------
                 // MUSIC ON
+                // ----------------------------------
 
-                else {
+                const playPromise = music.play();
 
-                    music.play()
+                if (playPromise !== undefined) {
+
+                    playPromise
                         .then(function () {
 
-                            musicToggle.innerHTML =
-                                "🎵";
+                            musicToggle.innerHTML = "🎵";
 
                         })
                         .catch(function (error) {
@@ -245,10 +251,11 @@ document.addEventListener("DOMContentLoaded", function () {
                                 error
                             );
 
+                            musicToggle.innerHTML = "🔇";
+
                         });
 
                 }
-
 
             }
         );
@@ -267,7 +274,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     function updateCountdown() {
-
 
         const now =
             new Date().getTime();
@@ -290,29 +296,32 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("seconds");
 
 
-        if (distance <= 0) {
+        // --------------------------------------
+        // WEDDING DATE PASSED
+        // --------------------------------------
 
+        if (distance <= 0) {
 
             if (daysElement)
                 daysElement.innerText = "00";
 
-
             if (hoursElement)
                 hoursElement.innerText = "00";
-
 
             if (minutesElement)
                 minutesElement.innerText = "00";
 
-
             if (secondsElement)
                 secondsElement.innerText = "00";
-
 
             return;
 
         }
 
+
+        // --------------------------------------
+        // CALCULATE TIME
+        // --------------------------------------
 
         const days =
             Math.floor(
@@ -345,35 +354,46 @@ document.addEventListener("DOMContentLoaded", function () {
             );
 
 
-        if (daysElement)
+        // --------------------------------------
+        // DISPLAY
+        // --------------------------------------
+
+        if (daysElement) {
 
             daysElement.innerText =
                 String(days).padStart(2, "0");
 
+        }
 
-        if (hoursElement)
+        if (hoursElement) {
 
             hoursElement.innerText =
                 String(hours).padStart(2, "0");
 
+        }
 
-        if (minutesElement)
+        if (minutesElement) {
 
             minutesElement.innerText =
                 String(minutes).padStart(2, "0");
 
+        }
 
-        if (secondsElement)
+        if (secondsElement) {
 
             secondsElement.innerText =
                 String(seconds).padStart(2, "0");
 
+        }
 
     }
 
 
-    updateCountdown();
+    // ==========================================
+    // START COUNTDOWN
+    // ==========================================
 
+    updateCountdown();
 
     setInterval(
         updateCountdown,
@@ -382,4 +402,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 });
-```
