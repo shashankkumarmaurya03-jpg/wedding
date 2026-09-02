@@ -1,12 +1,33 @@
+```javascript
 // ==========================================
 // SHASHANK & JYOTI WEDDING INVITATION
 // ==========================================
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    const opening = document.getElementById("opening");
-    const mainContent = document.getElementById("mainContent");
-    const openButton = document.getElementById("openInvitation");
+    const opening =
+        document.getElementById("opening");
+
+    const mainContent =
+        document.getElementById("mainContent");
+
+    const openButton =
+        document.getElementById("openInvitation");
+
+    const musicToggle =
+        document.getElementById("musicToggle");
+
+
+    // ==========================================
+    // BACKGROUND MUSIC
+    // ==========================================
+
+    const music =
+        new Audio("music.mp3");
+
+    music.loop = true;
+
+    music.volume = 0.7;
 
 
     // ==========================================
@@ -14,8 +35,11 @@ document.addEventListener("DOMContentLoaded", function () {
     // ==========================================
 
     if (mainContent) {
+
         mainContent.style.opacity = "0";
+
         mainContent.style.visibility = "hidden";
+
     }
 
 
@@ -25,45 +49,118 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (openButton) {
 
-        openButton.addEventListener("click", function () {
+        openButton.addEventListener(
+            "click",
+            function () {
 
-            openButton.disabled = true;
-
-            if (opening) {
-
-                opening.style.transition =
-                    "opacity 1.5s ease, transform 1.5s ease";
-
-                opening.style.opacity = "0";
-                opening.style.transform = "scale(1.04)";
-
-            }
+                openButton.disabled = true;
 
 
-            setTimeout(function () {
+                // START MUSIC
+                music.play()
+                    .then(function () {
+
+                        if (musicToggle) {
+
+                            musicToggle.innerText =
+                                "🎵";
+
+                        }
+
+                    })
+                    .catch(function (error) {
+
+                        console.log(
+                            "Music could not start:",
+                            error
+                        );
+
+                    });
+
+
+                // OPENING ANIMATION
 
                 if (opening) {
-                    opening.style.display = "none";
-                }
 
-                if (mainContent) {
+                    opening.style.transition =
+                        "opacity 1.5s ease, transform 1.5s ease";
 
-                    mainContent.style.visibility = "visible";
+                    opening.style.opacity = "0";
 
-                    setTimeout(function () {
-
-                        mainContent.style.transition =
-                            "opacity 1.5s ease";
-
-                        mainContent.style.opacity = "1";
-
-                    }, 100);
+                    opening.style.transform =
+                        "scale(1.04)";
 
                 }
 
-            }, 1500);
 
-        });
+                // SHOW MAIN CONTENT
+
+                setTimeout(function () {
+
+                    if (opening) {
+
+                        opening.style.display =
+                            "none";
+
+                    }
+
+
+                    if (mainContent) {
+
+                        mainContent.style.visibility =
+                            "visible";
+
+
+                        setTimeout(function () {
+
+                            mainContent.style.transition =
+                                "opacity 1.5s ease";
+
+                            mainContent.style.opacity =
+                                "1";
+
+                        }, 100);
+
+                    }
+
+                }, 1500);
+
+            }
+        );
+
+    }
+
+
+    // ==========================================
+    // MUSIC TOGGLE
+    // ==========================================
+
+    if (musicToggle) {
+
+        musicToggle.addEventListener(
+            "click",
+            function () {
+
+                if (music.paused) {
+
+                    music.play();
+
+                    musicToggle.innerText =
+                        "🎵";
+
+                }
+
+                else {
+
+                    music.pause();
+
+                    musicToggle.innerText =
+                        "🔇";
+
+                }
+
+            }
+        );
 
     }
 
@@ -73,14 +170,18 @@ document.addEventListener("DOMContentLoaded", function () {
     // ==========================================
 
     const weddingDate =
-        new Date("November 21, 2026 00:00:00").getTime();
+        new Date(
+            "November 21, 2026 00:00:00"
+        ).getTime();
 
 
     function updateCountdown() {
 
-        const now = new Date().getTime();
+        const now =
+            new Date().getTime();
 
-        const distance = weddingDate - now;
+        const distance =
+            weddingDate - now;
 
 
         const daysElement =
@@ -111,6 +212,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 secondsElement.innerText = "00";
 
             return;
+
         }
 
 
@@ -169,7 +271,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     updateCountdown();
 
-    setInterval(updateCountdown, 1000);
+    setInterval(
+        updateCountdown,
+        1000
+    );
 
 
     // ==========================================
@@ -186,19 +291,24 @@ document.addEventListener("DOMContentLoaded", function () {
             new IntersectionObserver(
                 function (entries) {
 
-                    entries.forEach(function (entry) {
+                    entries.forEach(
+                        function (entry) {
 
-                        if (entry.isIntersecting) {
+                            if (
+                                entry.isIntersecting
+                            ) {
 
-                            entry.target.classList.add("active");
+                                entry.target.classList
+                                    .add("active");
 
-                            observer.unobserve(
-                                entry.target
-                            );
+                                observer.unobserve(
+                                    entry.target
+                                );
+
+                            }
 
                         }
-
-                    });
+                    );
 
                 },
                 {
@@ -207,12 +317,15 @@ document.addEventListener("DOMContentLoaded", function () {
             );
 
 
-        revealElements.forEach(function (element) {
+        revealElements.forEach(
+            function (element) {
 
-            observer.observe(element);
+                observer.observe(element);
 
-        });
+            }
+        );
 
     }
 
 });
+```
