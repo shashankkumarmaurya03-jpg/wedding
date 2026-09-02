@@ -1,253 +1,429 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Shashank & Jyoti | Wedding Invitation</title>
+<title>Shashank & Jyoti | Wedding Invitation</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&display=swap');
 
-        html {
-            scroll-behavior: smooth;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        body {
-            font-family: Georgia, serif;
-            background: #fff8f2;
-            color: #4a3025;
-            text-align: center;
-        }
+html{
+    scroll-behavior:smooth;
+}
 
-        section {
-            min-height: 100vh;
-            padding: 70px 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
+body{
+    background:#fffaf5;
+    color:#4b3028;
+    font-family:'Cormorant Garamond',serif;
+    overflow-x:hidden;
+}
 
-        /* WELCOME */
+section{
+    min-height:100vh;
+    padding:80px 20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    position:relative;
+    overflow:hidden;
+}
 
-        .welcome {
-            background: linear-gradient(135deg, #fff0e6, #f4d2bd);
-        }
+section::before{
+    content:"";
+    position:absolute;
+    width:280px;
+    height:280px;
+    border:1px solid rgba(139,94,75,.18);
+    border-radius:50%;
+    top:-120px;
+    left:-120px;
+}
 
-        .welcome h1 {
-            font-size: 20px;
-            letter-spacing: 6px;
-            margin-bottom: 30px;
-        }
+section::after{
+    content:"";
+    position:absolute;
+    width:220px;
+    height:220px;
+    border:1px solid rgba(139,94,75,.15);
+    border-radius:50%;
+    bottom:-100px;
+    right:-100px;
+}
 
-        .welcome h2 {
-            font-size: 55px;
-            margin: 8px 0;
-        }
+.container{
+    width:100%;
+    max-width:800px;
+    text-align:center;
+    position:relative;
+    z-index:2;
+}
 
-        .and {
-            font-size: 32px;
-            margin: 8px;
-        }
+/* OPENING */
 
-        .date {
-            margin-top: 25px;
-            font-size: 20px;
-            letter-spacing: 3px;
-        }
+.hero{
+    min-height:100vh;
+    background:
+        radial-gradient(circle at top,#fff7ef,#f2d5c2 75%);
+}
 
-        .time {
-            margin-top: 10px;
-            font-size: 18px;
-        }
+.small-title{
+    font-size:17px;
+    letter-spacing:7px;
+    text-transform:uppercase;
+    animation:fadeDown 1.5s ease;
+}
 
-        .btn {
-            margin-top: 35px;
-            padding: 15px 32px;
-            border-radius: 30px;
-            border: none;
-            background: #8b5e4b;
-            color: white;
-            font-size: 15px;
-            cursor: pointer;
-        }
+.hero h1{
+    font-family:'Great Vibes',cursive;
+    font-size:90px;
+    font-weight:400;
+    margin:20px 0 0;
+    animation:fadeUp 1.5s ease;
+}
 
-        .btn:hover,
-        .map-btn:hover {
-            opacity: 0.85;
-        }
+.hero .and{
+    font-size:40px;
+    margin:0;
+    animation:fadeUp 1.8s ease;
+}
 
-        /* GENERAL */
+.hero .date{
+    font-size:21px;
+    letter-spacing:5px;
+    margin-top:20px;
+}
 
-        .section-title {
-            font-size: 40px;
-            margin-bottom: 25px;
-        }
+.hero .time{
+    font-size:19px;
+    margin-top:8px;
+}
 
-        /* COUPLE */
+.open-btn{
+    margin-top:40px;
+    padding:15px 35px;
+    border:1px solid #8b5e4b;
+    background:#8b5e4b;
+    color:white;
+    border-radius:50px;
+    font-family:inherit;
+    font-size:16px;
+    letter-spacing:2px;
+    cursor:pointer;
+    transition:.3s;
+}
 
-        .couple {
-            background: #fffaf7;
-        }
+.open-btn:hover{
+    transform:scale(1.05);
+    background:#6f493a;
+}
 
-        .names {
-            font-size: 35px;
-            margin: 20px;
-        }
+/* INTRO */
 
-        .couple p {
-            max-width: 600px;
-            line-height: 1.8;
-            font-size: 18px;
-            margin: 8px 0;
-        }
+.intro{
+    background:#fffaf6;
+}
 
-        /* EVENTS */
+.ornament{
+    font-size:28px;
+    margin-bottom:20px;
+}
 
-        .events {
-            background: #f9e8dc;
-        }
+.script{
+    font-family:'Great Vibes',cursive;
+    font-size:58px;
+    font-weight:400;
+}
 
-        .event {
-            width: 90%;
-            max-width: 500px;
-            padding: 25px;
-            margin: 10px;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-        }
+.names{
+    font-size:34px;
+    margin:25px 0;
+    letter-spacing:2px;
+}
 
-        .event h3 {
-            font-size: 25px;
-            margin-bottom: 10px;
-        }
+.intro p{
+    max-width:650px;
+    margin:12px auto;
+    font-size:20px;
+    line-height:1.7;
+}
 
-        .event p {
-            margin: 5px;
-            font-size: 17px;
-        }
+/* EVENTS */
 
-        .event .time {
-            font-weight: bold;
-        }
+.events{
+    background:#f9e8dc;
+}
 
-        /* COUNTDOWN */
+.title{
+    font-family:'Great Vibes',cursive;
+    font-size:58px;
+    font-weight:400;
+    margin-bottom:40px;
+}
 
-        .countdown {
-            background: #fff4ec;
-        }
+.event-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+    width:100%;
+    max-width:700px;
+}
 
-        #timer {
-            font-size: 30px;
-            font-weight: bold;
-            margin-top: 25px;
-            line-height: 1.6;
-        }
+.event-card{
+    background:rgba(255,255,255,.85);
+    padding:30px 20px;
+    border-radius:25px;
+    box-shadow:0 10px 30px rgba(70,40,30,.08);
+    transition:.4s;
+}
 
-        /* VENUE */
+.event-card:hover{
+    transform:translateY(-8px);
+}
 
-        .venue {
-            background: #f4dfd1;
-        }
+.event-icon{
+    font-size:35px;
+    margin-bottom:12px;
+}
 
-        .venue h3 {
-            font-size: 30px;
-            margin-bottom: 15px;
-        }
+.event-card h3{
+    font-size:28px;
+    margin-bottom:8px;
+}
 
-        .venue p {
-            font-size: 18px;
-            line-height: 1.8;
-            max-width: 650px;
-        }
+.event-card p{
+    font-size:19px;
+    line-height:1.5;
+}
 
-        .map-btn {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 15px 30px;
-            border-radius: 30px;
-            background: #8b5e4b;
-            color: white;
-            text-decoration: none;
-        }
+.event-time{
+    font-weight:bold;
+    margin-top:8px;
+}
 
-        /* RSVP */
+/* COUNTDOWN */
 
-        .rsvp {
-            background: #fffaf7;
-        }
+.countdown{
+    background:linear-gradient(135deg,#fff8f1,#f1d5c4);
+}
 
-        .rsvp p {
-            max-width: 550px;
-            line-height: 1.7;
-            font-size: 18px;
-        }
+.countdown-text{
+    font-size:20px;
+    margin-bottom:25px;
+}
 
-        /* FOOTER */
+.timer{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
 
-        footer {
-            padding: 30px;
-            background: #4a3025;
-            color: white;
-            line-height: 1.8;
-        }
+.time-box{
+    min-width:110px;
+    padding:20px 15px;
+    background:rgba(255,255,255,.75);
+    border-radius:18px;
+    box-shadow:0 8px 25px rgba(60,35,25,.08);
+}
 
-        /* MOBILE */
+.time-box span{
+    display:block;
+    font-size:38px;
+    font-weight:bold;
+}
 
-        @media(max-width: 600px) {
+.time-box small{
+    font-size:16px;
+    letter-spacing:2px;
+}
 
-            .welcome h2 {
-                font-size: 42px;
-            }
+/* VENUE */
 
-            .welcome h1 {
-                font-size: 16px;
-                letter-spacing: 4px;
-            }
+.venue{
+    background:#f4dfd1;
+}
 
-            .date {
-                font-size: 16px;
-            }
+.venue-box{
+    background:rgba(255,255,255,.8);
+    max-width:700px;
+    padding:45px 30px;
+    border-radius:30px;
+    box-shadow:0 15px 40px rgba(70,40,30,.08);
+}
 
-            .section-title {
-                font-size: 32px;
-            }
+.venue-name{
+    font-family:'Great Vibes',cursive;
+    font-size:55px;
+    margin-bottom:20px;
+}
 
-            .names {
-                font-size: 28px;
-            }
+.address{
+    font-size:20px;
+    line-height:1.8;
+}
 
-            #timer {
-                font-size: 22px;
-            }
+.map-btn,
+.whatsapp-btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:14px 30px;
+    border-radius:50px;
+    text-decoration:none;
+    color:white;
+    background:#8b5e4b;
+    font-size:17px;
+    transition:.3s;
+}
 
-            .venue p {
-                font-size: 16px;
-            }
-        }
-    </style>
+.map-btn:hover,
+.whatsapp-btn:hover{
+    transform:scale(1.05);
+}
+
+/* RSVP */
+
+.rsvp{
+    background:#fffaf6;
+}
+
+.rsvp p{
+    max-width:600px;
+    font-size:21px;
+    line-height:1.7;
+}
+
+.whatsapp-btn{
+    background:#6b8e65;
+}
+
+/* FOOTER */
+
+footer{
+    padding:40px 20px;
+    background:#4a3025;
+    color:white;
+    text-align:center;
+}
+
+.footer-script{
+    font-family:'Great Vibes',cursive;
+    font-size:42px;
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeDown{
+    from{
+        opacity:0;
+        transform:translateY(-30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    section{
+        padding:65px 18px;
+    }
+
+    .hero h1{
+        font-size:65px;
+    }
+
+    .small-title{
+        font-size:13px;
+        letter-spacing:4px;
+    }
+
+    .hero .date{
+        font-size:16px;
+        letter-spacing:3px;
+    }
+
+    .script,
+    .title{
+        font-size:45px;
+    }
+
+    .names{
+        font-size:28px;
+    }
+
+    .intro p,
+    .rsvp p{
+        font-size:18px;
+    }
+
+    .event-grid{
+        grid-template-columns:1fr;
+    }
+
+    .venue-name{
+        font-size:45px;
+    }
+
+    .address{
+        font-size:17px;
+    }
+
+    .time-box{
+        min-width:75px;
+        padding:15px 8px;
+    }
+
+    .time-box span{
+        font-size:27px;
+    }
+
+    .time-box small{
+        font-size:12px;
+    }
+}
+</style>
 </head>
 
 <body>
 
+<!-- HERO -->
 
-    <!-- WELCOME -->
+<section class="hero">
 
-    <section class="welcome">
+    <div class="container">
 
-        <h1>YOU ARE INVITED</h1>
+        <div class="small-title">
+            You Are Cordially Invited
+        </div>
 
-        <h2>Shashank</h2>
+        <h1>Shashank</h1>
 
         <div class="and">&</div>
 
-        <h2>Jyoti</h2>
+        <h1>Jyoti</h1>
 
         <div class="date">
             21 NOVEMBER 2026
@@ -258,160 +434,235 @@
         </div>
 
         <button
-            class="btn"
-            onclick="document.getElementById('couple').scrollIntoView()">
+            class="open-btn"
+            onclick="document.getElementById('intro').scrollIntoView()">
 
             OPEN INVITATION
 
         </button>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- COUPLE -->
+<!-- INTRO -->
 
-    <section class="couple" id="couple">
+<section class="intro" id="intro">
 
-        <h2 class="section-title">
+    <div class="container">
+
+        <div class="ornament">
+            ❦
+        </div>
+
+        <div class="script">
             Together Forever
-        </h2>
+        </div>
 
         <div class="names">
-            Shashank ❤️ Jyoti
+            Shashank Kumar Maurya
+            <br>
+            <span style="font-family:'Great Vibes';font-size:38px;">
+                &
+            </span>
+            <br>
+            Jyoti
         </div>
 
         <p>
-            Two hearts, one beautiful journey,
-            and a lifetime of memories together.
+            Two hearts, two souls and one beautiful journey
+            are coming together in the bond of love and marriage.
         </p>
 
         <p>
-            With love and happiness, we invite you
-            to celebrate our special day with us.
+            We warmly invite you to be a part of our
+            special day and bless us with your love.
         </p>
 
-    </section>
+        <div class="ornament">
+            ❦
+        </div>
+
+    </div>
+
+</section>
 
 
-    <!-- EVENTS -->
+<!-- EVENTS -->
 
-    <section class="events">
+<section class="events">
 
-        <h2 class="section-title">
-            Wedding Events
-        </h2>
+    <div class="container">
+
+        <div class="title">
+            Wedding Celebrations
+        </div>
+
+        <div class="event-grid">
+
+            <div class="event-card">
+
+                <div class="event-icon">
+                    🌼
+                </div>
+
+                <h3>Haldi</h3>
+
+                <p>
+                    19 November 2026
+                </p>
+
+            </div>
 
 
-        <!-- HALDI -->
+            <div class="event-card">
 
-        <div class="event">
+                <div class="event-icon">
+                    🌿
+                </div>
 
-            <h3>🌼 Haldi</h3>
+                <h3>Mehendi</h3>
 
-            <p>
-                19 November 2026
-            </p>
+                <p>
+                    19 November 2026
+                </p>
+
+            </div>
+
+
+            <div class="event-card"
+                 style="grid-column:1/-1;">
+
+                <div class="event-icon">
+                    💍
+                </div>
+
+                <h3>Wedding</h3>
+
+                <p>
+                    21 November 2026
+                </p>
+
+                <p class="event-time">
+                    🕕 6:00 PM
+                </p>
+
+            </div>
 
         </div>
 
+    </div>
 
-        <!-- MEHENDI -->
+</section>
 
-        <div class="event">
 
-            <h3>🌿 Mehendi</h3>
+<!-- COUNTDOWN -->
 
-            <p>
-                19 November 2026
-            </p>
+<section class="countdown">
+
+    <div class="container">
+
+        <div class="title">
+            The Countdown Begins
+        </div>
+
+        <div class="countdown-text">
+            Counting every moment until our special day ❤️
+        </div>
+
+        <div class="timer">
+
+            <div class="time-box">
+                <span id="days">0</span>
+                <small>DAYS</small>
+            </div>
+
+            <div class="time-box">
+                <span id="hours">0</span>
+                <small>HOURS</small>
+            </div>
+
+            <div class="time-box">
+                <span id="minutes">0</span>
+                <small>MINUTES</small>
+            </div>
+
+            <div class="time-box">
+                <span id="seconds">0</span>
+                <small>SECONDS</small>
+            </div>
 
         </div>
 
+    </div>
 
-        <!-- WEDDING -->
-
-        <div class="event">
-
-            <h3>💍 Wedding</h3>
-
-            <p>
-                21 November 2026
-            </p>
-
-            <p class="time">
-                🕕 6:00 PM
-            </p>
-
-        </div>
-
-    </section>
+</section>
 
 
-    <!-- COUNTDOWN -->
+<!-- VENUE -->
 
-    <section class="countdown">
+<section class="venue">
 
-        <h2 class="section-title">
-            Countdown
-        </h2>
+    <div class="container">
 
-        <p>
-            Our special day is coming...
-        </p>
-
-        <div id="timer">
-            Loading...
-        </div>
-
-    </section>
-
-
-    <!-- VENUE -->
-
-    <section class="venue">
-
-        <h2 class="section-title">
+        <div class="title">
             Wedding Venue
-        </h2>
+        </div>
 
-        <h3>
-            संतोष गार्डन
-        </h3>
+        <div class="venue-box">
+
+            <div class="venue-name">
+                संतोष गार्डन
+            </div>
+
+            <div class="address">
+
+                नियर लक्ष्मी हार्डवेयर,<br>
+                मनोज मोबाइल वाली गली,<br>
+                अमन विहार किराड़ी,<br>
+                सुलेमान नगर, दिल्ली-86
+
+            </div>
+
+            <a
+                class="map-btn"
+                href="https://www.google.com/maps/search/?api=1&query=Santosh+Garden+Aman+Vihar+Kirari+Suleman+Nagar+Delhi"
+                target="_blank">
+
+                📍 OPEN GOOGLE MAP
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- RSVP -->
+
+<section class="rsvp">
+
+    <div class="container">
+
+        <div class="title">
+            With Love
+        </div>
 
         <p>
-            नियर लक्ष्मी हार्डवेयर,<br>
-            मनोज मोबाइल वाली गली,<br>
-            अमन विहार किराड़ी,<br>
-            सुलेमान नगर, दिल्ली-86
+            Your presence will make our celebration
+            even more special.
+        </p>
+
+        <p>
+            We can't wait to celebrate this beautiful
+            beginning with you. ❤️
         </p>
 
         <a
-            class="map-btn"
-            href="https://www.google.com/maps/search/?api=1&query=Santosh+Garden+Aman+Vihar+Kirari+Suleman+Nagar+Delhi"
-            target="_blank">
-
-            📍 OPEN GOOGLE MAP
-
-        </a>
-
-    </section>
-
-
-    <!-- RSVP -->
-
-    <section class="rsvp">
-
-        <h2 class="section-title">
-            RSVP
-        </h2>
-
-        <p>
-            We would love to celebrate
-            this beautiful day with you ❤️
-        </p>
-
-        <a
-            class="map-btn"
+            class="whatsapp-btn"
             href="https://wa.me/919999999999"
             target="_blank">
 
@@ -419,91 +670,103 @@
 
         </a>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- FOOTER -->
+<!-- FOOTER -->
 
-    <footer>
+<footer>
 
-        Made with ❤️ for<br>
+    <div class="footer-script">
+        Shashank & Jyoti
+    </div>
 
-        <strong>
-            Shashank & Jyoti
-        </strong>
+    <p>
+        21 November 2026 • 6:00 PM
+    </p>
 
-    </footer>
+    <p style="margin-top:10px;">
+        Made with ❤️
+    </p>
 
-
-    <!-- COUNTDOWN SCRIPT -->
-
-    <script>
-
-        const weddingDate =
-            new Date("November 21, 2026 18:00:00").getTime();
+</footer>
 
 
-        const countdown =
-            setInterval(function () {
+<!-- COUNTDOWN SCRIPT -->
 
-                const now =
-                    new Date().getTime();
+<script>
 
-                const distance =
-                    weddingDate - now;
+const weddingDate =
+    new Date("November 21, 2026 18:00:00").getTime();
 
 
-                const days =
-                    Math.floor(
-                        distance /
-                        (1000 * 60 * 60 * 24)
-                    );
+const countdown =
+    setInterval(function(){
+
+        const now =
+            new Date().getTime();
+
+        const distance =
+            weddingDate - now;
 
 
-                const hours =
-                    Math.floor(
-                        (distance /
-                        (1000 * 60 * 60)) % 24
-                    );
+        if(distance <= 0){
+
+            clearInterval(countdown);
+
+            document.getElementById("days").innerHTML = "0";
+            document.getElementById("hours").innerHTML = "0";
+            document.getElementById("minutes").innerHTML = "0";
+            document.getElementById("seconds").innerHTML = "0";
+
+            return;
+        }
 
 
-                const minutes =
-                    Math.floor(
-                        (distance /
-                        (1000 * 60)) % 60
-                    );
+        const days =
+            Math.floor(
+                distance /
+                (1000 * 60 * 60 * 24)
+            );
 
 
-                const seconds =
-                    Math.floor(
-                        (distance / 1000) % 60
-                    );
+        const hours =
+            Math.floor(
+                (distance /
+                (1000 * 60 * 60)) % 24
+            );
 
 
-                if (distance > 0) {
+        const minutes =
+            Math.floor(
+                (distance /
+                (1000 * 60)) % 60
+            );
 
-                    document.getElementById("timer").innerHTML =
 
-                        days + " Days " +
-                        hours + " Hours " +
-                        minutes + " Minutes " +
-                        seconds + " Seconds";
+        const seconds =
+            Math.floor(
+                (distance / 1000) % 60
+            );
 
-                }
 
-                else {
+        document.getElementById("days").innerHTML =
+            days;
 
-                    clearInterval(countdown);
+        document.getElementById("hours").innerHTML =
+            hours;
 
-                    document.getElementById("timer").innerHTML =
+        document.getElementById("minutes").innerHTML =
+            minutes;
 
-                        "❤️ THE WEDDING DAY HAS ARRIVED ❤️";
+        document.getElementById("seconds").innerHTML =
+            seconds;
 
-                }
+    },1000);
 
-            }, 1000);
-
-    </script>
+</script>
 
 </body>
 </html>
