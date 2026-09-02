@@ -1,7 +1,7 @@
-/* =====================================================
+```css
+/* ==========================================
    SHASHANK & JYOTI WEDDING INVITATION
-   MAIN STYLESHEET
-===================================================== */
+   ========================================== */
 
 * {
     margin: 0;
@@ -14,181 +14,256 @@ html {
 }
 
 body {
-    font-family: Georgia, "Times New Roman", serif;
-    background: #f6eee2;
-    color: #3b281d;
+    width: 100%;
+    min-height: 100vh;
     overflow-x: hidden;
+    font-family: Georgia, "Times New Roman", serif;
+    background: #f8f1e7;
+    color: #4b3428;
 }
 
-button,
-a {
-    font-family: inherit;
-}
 
-
-/* =====================================================
+/* ==========================================
    OPENING SCREEN
-===================================================== */
+   ========================================== */
 
 .opening {
-    min-height: 100svh;
-    width: 100%;
     position: relative;
-    overflow: hidden;
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
 
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
     text-align: center;
+
+    overflow: hidden;
 
     background:
         radial-gradient(
             circle at center,
-            #fffaf3 0%,
-            #f7ecdc 55%,
-            #ead8c0 100%
+            #fffaf2 0%,
+            #f8f1e7 55%,
+            #eadbc9 100%
         );
+
+    z-index: 1000;
 }
 
 
-/* Decorative circles */
+.opening-content {
+    position: relative;
+    z-index: 10;
+
+    width: min(90%, 850px);
+
+    padding: 40px 20px;
+}
+
+
+/* ==========================================
+   DECORATIONS
+   ========================================== */
 
 .opening-decoration {
     position: absolute;
-    border: 1px solid rgba(112, 77, 43, 0.22);
+
     border-radius: 50%;
+
     pointer-events: none;
+
+    opacity: 0.35;
 }
+
 
 .decoration-one {
-    width: 380px;
-    height: 380px;
+    width: 350px;
+    height: 350px;
+
     top: -180px;
-    left: -180px;
-    animation: slowRotate 18s linear infinite;
+    left: -160px;
+
+    border: 1px solid #b99a6b;
 }
+
 
 .decoration-two {
-    width: 420px;
-    height: 420px;
-    right: -210px;
-    bottom: -210px;
-    animation: slowRotateReverse 20s linear infinite;
+    width: 300px;
+    height: 300px;
+
+    right: -150px;
+    bottom: -150px;
+
+    border: 1px solid #b99a6b;
 }
 
 
-/* Opening content */
+/* ==========================================
+   GANESH
+   ========================================== */
 
-.opening-content {
-    width: min(92%, 650px);
-    position: relative;
-    z-index: 5;
+.ganesh {
+    margin-bottom: 35px;
 
-    animation: openingAppear 2s ease forwards;
+    animation: openingFade 1.5s ease forwards;
 }
 
-
-/* Ganesh */
 
 .ganesh-symbol {
-    font-family: Georgia, serif;
-    font-size: 48px;
-    margin-bottom: 10px;
+    font-size: 55px;
 
-    animation: softFloat 4s ease-in-out infinite;
+    color: #9a6a35;
+
+    margin-bottom: 10px;
 }
+
 
 .ganesh h3 {
-    font-size: 21px;
-    font-weight: 400;
+    font-size: 18px;
+
+    font-weight: normal;
+
     letter-spacing: 1px;
-    margin-bottom: 22px;
+
+    color: #80572f;
 }
+
 
 .mantra {
-    font-family: "Noto Serif Devanagari",
-                 "Mangal",
-                 serif;
+    margin-top: 15px;
 
-    font-size: 17px;
-    line-height: 2;
+    font-size: 15px;
+
+    line-height: 1.9;
+
+    color: #6d5140;
 }
 
 
-/* Invitation text */
+/* ==========================================
+   INVITATION TEXT
+   ========================================== */
 
 .invitation-text {
-    margin-top: 38px;
+    margin: 30px auto;
+
+    max-width: 600px;
+
+    color: #6b5545;
+
     font-family: Arial, sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    letter-spacing: 0.3px;
 }
+
 
 .invitation-text p {
-    font-size: 14px;
-    line-height: 1.8;
-    letter-spacing: 0.5px;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 
-/* Couple name */
+/* ==========================================
+   COUPLE NAME
+   ========================================== */
 
 .couple-name {
-    margin-top: 32px;
+    margin: 35px 0;
 }
+
 
 .couple-name h1 {
-    font-size: clamp(34px, 8vw, 62px);
-    font-weight: 400;
+    font-size: clamp(34px, 6vw, 64px);
+
+    font-weight: normal;
+
+    color: #6e4427;
+
     letter-spacing: 1px;
 
-    animation: nameReveal 2s ease forwards;
+    line-height: 1.2;
+
+    animation: nameReveal 1.8s ease forwards;
 }
+
 
 .couple-name span {
     display: block;
-    font-size: 27px;
-    margin: 12px 0;
+
+    margin: 10px 0;
+
+    font-size: 30px;
+
+    color: #a47b49;
 }
+
 
 .couple-name h2 {
-    font-size: clamp(32px, 7vw, 54px);
-    font-weight: 400;
+    font-size: clamp(30px, 5vw, 52px);
+
+    font-weight: normal;
+
+    color: #6e4427;
 }
 
 
-/* Save date */
+/* ==========================================
+   SAVE DATE
+   ========================================== */
 
 .save-date {
-    margin-top: 30px;
+    margin: 30px 0;
 }
+
 
 .save-date p {
     font-family: Arial, sans-serif;
-    font-size: 11px;
+
+    font-size: 12px;
+
     letter-spacing: 4px;
+
+    color: #97724c;
+
     margin-bottom: 8px;
 }
 
+
 .save-date strong {
-    font-size: 15px;
-    letter-spacing: 3px;
-    font-weight: 400;
+    font-family: Arial, sans-serif;
+
+    font-size: 16px;
+
+    letter-spacing: 2px;
+
+    color: #5c402d;
 }
 
 
-/* Open button */
+/* ==========================================
+   OPEN BUTTON
+   ========================================== */
 
 .open-button {
-    margin-top: 35px;
+    margin-top: 25px;
 
-    padding: 15px 34px;
+    padding: 15px 32px;
 
-    border: 1px solid #765337;
+    border: 1px solid #9c774e;
+
     background: transparent;
-    color: #3b281d;
+
+    color: #65452d;
+
+    font-family: Arial, sans-serif;
 
     font-size: 12px;
+
     letter-spacing: 3px;
 
     cursor: pointer;
@@ -196,409 +271,607 @@ a {
     transition:
         background 0.4s ease,
         color 0.4s ease,
-        transform 0.3s ease;
+        transform 0.4s ease;
 }
 
+
 .open-button:hover {
-    background: #3b281d;
-    color: #fffaf3;
+    background: #765334;
+
+    color: #fff;
+
     transform: translateY(-3px);
 }
 
 
-/* =====================================================
-   MAIN CONTENT
-===================================================== */
-
-#mainContent {
-    opacity: 1;
+.open-button:active {
+    transform: scale(0.97);
 }
 
 
-/* =====================================================
-   COMMON SECTION
-===================================================== */
+/* ==========================================
+   MAIN CONTENT
+   ========================================== */
 
-section:not(.opening) {
+#mainContent {
     width: 100%;
-    min-height: 80vh;
 
-    padding: 90px 22px;
+    opacity: 0;
+
+    visibility: hidden;
+}
+
+
+/* ==========================================
+   COMMON SECTION
+   ========================================== */
+
+#mainContent section {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+
+    padding: 90px 20px;
 
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
+
     justify-content: center;
 
     text-align: center;
-
-    position: relative;
 }
 
 
 .small-heading {
-    font-family: Arial, sans-serif;
-    font-size: 10px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-
     margin-bottom: 20px;
 
-    opacity: 0.7;
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    color: #a27a4b;
 }
 
 
-/* =====================================================
+/* ==========================================
    WELCOME
-===================================================== */
+   ========================================== */
 
 .welcome-section {
-    background: #f6eee2;
+    background: #f8f1e7;
 }
 
+
 .welcome-section h1 {
-    font-size: clamp(42px, 9vw, 75px);
-    font-weight: 400;
-    line-height: 1.1;
+    font-size: clamp(45px, 8vw, 80px);
+
+    font-weight: normal;
+
+    color: #6e4427;
+
+    line-height: 1.2;
 }
+
 
 .welcome-section h1 span {
     display: block;
-    font-size: 25px;
-    margin: 12px;
+
+    font-size: 30px;
+
+    color: #a47b49;
+
+    margin: 10px 0;
 }
+
 
 .welcome-section > p:last-child {
     margin-top: 25px;
+
     font-family: Arial, sans-serif;
-    font-size: 14px;
-    line-height: 1.8;
-}
 
+    color: #755c4a;
 
-/* =====================================================
-   DATE SECTION
-===================================================== */
-
-.date-section {
-    min-height: 90vh !important;
-
-    background:
-        radial-gradient(
-            circle,
-            #fffaf4,
-            #f0dfc9
-        );
-}
-
-.date-section h2 {
-    font-size: clamp(110px, 25vw, 200px);
-    font-weight: 300;
-    line-height: 0.8;
-}
-
-.date-section h3 {
-    margin-top: 30px;
-    font-size: 21px;
-    letter-spacing: 5px;
-    font-weight: 400;
-}
-
-.date-section p:last-child {
-    margin-top: 30px;
-    font-style: italic;
-}
-
-
-/* =====================================================
-   EVENTS
-===================================================== */
-
-.events-section {
-    background: #ead9c3;
-}
-
-.events-section > h2 {
-    font-size: clamp(38px, 8vw, 65px);
-    font-weight: 400;
-    margin-bottom: 45px;
-}
-
-
-/* Event card */
-
-.event-card {
-    width: min(100%, 460px);
-
-    padding: 35px 25px;
-    margin: 10px 0;
-
-    border-top: 1px solid rgba(59, 40, 29, 0.3);
-    border-bottom: 1px solid rgba(59, 40, 29, 0.3);
-
-    position: relative;
-
-    transition:
-        transform 0.5s ease,
-        background 0.5s ease;
-}
-
-.event-card:hover {
-    transform: translateY(-8px);
-    background: rgba(255, 250, 243, 0.4);
-}
-
-.event-number {
-    font-family: Arial, sans-serif;
-    font-size: 10px;
-    letter-spacing: 2px;
-    opacity: 0.5;
-}
-
-.event-card h3 {
-    font-size: 32px;
-    font-weight: 400;
-    margin: 15px 0;
-    letter-spacing: 3px;
-}
-
-.event-date {
-    font-family: Arial, sans-serif;
-    font-size: 12px;
-    letter-spacing: 2px;
-}
-
-.event-card p:last-child {
-    margin-top: 12px;
     font-size: 15px;
 }
 
 
-/* =====================================================
-   WEDDING SECTION
-===================================================== */
+/* ==========================================
+   DATE SECTION
+   ========================================== */
+
+.date-section {
+    background: #eee2d2;
+}
+
+
+.date-section h2 {
+    font-size: clamp(100px, 20vw, 190px);
+
+    line-height: 0.9;
+
+    font-weight: normal;
+
+    color: #70472b;
+}
+
+
+.date-section h3 {
+    margin-top: 20px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 18px;
+
+    letter-spacing: 5px;
+
+    color: #755239;
+}
+
+
+.date-section p:last-child {
+    margin-top: 25px;
+
+    font-style: italic;
+
+    color: #806653;
+}
+
+
+/* ==========================================
+   EVENTS
+   ========================================== */
+
+.events-section {
+    background: #f8f1e7;
+
+    justify-content: flex-start !important;
+
+    padding-top: 100px !important;
+    padding-bottom: 100px !important;
+}
+
+
+.events-section > h2 {
+    margin-bottom: 50px;
+
+    font-size: clamp(35px, 6vw, 60px);
+
+    font-weight: normal;
+
+    color: #6e4427;
+}
+
+
+.event-card {
+    position: relative;
+
+    width: min(90%, 650px);
+
+    padding: 45px 25px;
+
+    margin-bottom: 25px;
+
+    border: 1px solid rgba(145, 108, 70, 0.35);
+
+    background: rgba(255, 250, 243, 0.55);
+
+    transition:
+        transform 0.5s ease,
+        box-shadow 0.5s ease;
+}
+
+
+.event-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 15px 40px rgba(100, 70, 40, 0.12);
+}
+
+
+.event-number {
+    display: block;
+
+    margin-bottom: 15px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    color: #a17b50;
+}
+
+
+.event-card h3 {
+    font-size: 30px;
+
+    font-weight: normal;
+
+    letter-spacing: 3px;
+
+    color: #70472b;
+
+    margin-bottom: 15px;
+}
+
+
+.event-card p {
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+    color: #755b48;
+
+    margin-top: 6px;
+}
+
+
+.event-card .event-date {
+    letter-spacing: 2px;
+
+    font-size: 12px;
+
+    color: #9a7045;
+}
+
+
+/* ==========================================
+   WEDDING
+   ========================================== */
 
 .wedding-section {
-    min-height: 100vh !important;
-
     background:
         linear-gradient(
-            180deg,
-            #f7ecdd,
-            #e4cfb4
-        );
+            rgba(91, 61, 38, 0.88),
+            rgba(91, 61, 38, 0.88)
+        ),
+        #765334;
+
+    color: #fff;
 }
+
+
+.wedding-section .small-heading {
+    color: #e3c59e;
+}
+
 
 .wedding-section h2 {
-    max-width: 700px;
+    max-width: 800px;
 
-    font-size: clamp(40px, 8vw, 70px);
-    font-weight: 400;
+    font-size: clamp(38px, 7vw, 72px);
 
-    line-height: 1.15;
+    font-weight: normal;
+
+    line-height: 1.2;
+
+    color: #fff8ed;
 }
+
 
 .wedding-date {
-    margin-top: 35px;
+    margin-top: 45px;
 }
+
 
 .wedding-date p {
     font-family: Arial, sans-serif;
+
     font-size: 11px;
+
     letter-spacing: 4px;
+
+    color: #dfc19b;
+
+    margin-bottom: 10px;
 }
+
 
 .wedding-date strong {
-    display: block;
-
-    margin-top: 10px;
+    font-family: Arial, sans-serif;
 
     font-size: 18px;
+
     letter-spacing: 3px;
-    font-weight: 400;
+
+    color: #fff;
 }
 
 
-/* =====================================================
+/* ==========================================
    COUNTDOWN
-===================================================== */
+   ========================================== */
 
 .countdown {
     display: flex;
+
     justify-content: center;
-    gap: 10px;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
 
     margin-top: 50px;
-
-    width: 100%;
-    max-width: 600px;
 }
+
 
 .count-box {
-    width: 110px;
-    min-height: 100px;
+    width: 100px;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    padding: 20px 10px;
 
-    border: 1px solid rgba(59, 40, 29, 0.3);
+    border: 1px solid rgba(255,255,255,0.3);
 }
+
 
 .count-box strong {
-    font-size: 34px;
-    font-weight: 400;
-}
-
-.count-box span {
-    margin-top: 7px;
+    display: block;
 
     font-family: Arial, sans-serif;
-    font-size: 9px;
-    letter-spacing: 2px;
+
+    font-size: 32px;
+
+    font-weight: normal;
+
+    color: #fff;
 }
 
 
-/* =====================================================
+.count-box span {
+    display: block;
+
+    margin-top: 8px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: #e5c9a5;
+}
+
+
+/* ==========================================
    VENUE
-===================================================== */
+   ========================================== */
 
 .venue-section {
-    background: #f6eee2;
+    background: #eee2d2;
 }
+
 
 .venue-section h2,
 .reception-section h2 {
-    font-size: clamp(48px, 10vw, 80px);
-    font-weight: 400;
+    font-size: clamp(45px, 8vw, 75px);
+
+    font-weight: normal;
+
+    color: #70472b;
+
+    margin-bottom: 20px;
 }
 
-.venue-section h3 {
-    margin-top: 30px;
 
-    font-size: 27px;
-    font-weight: 400;
+.venue-section h3,
+.reception-section h3 {
+    font-size: 25px;
+
+    font-weight: normal;
+
+    color: #805433;
+
+    margin-bottom: 25px;
 }
+
 
 .address {
-    margin-top: 18px;
-
     font-family: Arial, sans-serif;
+
     font-size: 14px;
-    line-height: 2;
+
+    line-height: 1.9;
+
+    color: #705746;
+
+    margin-bottom: 30px;
 }
 
 
-/* Map Button */
+/* ==========================================
+   MAP BUTTON
+   ========================================== */
 
 .map-button {
     display: inline-block;
 
-    margin-top: 30px;
+    padding: 14px 25px;
 
-    padding: 14px 28px;
+    border: 1px solid #9c774e;
 
-    border: 1px solid #765337;
+    color: #70472b;
 
-    color: #3b281d;
     text-decoration: none;
 
     font-family: Arial, sans-serif;
-    font-size: 10px;
+
+    font-size: 11px;
+
     letter-spacing: 2px;
 
     transition:
         background 0.4s ease,
         color 0.4s ease,
-        transform 0.3s ease;
+        transform 0.4s ease;
 }
 
+
 .map-button:hover {
-    background: #3b281d;
-    color: #fffaf3;
+    background: #70472b;
+
+    color: #fff;
+
     transform: translateY(-3px);
 }
 
 
-/* =====================================================
+/* ==========================================
    RECEPTION
-===================================================== */
+   ========================================== */
 
 .reception-section {
-    background: #ead9c3;
+    background: #f8f1e7;
 }
 
-.reception-section > p:not(.address) {
+
+.reception-section > p:not(.small-heading) {
     font-family: Arial, sans-serif;
-    font-size: 13px;
-    letter-spacing: 2px;
-    margin-top: 15px;
-}
 
-.reception-section h3 {
-    margin-top: 35px;
+    font-size: 14px;
 
-    font-size: 23px;
-    font-weight: 400;
+    color: #755b48;
+
+    margin-bottom: 8px;
 }
 
 
-/* =====================================================
+/* ==========================================
    CLOSING
-===================================================== */
+   ========================================== */
 
 .closing-section {
-    min-height: 100vh !important;
-
     background:
         radial-gradient(
-            circle,
-            #fffaf3,
-            #ead8c0
+            circle at center,
+            #fffaf2,
+            #eadbc9
         );
 }
 
+
 .closing-section > p {
-    max-width: 600px;
+    max-width: 650px;
 
     font-family: Arial, sans-serif;
-    font-size: 14px;
-    line-height: 2;
 
-    margin-bottom: 18px;
+    font-size: 15px;
+
+    line-height: 1.9;
+
+    color: #705746;
+
+    margin-bottom: 20px;
 }
+
 
 .closing-section > span {
-    margin-top: 35px;
-
-    font-family: Arial, sans-serif;
-    font-size: 10px;
-    letter-spacing: 4px;
-}
-
-.closing-section h2 {
     margin-top: 25px;
 
-    font-size: clamp(34px, 8vw, 60px);
-    font-weight: 400;
-    line-height: 1.4;
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    color: #9a7045;
 }
 
 
-/* =====================================================
-   ANIMATIONS
-===================================================== */
+.closing-section h2 {
+    margin-top: 20px;
 
-@keyframes openingAppear {
+    font-size: clamp(35px, 6vw, 58px);
+
+    line-height: 1.4;
+
+    font-weight: normal;
+
+    color: #70472b;
+}
+
+
+/* ==========================================
+   MUSIC BUTTON
+   ========================================== */
+
+.music-toggle {
+    position: fixed !important;
+
+    right: 20px !important;
+
+    bottom: 20px !important;
+
+    width: 52px !important;
+
+    height: 52px !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    border: 1px solid #9c774e !important;
+
+    border-radius: 50% !important;
+
+    background: rgba(255, 250, 243, 0.95) !important;
+
+    color: #70472b !important;
+
+    font-size: 21px !important;
+
+    cursor: pointer !important;
+
+    z-index: 999999 !important;
+
+    box-shadow:
+        0 6px 25px rgba(70, 45, 25, 0.18) !important;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease !important;
+}
+
+
+.music-toggle:hover {
+    transform: scale(1.1);
+
+    box-shadow:
+        0 10px 30px rgba(70, 45, 25, 0.25);
+}
+
+
+.music-toggle:active {
+    transform: scale(0.92);
+}
+
+
+/* ==========================================
+   ANIMATIONS
+   ========================================== */
+
+@keyframes openingFade {
 
     from {
         opacity: 0;
-        transform: scale(0.94) translateY(20px);
+        transform: translateY(20px);
     }
 
     to {
         opacity: 1;
-        transform: scale(1) translateY(0);
+        transform: translateY(0);
     }
 
 }
@@ -608,154 +881,137 @@ section:not(.opening) {
 
     from {
         opacity: 0;
-        letter-spacing: 15px;
+        transform: translateY(30px);
     }
 
     to {
         opacity: 1;
-        letter-spacing: 1px;
-    }
-
-}
-
-
-@keyframes softFloat {
-
-    0%,
-    100% {
         transform: translateY(0);
     }
 
-    50% {
-        transform: translateY(-8px);
-    }
-
 }
 
 
-@keyframes slowRotate {
-
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-
-}
-
-
-@keyframes slowRotateReverse {
-
-    from {
-        transform: rotate(360deg);
-    }
-
-    to {
-        transform: rotate(0deg);
-    }
-
-}
-
-
-/* =====================================================
+/* ==========================================
    MOBILE
-===================================================== */
+   ========================================== */
 
 @media (max-width: 600px) {
 
     .opening-content {
-        width: 92%;
+        width: 94%;
+
+        padding:
+            30px 15px;
     }
+
 
     .ganesh-symbol {
-        font-size: 40px;
+        font-size: 45px;
     }
+
 
     .ganesh h3 {
-        font-size: 17px;
+        font-size: 16px;
     }
+
 
     .mantra {
-        font-size: 14px;
-        line-height: 1.9;
+        font-size: 13px;
     }
+
 
     .invitation-text {
-        margin-top: 28px;
+        font-size: 13px;
+
+        margin: 20px auto;
     }
 
-    .invitation-text p {
-        font-size: 12px;
-    }
 
     .couple-name {
-        margin-top: 25px;
+        margin: 25px 0;
     }
+
 
     .couple-name h1 {
-        font-size: 35px;
-    }
-
-    .couple-name h2 {
         font-size: 34px;
     }
 
-    .save-date {
-        margin-top: 24px;
+
+    .couple-name h2 {
+        font-size: 32px;
     }
+
+
+    .save-date strong {
+        font-size: 13px;
+    }
+
 
     .open-button {
-        margin-top: 28px;
-        padding: 13px 24px;
+        padding:
+            13px 22px;
+
+        font-size: 10px;
     }
 
 
-    section:not(.opening) {
-        padding: 75px 18px;
+    #mainContent section {
+        min-height: 100svh;
+
+        padding:
+            70px 18px;
+    }
+
+
+    .event-card {
+        width: 100%;
+
+        padding:
+            35px 18px;
     }
 
 
     .countdown {
-        gap: 5px;
+        gap: 8px;
+
+        max-width: 350px;
     }
 
+
     .count-box {
-        width: 78px;
-        min-height: 80px;
+        width: 75px;
+
+        padding: 15px 5px;
     }
+
 
     .count-box strong {
         font-size: 25px;
     }
 
+
     .count-box span {
-        font-size: 7px;
+        font-size: 8px;
     }
 
 
-    .event-card {
-        padding: 30px 18px;
-    }
+    .music-toggle {
+        right: 15px !important;
 
+        bottom: 15px !important;
 
-    .decoration-one {
-        width: 250px;
-        height: 250px;
-    }
+        width: 48px !important;
 
-    .decoration-two {
-        width: 280px;
-        height: 280px;
+        height: 48px !important;
     }
 
 }
 
 
-/* =====================================================
-   SMALL MOBILE
-===================================================== */
+/* ==========================================
+   VERY SMALL MOBILE
+   ========================================== */
 
 @media (max-width: 380px) {
 
@@ -763,16 +1019,20 @@ section:not(.opening) {
         font-size: 29px;
     }
 
+
     .couple-name h2 {
-        font-size: 29px;
+        font-size: 28px;
     }
+
 
     .mantra {
         font-size: 12px;
     }
 
+
     .count-box {
-        width: 70px;
+        width: 68px;
     }
 
 }
+```
