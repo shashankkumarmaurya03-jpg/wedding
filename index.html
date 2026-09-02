@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Wedding Invitation</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, serif;
+            background: #fff8f2;
+            color: #4a3025;
+            text-align: center;
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 70px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .welcome {
+            background: linear-gradient(135deg, #fff0e6, #f9d9c5);
+        }
+
+        .welcome h1 {
+            font-size: 22px;
+            letter-spacing: 5px;
+            margin-bottom: 25px;
+        }
+
+        .welcome h2 {
+            font-size: 48px;
+            margin: 10px 0;
+        }
+
+        .and {
+            font-size: 30px;
+            margin: 10px;
+        }
+
+        .date {
+            margin-top: 25px;
+            font-size: 20px;
+            letter-spacing: 2px;
+        }
+
+        .btn {
+            margin-top: 35px;
+            padding: 14px 30px;
+            border-radius: 30px;
+            border: none;
+            background: #8b5e4b;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .section-title {
+            font-size: 38px;
+            margin-bottom: 30px;
+        }
+
+        .couple {
+            background: #fffaf7;
+        }
+
+        .names {
+            font-size: 32px;
+            margin: 15px;
+        }
+
+        .event {
+            width: 90%;
+            max-width: 500px;
+            padding: 25px;
+            margin: 12px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .event h3 {
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+
+        .countdown {
+            background: #f7e4d8;
+        }
+
+        #timer {
+            font-size: 35px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .gallery {
+            background: #fffaf7;
+        }
+
+        .photos {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .photos img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .venue {
+            background: #f9e9df;
+        }
+
+        .map-btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 15px 30px;
+            border-radius: 30px;
+            background: #8b5e4b;
+            color: white;
+            text-decoration: none;
+        }
+
+        footer {
+            padding: 30px;
+            background: #4a3025;
+            color: white;
+        }
+
+        @media(max-width:600px) {
+
+            .welcome h2 {
+                font-size: 38px;
+            }
+
+            .section-title {
+                font-size: 30px;
+            }
+
+            .photos img {
+                height: 160px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- WELCOME -->
+    <section class="welcome">
+
+        <h1>YOU ARE INVITED</h1>
+
+        <h2>Groom Name</h2>
+
+        <div class="and">&</div>
+
+        <h2>Bride Name</h2>
+
+        <div class="date">
+            25 DECEMBER 2026
+        </div>
+
+        <button class="btn" onclick="document.getElementById('couple').scrollIntoView()">
+            OPEN INVITATION
+        </button>
+
+    </section>
+
+
+    <!-- COUPLE -->
+    <section class="couple" id="couple">
+
+        <h2 class="section-title">
+            Together Forever
+        </h2>
+
+        <p class="names">
+            Groom Name ❤️ Bride Name
+        </p>
+
+        <p>
+            Two hearts, one beautiful journey,
+            and a lifetime of memories together.
+        </p>
+
+    </section>
+
+
+    <!-- EVENTS -->
+    <section>
+
+        <h2 class="section-title">
+            Wedding Events
+        </h2>
+
+        <div class="event">
+            <h3>🌼 Haldi</h3>
+            <p>20 December 2026</p>
+            <p>11:00 AM</p>
+        </div>
+
+        <div class="event">
+            <h3>🌿 Mehendi</h3>
+            <p>22 December 2026</p>
+            <p>5:00 PM</p>
+        </div>
+
+        <div class="event">
+            <h3>💍 Wedding</h3>
+            <p>25 December 2026</p>
+            <p>7:00 PM</p>
+        </div>
+
+        <div class="event">
+            <h3>🎉 Reception</h3>
+            <p>27 December 2026</p>
+            <p>7:00 PM</p>
+        </div>
+
+    </section>
+
+
+    <!-- COUNTDOWN -->
+    <section class="countdown">
+
+        <h2 class="section-title">
+            Countdown
+        </h2>
+
+        <p>Our special day is coming...</p>
+
+        <div id="timer">
+            Loading...
+        </div>
+
+    </section>
+
+
+    <!-- GALLERY -->
+    <section class="gallery">
+
+        <h2 class="section-title">
+            Our Memories
+        </h2>
+
+        <div class="photos">
+
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80">
+
+            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80">
+
+            <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=800&q=80">
+
+            <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=800&q=80">
+
+        </div>
+
+    </section>
+
+
+    <!-- VENUE -->
+    <section class="venue">
+
+        <h2 class="section-title">
+            Wedding Venue
+        </h2>
+
+        <h3>Royal Wedding Palace</h3>
+
+        <p>
+            New Delhi, India
+        </p>
+
+        <a class="map-btn"
+           href="https://www.google.com/maps"
+           target="_blank">
+            📍 OPEN GOOGLE MAP
+        </a>
+
+    </section>
+
+
+    <!-- RSVP -->
+    <section>
+
+        <h2 class="section-title">
+            RSVP
+        </h2>
+
+        <p>
+            We would love to celebrate this special day with you ❤️
+        </p>
+
+        <a class="map-btn"
+           href="https://wa.me/919999999999"
+           target="_blank">
+            📱 CONFIRM ON WHATSAPP
+        </a>
+
+    </section>
+
+
+    <footer>
+        Made with ❤️ for our special day
+    </footer>
+
+
+    <script>
+
+        const weddingDate = new Date("December 25, 2026 19:00:00").getTime();
+
+        const countdown = setInterval(function () {
+
+            const now = new Date().getTime();
+
+            const distance = weddingDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((distance / (1000 * 60)) % 60);
+            const seconds = Math.floor((distance / 1000) % 60);
+
+            document.getElementById("timer").innerHTML =
+                days + " Days " +
+                hours + " Hours " +
+                minutes + " Minutes " +
+                seconds + " Seconds";
+
+            if (distance < 0) {
+                clearInterval(countdown);
+                document.getElementById("timer").innerHTML =
+                    "❤️ The Wedding Day Has Arrived ❤️";
+            }
+
+        }, 1000);
+
+    </script>
+
+</body>
+</html>
