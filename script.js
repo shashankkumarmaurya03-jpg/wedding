@@ -1,4 +1,3 @@
-```javascript
 // ==========================================
 // SHASHANK & JYOTI WEDDING INVITATION
 // ==========================================
@@ -12,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // ==========================================
-    // BACKGROUND MUSIC
+    // MUSIC
     // ==========================================
 
     const music = new Audio("music.mp3");
@@ -42,24 +41,21 @@ document.addEventListener("DOMContentLoaded", function () {
             openButton.disabled = true;
 
 
-            // START MUSIC
-            music.play()
-                .then(function () {
+            // MUSIC START
+            music.play().then(function () {
 
-                    if (musicToggle) {
-                        musicToggle.innerText = "🎵";
-                    }
+                if (musicToggle) {
+                    musicToggle.innerText = "🎵";
+                }
 
-                })
-                .catch(function (error) {
+            }).catch(function (error) {
 
-                    console.log("Music could not start:", error);
+                console.log("Music error:", error);
 
-                });
+            });
 
 
             // OPENING FADE + ZOOM
-
             if (opening) {
 
                 opening.style.transition =
@@ -72,7 +68,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
             // SHOW MAIN CONTENT
-
             setTimeout(function () {
 
                 if (opening) {
@@ -101,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // ==========================================
-    // MUSIC ON / OFF BUTTON
+    // MUSIC ON / OFF
     // ==========================================
 
     if (musicToggle) {
@@ -142,10 +137,17 @@ document.addEventListener("DOMContentLoaded", function () {
         const distance = weddingDate - now;
 
 
-        const daysElement = document.getElementById("days");
-        const hoursElement = document.getElementById("hours");
-        const minutesElement = document.getElementById("minutes");
-        const secondsElement = document.getElementById("seconds");
+        const daysElement =
+            document.getElementById("days");
+
+        const hoursElement =
+            document.getElementById("hours");
+
+        const minutesElement =
+            document.getElementById("minutes");
+
+        const secondsElement =
+            document.getElementById("seconds");
 
 
         if (distance <= 0) {
@@ -251,4 +253,3 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
-```
