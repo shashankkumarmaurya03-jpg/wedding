@@ -1,19 +1,70 @@
 // ==========================================
-// WEDDING INVITATION - SHASHANK & JYOTI
+// SHASHANK & JYOTI WEDDING INVITATION
 // ==========================================
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
 
-    // Opening animation
-    const app = document.getElementById("app");
+    const opening = document.getElementById("opening");
+    const mainContent = document.getElementById("mainContent");
+    const openButton = document.getElementById("openInvitation");
 
-    if (app) {
-        app.style.opacity = "0";
 
-        setTimeout(() => {
-            app.style.transition = "opacity 1.5s ease";
-            app.style.opacity = "1";
-        }, 300);
+    // ==========================================
+    // INITIAL STATE
+    // ==========================================
+
+    if (mainContent) {
+        mainContent.style.opacity = "0";
+        mainContent.style.visibility = "hidden";
+    }
+
+
+    // ==========================================
+    // OPEN INVITATION
+    // ==========================================
+
+    if (openButton) {
+
+        openButton.addEventListener("click", function () {
+
+            openButton.disabled = true;
+
+            if (opening) {
+
+                opening.style.transition =
+                    "opacity 1.5s ease, transform 1.5s ease";
+
+                opening.style.opacity = "0";
+                opening.style.transform = "scale(1.04)";
+
+            }
+
+
+            setTimeout(function () {
+
+                if (opening) {
+                    opening.style.display = "none";
+                }
+
+                if (mainContent) {
+
+                    mainContent.style.visibility = "visible";
+
+                    setTimeout(function () {
+
+                        mainContent.style.transition =
+                            "opacity 1.5s ease";
+
+                        mainContent.style.opacity = "1";
+
+                    }, 100);
+
+                }
+
+            }, 1500);
+
+        });
+
     }
 
 
@@ -21,61 +72,100 @@ document.addEventListener("DOMContentLoaded", () => {
     // WEDDING COUNTDOWN
     // ==========================================
 
-    // Wedding Date:
-    // 21 November 2026
+    const weddingDate =
+        new Date("November 21, 2026 00:00:00").getTime();
 
-    const weddingDate = new Date("November 21, 2026 00:00:00").getTime();
 
     function updateCountdown() {
 
         const now = new Date().getTime();
+
         const distance = weddingDate - now;
 
+
+        const daysElement =
+            document.getElementById("days");
+
+        const hoursElement =
+            document.getElementById("hours");
+
+        const minutesElement =
+            document.getElementById("minutes");
+
+        const secondsElement =
+            document.getElementById("seconds");
+
+
         if (distance <= 0) {
-            console.log("Wedding Day!");
+
+            if (daysElement)
+                daysElement.innerText = "00";
+
+            if (hoursElement)
+                hoursElement.innerText = "00";
+
+            if (minutesElement)
+                minutesElement.innerText = "00";
+
+            if (secondsElement)
+                secondsElement.innerText = "00";
+
             return;
         }
 
-        const days = Math.floor(
-            distance / (1000 * 60 * 60 * 24)
-        );
 
-        const hours = Math.floor(
-            (distance % (1000 * 60 * 60 * 24)) /
-            (1000 * 60 * 60)
-        );
+        const days =
+            Math.floor(
+                distance /
+                (1000 * 60 * 60 * 24)
+            );
 
-        const minutes = Math.floor(
-            (distance % (1000 * 60 * 60)) /
-            (1000 * 60)
-        );
 
-        const seconds = Math.floor(
-            (distance % (1000 * 60)) /
-            1000
-        );
+        const hours =
+            Math.floor(
+                (distance %
+                    (1000 * 60 * 60 * 24)) /
+                (1000 * 60 * 60)
+            );
 
-        const dayElement = document.getElementById("days");
-        const hourElement = document.getElementById("hours");
-        const minuteElement = document.getElementById("minutes");
-        const secondElement = document.getElementById("seconds");
 
-        if (dayElement) {
-            dayElement.innerText = String(days).padStart(2, "0");
-        }
+        const minutes =
+            Math.floor(
+                (distance %
+                    (1000 * 60 * 60)) /
+                (1000 * 60)
+            );
 
-        if (hourElement) {
-            hourElement.innerText = String(hours).padStart(2, "0");
-        }
 
-        if (minuteElement) {
-            minuteElement.innerText = String(minutes).padStart(2, "0");
-        }
+        const seconds =
+            Math.floor(
+                (distance %
+                    (1000 * 60)) /
+                1000
+            );
 
-        if (secondElement) {
-            secondElement.innerText = String(seconds).padStart(2, "0");
-        }
+
+        if (daysElement)
+            daysElement.innerText =
+                String(days).padStart(2, "0");
+
+
+        if (hoursElement)
+            hoursElement.innerText =
+                String(hours).padStart(2, "0");
+
+
+        if (minutesElement)
+            minutesElement.innerText =
+                String(minutes).padStart(2, "0");
+
+
+        if (secondsElement)
+            secondsElement.innerText =
+                String(seconds).padStart(2, "0");
+
     }
+
 
     updateCountdown();
 
@@ -89,31 +179,40 @@ document.addEventListener("DOMContentLoaded", () => {
     const revealElements =
         document.querySelectorAll(".reveal");
 
-    const revealObserver =
-        new IntersectionObserver(
-            (entries) => {
 
-                entries.forEach((entry) => {
+    if (revealElements.length > 0) {
 
-                    if (entry.isIntersecting) {
+        const observer =
+            new IntersectionObserver(
+                function (entries) {
 
-                        entry.target.classList.add("active");
+                    entries.forEach(function (entry) {
 
-                        revealObserver.unobserve(
-                            entry.target
-                        );
-                    }
+                        if (entry.isIntersecting) {
 
-                });
+                            entry.target.classList.add("active");
 
-            },
-            {
-                threshold: 0.15
-            }
-        );
+                            observer.unobserve(
+                                entry.target
+                            );
 
-    revealElements.forEach((element) => {
-        revealObserver.observe(element);
-    });
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.15
+                }
+            );
+
+
+        revealElements.forEach(function (element) {
+
+            observer.observe(element);
+
+        });
+
+    }
 
 });
