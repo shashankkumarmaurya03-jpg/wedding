@@ -1,4 +1,3 @@
-```css
 /* ==========================================
    SHASHANK & JYOTI WEDDING INVITATION
    ========================================== */
@@ -17,7 +16,9 @@ body {
     width: 100%;
     min-height: 100vh;
     overflow-x: hidden;
+
     font-family: Georgia, "Times New Roman", serif;
+
     background: #f8f1e7;
     color: #4b3428;
 }
@@ -29,6 +30,7 @@ body {
 
 .opening {
     position: relative;
+
     width: 100%;
     min-height: 100vh;
     min-height: 100svh;
@@ -51,7 +53,6 @@ body {
 
     z-index: 1000;
 }
-
 
 .opening-content {
     position: relative;
@@ -77,7 +78,6 @@ body {
     opacity: 0.35;
 }
 
-
 .decoration-one {
     width: 350px;
     height: 350px;
@@ -87,7 +87,6 @@ body {
 
     border: 1px solid #b99a6b;
 }
-
 
 .decoration-two {
     width: 300px;
@@ -110,7 +109,6 @@ body {
     animation: openingFade 1.5s ease forwards;
 }
 
-
 .ganesh-symbol {
     font-size: 55px;
 
@@ -118,7 +116,6 @@ body {
 
     margin-bottom: 10px;
 }
-
 
 .ganesh h3 {
     font-size: 18px;
@@ -129,7 +126,6 @@ body {
 
     color: #80572f;
 }
-
 
 .mantra {
     margin-top: 15px;
@@ -162,7 +158,6 @@ body {
     letter-spacing: 0.3px;
 }
 
-
 .invitation-text p {
     margin-bottom: 10px;
 }
@@ -175,7 +170,6 @@ body {
 .couple-name {
     margin: 35px 0;
 }
-
 
 .couple-name h1 {
     font-size: clamp(34px, 6vw, 64px);
@@ -191,7 +185,6 @@ body {
     animation: nameReveal 1.8s ease forwards;
 }
 
-
 .couple-name span {
     display: block;
 
@@ -201,7 +194,6 @@ body {
 
     color: #a47b49;
 }
-
 
 .couple-name h2 {
     font-size: clamp(30px, 5vw, 52px);
@@ -220,7 +212,6 @@ body {
     margin: 30px 0;
 }
 
-
 .save-date p {
     font-family: Arial, sans-serif;
 
@@ -232,7 +223,6 @@ body {
 
     margin-bottom: 8px;
 }
-
 
 .save-date strong {
     font-family: Arial, sans-serif;
@@ -250,6 +240,11 @@ body {
    ========================================== */
 
 .open-button {
+    position: relative;
+    z-index: 9999;
+
+    display: inline-block;
+
     margin-top: 25px;
 
     padding: 15px 32px;
@@ -268,12 +263,14 @@ body {
 
     cursor: pointer;
 
+    pointer-events: auto;
+
     transition:
         background 0.4s ease,
         color 0.4s ease,
-        transform 0.4s ease;
+        transform 0.4s ease,
+        opacity 0.3s ease;
 }
-
 
 .open-button:hover {
     background: #765334;
@@ -283,9 +280,13 @@ body {
     transform: translateY(-3px);
 }
 
-
 .open-button:active {
     transform: scale(0.97);
+}
+
+.open-button:disabled {
+    opacity: 0.7;
+    cursor: default;
 }
 
 
@@ -299,6 +300,14 @@ body {
     opacity: 0;
 
     visibility: hidden;
+
+    display: block;
+}
+
+#mainContent.show {
+    opacity: 1;
+
+    visibility: visible;
 }
 
 
@@ -310,6 +319,7 @@ body {
     position: relative;
 
     width: 100%;
+
     min-height: 100vh;
     min-height: 100svh;
 
@@ -325,7 +335,6 @@ body {
 
     text-align: center;
 }
-
 
 .small-heading {
     margin-bottom: 20px;
@@ -348,7 +357,6 @@ body {
     background: #f8f1e7;
 }
 
-
 .welcome-section h1 {
     font-size: clamp(45px, 8vw, 80px);
 
@@ -359,7 +367,6 @@ body {
     line-height: 1.2;
 }
 
-
 .welcome-section h1 span {
     display: block;
 
@@ -369,7 +376,6 @@ body {
 
     margin: 10px 0;
 }
-
 
 .welcome-section > p:last-child {
     margin-top: 25px;
@@ -383,13 +389,12 @@ body {
 
 
 /* ==========================================
-   DATE SECTION
+   DATE
    ========================================== */
 
 .date-section {
     background: #eee2d2;
 }
-
 
 .date-section h2 {
     font-size: clamp(100px, 20vw, 190px);
@@ -400,7 +405,6 @@ body {
 
     color: #70472b;
 }
-
 
 .date-section h3 {
     margin-top: 20px;
@@ -413,7 +417,6 @@ body {
 
     color: #755239;
 }
-
 
 .date-section p:last-child {
     margin-top: 25px;
@@ -434,9 +437,9 @@ body {
     justify-content: flex-start !important;
 
     padding-top: 100px !important;
+
     padding-bottom: 100px !important;
 }
-
 
 .events-section > h2 {
     margin-bottom: 50px;
@@ -447,7 +450,6 @@ body {
 
     color: #6e4427;
 }
-
 
 .event-card {
     position: relative;
@@ -467,14 +469,12 @@ body {
         box-shadow 0.5s ease;
 }
 
-
 .event-card:hover {
     transform: translateY(-8px);
 
     box-shadow:
         0 15px 40px rgba(100, 70, 40, 0.12);
 }
-
 
 .event-number {
     display: block;
@@ -490,7 +490,6 @@ body {
     color: #a17b50;
 }
 
-
 .event-card h3 {
     font-size: 30px;
 
@@ -503,7 +502,6 @@ body {
     margin-bottom: 15px;
 }
 
-
 .event-card p {
     font-family: Arial, sans-serif;
 
@@ -513,7 +511,6 @@ body {
 
     margin-top: 6px;
 }
-
 
 .event-card .event-date {
     letter-spacing: 2px;
@@ -539,11 +536,9 @@ body {
     color: #fff;
 }
 
-
 .wedding-section .small-heading {
     color: #e3c59e;
 }
-
 
 .wedding-section h2 {
     max-width: 800px;
@@ -557,11 +552,9 @@ body {
     color: #fff8ed;
 }
 
-
 .wedding-date {
     margin-top: 45px;
 }
-
 
 .wedding-date p {
     font-family: Arial, sans-serif;
@@ -574,7 +567,6 @@ body {
 
     margin-bottom: 10px;
 }
-
 
 .wedding-date strong {
     font-family: Arial, sans-serif;
@@ -605,7 +597,6 @@ body {
     margin-top: 50px;
 }
 
-
 .count-box {
     width: 100px;
 
@@ -613,7 +604,6 @@ body {
 
     border: 1px solid rgba(255,255,255,0.3);
 }
-
 
 .count-box strong {
     display: block;
@@ -626,7 +616,6 @@ body {
 
     color: #fff;
 }
-
 
 .count-box span {
     display: block;
@@ -651,7 +640,6 @@ body {
     background: #eee2d2;
 }
 
-
 .venue-section h2,
 .reception-section h2 {
     font-size: clamp(45px, 8vw, 75px);
@@ -663,7 +651,6 @@ body {
     margin-bottom: 20px;
 }
 
-
 .venue-section h3,
 .reception-section h3 {
     font-size: 25px;
@@ -674,7 +661,6 @@ body {
 
     margin-bottom: 25px;
 }
-
 
 .address {
     font-family: Arial, sans-serif;
@@ -716,7 +702,6 @@ body {
         transform 0.4s ease;
 }
 
-
 .map-button:hover {
     background: #70472b;
 
@@ -733,7 +718,6 @@ body {
 .reception-section {
     background: #f8f1e7;
 }
-
 
 .reception-section > p:not(.small-heading) {
     font-family: Arial, sans-serif;
@@ -759,7 +743,6 @@ body {
         );
 }
 
-
 .closing-section > p {
     max-width: 650px;
 
@@ -774,7 +757,6 @@ body {
     margin-bottom: 20px;
 }
 
-
 .closing-section > span {
     margin-top: 25px;
 
@@ -786,7 +768,6 @@ body {
 
     color: #9a7045;
 }
-
 
 .closing-section h2 {
     margin-top: 20px;
@@ -844,14 +825,12 @@ body {
         box-shadow 0.3s ease !important;
 }
 
-
 .music-toggle:hover {
     transform: scale(1.1);
 
     box-shadow:
         0 10px 30px rgba(70, 45, 25, 0.25);
 }
-
 
 .music-toggle:active {
     transform: scale(0.92);
@@ -876,7 +855,6 @@ body {
 
 }
 
-
 @keyframes nameReveal {
 
     from {
@@ -900,109 +878,79 @@ body {
 
     .opening-content {
         width: 94%;
-
-        padding:
-            30px 15px;
+        padding: 30px 15px;
     }
-
 
     .ganesh-symbol {
         font-size: 45px;
     }
 
-
     .ganesh h3 {
         font-size: 16px;
     }
-
 
     .mantra {
         font-size: 13px;
     }
 
-
     .invitation-text {
         font-size: 13px;
-
         margin: 20px auto;
     }
-
 
     .couple-name {
         margin: 25px 0;
     }
 
-
     .couple-name h1 {
         font-size: 34px;
     }
-
 
     .couple-name h2 {
         font-size: 32px;
     }
 
-
     .save-date strong {
         font-size: 13px;
     }
 
-
     .open-button {
-        padding:
-            13px 22px;
-
+        padding: 13px 22px;
         font-size: 10px;
     }
 
-
     #mainContent section {
         min-height: 100svh;
-
-        padding:
-            70px 18px;
+        padding: 70px 18px;
     }
-
 
     .event-card {
         width: 100%;
-
-        padding:
-            35px 18px;
+        padding: 35px 18px;
     }
-
 
     .countdown {
         gap: 8px;
-
         max-width: 350px;
     }
 
-
     .count-box {
         width: 75px;
-
         padding: 15px 5px;
     }
-
 
     .count-box strong {
         font-size: 25px;
     }
 
-
     .count-box span {
         font-size: 8px;
     }
 
-
     .music-toggle {
         right: 15px !important;
-
         bottom: 15px !important;
-
         width: 48px !important;
-
         height: 48px !important;
     }
 
@@ -1019,20 +967,16 @@ body {
         font-size: 29px;
     }
 
-
     .couple-name h2 {
         font-size: 28px;
     }
 
-
     .mantra {
         font-size: 12px;
     }
-
 
     .count-box {
         width: 68px;
     }
 
 }
-```
