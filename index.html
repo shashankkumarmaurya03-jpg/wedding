@@ -42,6 +42,7 @@ body{
     overflow-x:hidden;
 }
 
+
 /* =========================
    OPENING
 ========================= */
@@ -329,7 +330,6 @@ body{
 
 /* =========================
    EVENTS
-   ONE PAGE ONLY
 ========================= */
 
 .events-section{
@@ -537,7 +537,7 @@ body{
 ========================= */
 
 .venue-section{
-    min-height:75vh;
+    min-height:85vh;
 
     display:flex;
     flex-direction:column;
@@ -573,6 +573,47 @@ body{
     font-size:14px;
     line-height:1.8;
     opacity:.72;
+    max-width:500px;
+}
+
+
+/* =========================
+   MAP BUTTON
+========================= */
+
+.map-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    margin-top:28px;
+
+    min-width:170px;
+    height:46px;
+
+    padding:0 25px;
+
+    border:1px solid rgba(255,255,255,.40);
+
+    background:rgba(255,255,255,.06);
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-family:var(--main-font);
+
+    font-size:11px;
+
+    letter-spacing:3px;
+
+    transition:.4s ease;
+}
+
+.map-btn:hover{
+    background:#fff;
+    color:#111;
+    transform:translateY(-2px);
 }
 
 
@@ -581,7 +622,7 @@ body{
 ========================= */
 
 .reception-section{
-    min-height:80vh;
+    min-height:85vh;
 
     display:flex;
     flex-direction:column;
@@ -732,14 +773,31 @@ body{
 
 }
 
+
+/* =========================
+   MAP BUTTON MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    .map-btn{
+        margin-top:25px;
+        min-width:160px;
+        height:44px;
+        font-size:10px;
+    }
+
+}
+
 </style>
 </head>
 
 
 <body>
 
+
 <!-- =========================
-     1. OPENING
+     OPENING
 ========================= -->
 
 <section class="opening" id="opening">
@@ -778,6 +836,7 @@ body{
 
 
 <script>
+
 
 /* =========================
    OPEN INVITATION
@@ -1207,8 +1266,6 @@ function setupScratch(){
 
 /* =========================
    EVENTS
-   HALDI → MEHNDI → SANGEET
-   ONLY ONCE
 ========================= */
 
 function showEvents(){
@@ -1241,8 +1298,6 @@ function showEvents(){
         <div class="events-list">
 
 
-            <!-- HALDI -->
-
             <div class="event-card">
 
                 <div class="event-number">
@@ -1266,8 +1321,6 @@ function showEvents(){
             </div>
 
 
-            <!-- MEHNDI -->
-
             <div class="event-card">
 
                 <div class="event-number">
@@ -1290,8 +1343,6 @@ function showEvents(){
 
             </div>
 
-
-            <!-- SANGEET -->
 
             <div class="event-card">
 
@@ -1334,8 +1385,6 @@ function showEvents(){
     },100);
 
 
-    /* इसके बाद Wedding section */
-
     setTimeout(function(){
 
         showWedding();
@@ -1346,7 +1395,7 @@ function showEvents(){
 
 
 /* =========================
-   WEDDING + COUNTDOWN
+   WEDDING
 ========================= */
 
 function showWedding(){
@@ -1558,7 +1607,7 @@ function startCountdown(){
 
 
 /* =========================
-   VENUE
+   VENUE + GOOGLE MAP
 ========================= */
 
 function showVenue(){
@@ -1596,6 +1645,16 @@ function showVenue(){
 
         </div>
 
+
+        <a
+            class="map-btn"
+            href="https://www.google.com/maps/search/?api=1&query=Santosh+Garden%2C+Near+Lakshmi+Hardware%2C+Manoj+Mobile+Wali+Gali%2C+Aman+Vihar%2C+Kirari%2C+Suleman+Nagar%2C+Delhi+110086"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            VIEW LOCATION
+        </a>
+
     `;
 
 
@@ -1622,7 +1681,7 @@ function showVenue(){
 
 
 /* =========================
-   RECEPTION
+   RECEPTION + GOOGLE MAP
 ========================= */
 
 function showReception(){
@@ -1648,13 +1707,23 @@ function showReception(){
 
             Community Hall at Shahbad Dairy<br>
 
-            Near B, Murga Market Rd,<br>
+            B, Murga Market Rd,<br>
 
             Sahibabad Dairy, Prahladpur,<br>
 
             Rohini, Delhi, 110042
 
         </div>
+
+
+        <a
+            class="map-btn"
+            href="https://www.google.com/maps/search/?api=1&query=B%2C+Murga+Market+Rd%2C+Sahibabad+Dairy%2C+Prahladpur%2C+Rohini%2C+Delhi+110042"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            VIEW LOCATION
+        </a>
 
     `;
 
