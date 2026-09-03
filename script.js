@@ -1,202 +1,151 @@
-// ==========================================
-// SHASHANK & JYOTI WEDDING INVITATION
-// ==========================================
-
+```javascript
 document.addEventListener("DOMContentLoaded", function () {
 
-    // ==========================================
-    // ELEMENTS
-    // ==========================================
 
-    const opening = document.getElementById("opening");
+    /* ==================================================
+       ELEMENTS
+    ================================================== */
 
-    const mainContent = document.getElementById("mainContent");
+    const opening =
+        document.getElementById("opening");
 
-    const openButton = document.getElementById("openInvitation");
+    const mainContent =
+        document.getElementById("mainContent");
 
-    const music = document.getElementById("backgroundMusic");
+    const openButton =
+        document.getElementById("openInvitation");
 
-    const musicToggle = document.getElementById("musicToggle");
+    const music =
+        document.getElementById("backgroundMusic");
+
+    const musicToggle =
+        document.getElementById("musicToggle");
 
 
-    // ==========================================
-    // MUSIC SETTINGS
-    // ==========================================
+    /* ==================================================
+       MUSIC
+    ================================================== */
 
     if (music) {
 
-        music.volume = 0.7;
-
         music.loop = true;
 
-    }
-
-
-    // ==========================================
-    // INITIAL STATE
-    // ==========================================
-
-    if (mainContent) {
-
-        mainContent.style.opacity = "0";
-
-        mainContent.style.visibility = "hidden";
+        music.volume = 0.7;
 
     }
 
 
-    // ==========================================
-    // MUSIC BUTTON
-    // ==========================================
+    /* ==================================================
+       OPEN INVITATION
+    ================================================== */
 
-    if (musicToggle) {
+    if (openButton) {
 
-        musicToggle.innerHTML = "🎵";
+        openButton.addEventListener(
+            "click",
+            function () {
 
-        musicToggle.setAttribute(
-            "aria-label",
-            "Turn music on or off"
+
+                openButton.disabled = true;
+
+
+                /* START MUSIC */
+
+                if (music) {
+
+                    music.play()
+                        .then(function () {
+
+                            if (musicToggle) {
+
+                                musicToggle.innerHTML =
+                                    "♫";
+
+                            }
+
+                        })
+                        .catch(function (error) {
+
+                            console.log(
+                                "Music waiting for interaction:",
+                                error
+                            );
+
+                        });
+
+                }
+
+
+                /* CINEMATIC EXIT */
+
+                if (opening) {
+
+                    opening.classList.add(
+                        "opening-exit"
+                    );
+
+                    opening.style.transition =
+                        "opacity 1.8s ease, transform 1.8s ease";
+
+                    opening.style.opacity = "0";
+
+                    opening.style.transform =
+                        "scale(1.06)";
+
+                }
+
+
+                /* SHOW MAIN */
+
+                setTimeout(
+                    function () {
+
+
+                        if (opening) {
+
+                            opening.style.display =
+                                "none";
+
+                        }
+
+
+                        if (mainContent) {
+
+                            mainContent.style.visibility =
+                                "visible";
+
+
+                            mainContent.style.transition =
+                                "opacity 1.8s ease";
+
+
+                            setTimeout(
+                                function () {
+
+                                    mainContent.style.opacity =
+                                        "1";
+
+                                },
+                                100
+                            );
+
+                        }
+
+
+                    },
+                    1800
+                );
+
+            }
         );
 
     }
 
 
-    // ==========================================
-    // OPEN INVITATION
-    // ==========================================
 
-    if (openButton) {
-
-        openButton.addEventListener("click", function () {
-
-            console.log("OPEN INVITATION clicked");
-
-
-            // --------------------------------------
-            // Prevent double click
-            // --------------------------------------
-
-            openButton.disabled = true;
-
-
-            // --------------------------------------
-            // START MUSIC
-            // --------------------------------------
-
-            if (music) {
-
-                try {
-
-                    music.currentTime = 0;
-
-                    const playPromise = music.play();
-
-                    if (playPromise !== undefined) {
-
-                        playPromise
-                            .then(function () {
-
-                                console.log(
-                                    "Wedding music started."
-                                );
-
-                                if (musicToggle) {
-                                    musicToggle.innerHTML = "🎵";
-                                }
-
-                            })
-                            .catch(function (error) {
-
-                                console.log(
-                                    "Music could not start:",
-                                    error
-                                );
-
-                                /*
-                                 * IMPORTANT:
-                                 * Music error will NOT stop
-                                 * invitation from opening.
-                                 */
-
-                            });
-
-                    }
-
-                } catch (error) {
-
-                    console.log(
-                        "Music error:",
-                        error
-                    );
-
-                }
-
-            }
-
-
-            // --------------------------------------
-            // OPENING FADE
-            // --------------------------------------
-
-            if (opening) {
-
-                opening.style.transition =
-                    "opacity 1.2s ease, transform 1.2s ease";
-
-                opening.style.opacity = "0";
-
-                opening.style.transform =
-                    "scale(1.04)";
-
-            }
-
-
-            // --------------------------------------
-            // SHOW MAIN CONTENT
-            // --------------------------------------
-
-            setTimeout(function () {
-
-                if (opening) {
-
-                    opening.style.display = "none";
-
-                }
-
-
-                if (mainContent) {
-
-                    mainContent.style.visibility =
-                        "visible";
-
-                    mainContent.style.transition =
-                        "opacity 1s ease";
-
-                    /*
-                     * Force browser to process
-                     * visibility before opacity.
-                     */
-
-                    requestAnimationFrame(function () {
-
-                        mainContent.style.opacity = "1";
-
-                        mainContent.classList.add("show");
-
-                    });
-
-                }
-
-            }, 1200);
-
-        });
-
-    }
-
-
-    // ==========================================
-    // MUSIC ON / OFF
-    // ==========================================
+    /* ==================================================
+       MUSIC BUTTON
+    ================================================== */
 
     if (musicToggle) {
 
@@ -204,56 +153,31 @@ document.addEventListener("DOMContentLoaded", function () {
             "click",
             function () {
 
+
                 if (!music) {
-
-                    console.log(
-                        "backgroundMusic element not found."
-                    );
-
                     return;
-
                 }
 
 
-                // ----------------------------------
-                // MUSIC OFF
-                // ----------------------------------
+                if (music.paused) {
 
-                if (!music.paused) {
+
+                    music.play()
+                        .then(function () {
+
+                            musicToggle.innerHTML =
+                                "♫";
+
+                        });
+
+
+                } else {
+
 
                     music.pause();
 
-                    musicToggle.innerHTML = "🔇";
-
-                    return;
-
-                }
-
-
-                // ----------------------------------
-                // MUSIC ON
-                // ----------------------------------
-
-                const playPromise = music.play();
-
-                if (playPromise !== undefined) {
-
-                    playPromise
-                        .then(function () {
-
-                            musicToggle.innerHTML = "🎵";
-
-                        })
-                        .catch(function (error) {
-
-                            console.log(
-                                "Music playback error:",
-                                error
-                            );
-
-                            musicToggle.innerHTML = "🔇";
-
-                        });
+                    musicToggle.innerHTML =
+                        "🔇";
 
                 }
 
@@ -263,9 +187,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    // ==========================================
-    // WEDDING COUNTDOWN
-    // ==========================================
+
+    /* ==================================================
+       COUNTDOWN
+    ================================================== */
 
     const weddingDate =
         new Date(
@@ -275,6 +200,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function updateCountdown() {
 
+
         const now =
             new Date().getTime();
 
@@ -283,54 +209,46 @@ document.addEventListener("DOMContentLoaded", function () {
             weddingDate - now;
 
 
-        const daysElement =
+        const days =
             document.getElementById("days");
 
-        const hoursElement =
+        const hours =
             document.getElementById("hours");
 
-        const minutesElement =
+        const minutes =
             document.getElementById("minutes");
 
-        const secondsElement =
+        const seconds =
             document.getElementById("seconds");
 
 
-        // --------------------------------------
-        // WEDDING DATE PASSED
-        // --------------------------------------
-
         if (distance <= 0) {
 
-            if (daysElement)
-                daysElement.innerText = "00";
+            if (days)
+                days.innerText = "00";
 
-            if (hoursElement)
-                hoursElement.innerText = "00";
+            if (hours)
+                hours.innerText = "00";
 
-            if (minutesElement)
-                minutesElement.innerText = "00";
+            if (minutes)
+                minutes.innerText = "00";
 
-            if (secondsElement)
-                secondsElement.innerText = "00";
+            if (seconds)
+                seconds.innerText = "00";
 
             return;
 
         }
 
 
-        // --------------------------------------
-        // CALCULATE TIME
-        // --------------------------------------
-
-        const days =
+        const d =
             Math.floor(
                 distance /
                 (1000 * 60 * 60 * 24)
             );
 
 
-        const hours =
+        const h =
             Math.floor(
                 (distance %
                     (1000 * 60 * 60 * 24)) /
@@ -338,7 +256,7 @@ document.addEventListener("DOMContentLoaded", function () {
             );
 
 
-        const minutes =
+        const m =
             Math.floor(
                 (distance %
                     (1000 * 60 * 60)) /
@@ -346,7 +264,7 @@ document.addEventListener("DOMContentLoaded", function () {
             );
 
 
-        const seconds =
+        const s =
             Math.floor(
                 (distance %
                     (1000 * 60)) /
@@ -354,44 +272,27 @@ document.addEventListener("DOMContentLoaded", function () {
             );
 
 
-        // --------------------------------------
-        // DISPLAY
-        // --------------------------------------
+        if (days)
+            days.innerText =
+                String(d).padStart(2, "0");
 
-        if (daysElement) {
 
-            daysElement.innerText =
-                String(days).padStart(2, "0");
+        if (hours)
+            hours.innerText =
+                String(h).padStart(2, "0");
 
-        }
 
-        if (hoursElement) {
+        if (minutes)
+            minutes.innerText =
+                String(m).padStart(2, "0");
 
-            hoursElement.innerText =
-                String(hours).padStart(2, "0");
 
-        }
-
-        if (minutesElement) {
-
-            minutesElement.innerText =
-                String(minutes).padStart(2, "0");
-
-        }
-
-        if (secondsElement) {
-
-            secondsElement.innerText =
-                String(seconds).padStart(2, "0");
-
-        }
+        if (seconds)
+            seconds.innerText =
+                String(s).padStart(2, "0");
 
     }
 
-
-    // ==========================================
-    // START COUNTDOWN
-    // ==========================================
 
     updateCountdown();
 
@@ -401,4 +302,334 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 
+
+    /* ==================================================
+       SCROLL REVEAL
+    ================================================== */
+
+    const revealElements =
+        document.querySelectorAll(".reveal");
+
+
+    if (revealElements.length > 0) {
+
+
+        const observer =
+            new IntersectionObserver(
+                function (entries) {
+
+
+                    entries.forEach(
+                        function (entry) {
+
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+
+                                entry.target.classList.add(
+                                    "active"
+                                );
+
+
+                                observer.unobserve(
+                                    entry.target
+                                );
+
+                            }
+
+                        }
+                    );
+
+                },
+                {
+                    threshold: 0.15
+                }
+            );
+
+
+        revealElements.forEach(
+            function (element) {
+
+                observer.observe(element);
+
+            }
+        );
+
+    }
+
+
+
+    /* ==================================================
+       SCRATCH CARD
+    ================================================== */
+
+    const canvas =
+        document.getElementById(
+            "scratchCanvas"
+        );
+
+
+    if (canvas) {
+
+
+        const ctx =
+            canvas.getContext("2d");
+
+
+        function setupScratch() {
+
+
+            const rect =
+                canvas.getBoundingClientRect();
+
+
+            const ratio =
+                window.devicePixelRatio || 1;
+
+
+            canvas.width =
+                rect.width * ratio;
+
+
+            canvas.height =
+                rect.height * ratio;
+
+
+            ctx.scale(
+                ratio,
+                ratio
+            );
+
+
+            /* SCRATCH COVER */
+
+            ctx.fillStyle =
+                "#b28a5c";
+
+
+            ctx.fillRect(
+                0,
+                0,
+                rect.width,
+                rect.height
+            );
+
+
+            /* COVER TEXT */
+
+            ctx.fillStyle =
+                "#fffaf2";
+
+
+            ctx.font =
+                "14px Arial";
+
+
+            ctx.textAlign =
+                "center";
+
+
+            ctx.textBaseline =
+                "middle";
+
+
+            ctx.fillText(
+                "SCRATCH TO REVEAL",
+                rect.width / 2,
+                rect.height / 2
+            );
+
+
+            ctx.globalCompositeOperation =
+                "destination-out";
+
+        }
+
+
+        setupScratch();
+
+
+        window.addEventListener(
+            "resize",
+            setupScratch
+        );
+
+
+        let scratching = false;
+
+
+        function scratch(x, y) {
+
+
+            ctx.beginPath();
+
+
+            ctx.arc(
+                x,
+                y,
+                24,
+                0,
+                Math.PI * 2
+            );
+
+
+            ctx.fill();
+
+        }
+
+
+        function getPosition(event) {
+
+
+            const rect =
+                canvas.getBoundingClientRect();
+
+
+            if (
+                event.touches &&
+                event.touches.length
+            ) {
+
+
+                return {
+
+                    x:
+                        event.touches[0].clientX -
+                        rect.left,
+
+                    y:
+                        event.touches[0].clientY -
+                        rect.top
+
+                };
+
+            }
+
+
+            return {
+
+                x:
+                    event.clientX -
+                    rect.left,
+
+                y:
+                    event.clientY -
+                    rect.top
+
+            };
+
+        }
+
+
+        canvas.addEventListener(
+            "mousedown",
+            function (event) {
+
+                scratching = true;
+
+                const pos =
+                    getPosition(event);
+
+                scratch(
+                    pos.x,
+                    pos.y
+                );
+
+            }
+        );
+
+
+        canvas.addEventListener(
+            "mousemove",
+            function (event) {
+
+                if (!scratching) {
+                    return;
+                }
+
+                const pos =
+                    getPosition(event);
+
+                scratch(
+                    pos.x,
+                    pos.y
+                );
+
+            }
+        );
+
+
+        window.addEventListener(
+            "mouseup",
+            function () {
+
+                scratching = false;
+
+            }
+        );
+
+
+        canvas.addEventListener(
+            "touchstart",
+            function (event) {
+
+                event.preventDefault();
+
+                scratching = true;
+
+                const pos =
+                    getPosition(event);
+
+                scratch(
+                    pos.x,
+                    pos.y
+                );
+
+            },
+            {
+                passive: false
+            }
+        );
+
+
+        canvas.addEventListener(
+            "touchmove",
+            function (event) {
+
+                event.preventDefault();
+
+                if (!scratching) {
+                    return;
+                }
+
+                const pos =
+                    getPosition(event);
+
+                scratch(
+                    pos.x,
+                    pos.y
+                );
+
+            },
+            {
+                passive: false
+            }
+        );
+
+
+        canvas.addEventListener(
+            "touchend",
+            function () {
+
+                scratching = false;
+
+            }
+        );
+
+    }
+
+
 });
+```
