@@ -1,44 +1,51 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Shashank & Jyoti | Wedding Invitation</title>
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        html, body {
+        html,
+        body {
             width: 100%;
             min-height: 100%;
-            overflow: hidden;
         }
 
         body {
             background: #0b0806;
-            color: #fff;
+            color: #ffffff;
             font-family: Georgia, "Times New Roman", serif;
         }
 
-        /* =========================
+
+        /* =========================================
            OPENING SCREEN
-        ========================= */
+        ========================================= */
 
         .opening {
+
             position: relative;
+
             width: 100%;
             height: 100vh;
             height: 100dvh;
 
             display: flex;
+
             align-items: center;
             justify-content: center;
 
             text-align: center;
+
             overflow: hidden;
 
             background:
@@ -55,12 +62,15 @@
                 );
 
             opacity: 1;
+
             transform: scale(1);
         }
 
-        /* Cinematic glowing light */
+
+        /* Cinematic Glow */
 
         .opening::before {
+
             content: "";
 
             position: absolute;
@@ -73,28 +83,37 @@
 
             border-radius: 50%;
 
-            background: rgba(180, 130, 70, 0.08);
+            background:
+                rgba(180, 130, 70, 0.08);
 
             filter: blur(80px);
 
-            animation: glow 5s ease-in-out infinite alternate;
+            animation:
+                glow 5s ease-in-out infinite alternate;
         }
+
 
         /* Opening Content */
 
         .opening-content {
+
             position: relative;
+
             z-index: 2;
 
             width: 90%;
+
             max-width: 750px;
 
-            animation: fadeUp 1.8s ease forwards;
+            animation:
+                fadeUp 1.8s ease forwards;
         }
+
 
         /* Ganesh */
 
         .ganesh {
+
             font-size: 18px;
 
             letter-spacing: 2px;
@@ -104,9 +123,11 @@
             opacity: 0.95;
         }
 
+
         /* Mantra */
 
         .mantra {
+
             font-size: 15px;
 
             line-height: 2;
@@ -118,9 +139,11 @@
             opacity: 0.85;
         }
 
-        /* Invitation text */
+
+        /* Invitation */
 
         .invite {
+
             font-family: Arial, sans-serif;
 
             font-size: 11px;
@@ -134,10 +157,13 @@
             margin-bottom: 20px;
         }
 
-        /* Couple Names */
+
+        /* Names */
 
         .names {
-            font-size: clamp(32px, 8vw, 68px);
+
+            font-size:
+                clamp(32px, 8vw, 68px);
 
             font-weight: normal;
 
@@ -151,7 +177,9 @@
                 0 4px 25px rgba(0,0,0,0.8);
         }
 
+
         .ampersand {
+
             font-style: italic;
 
             font-size: 0.55em;
@@ -161,9 +189,11 @@
             opacity: 0.8;
         }
 
+
         /* Subtitle */
 
         .subtitle {
+
             font-family: Arial, sans-serif;
 
             font-size: 10px;
@@ -175,18 +205,24 @@
             margin-bottom: 45px;
         }
 
+
         /* Open Button */
 
         .open-btn {
-            border: 1px solid rgba(255,255,255,0.5);
 
-            background: rgba(255,255,255,0.05);
+            border:
+                1px solid rgba(255,255,255,0.5);
+
+            background:
+                rgba(255,255,255,0.05);
 
             color: white;
 
-            padding: 15px 32px;
+            padding:
+                15px 32px;
 
-            font-family: Arial, sans-serif;
+            font-family:
+                Arial, sans-serif;
 
             font-size: 11px;
 
@@ -197,33 +233,46 @@
             transition:
                 all 0.4s ease;
 
-            backdrop-filter: blur(5px);
+            backdrop-filter:
+                blur(5px);
         }
+
 
         .open-btn:hover {
-            background: rgba(255,255,255,0.15);
 
-            border-color: white;
+            background:
+                rgba(255,255,255,0.15);
 
-            transform: scale(1.04);
+            border-color:
+                white;
+
+            transform:
+                scale(1.04);
         }
+
 
         .open-btn:active {
-            transform: scale(0.97);
+
+            transform:
+                scale(0.97);
         }
+
 
         /* Bottom Date */
 
         .bottom-line {
+
             position: absolute;
 
             bottom: 25px;
 
             left: 50%;
 
-            transform: translateX(-50%);
+            transform:
+                translateX(-50%);
 
-            font-family: Arial, sans-serif;
+            font-family:
+                Arial, sans-serif;
 
             font-size: 9px;
 
@@ -236,14 +285,19 @@
             white-space: nowrap;
         }
 
-        /* =========================
-           WELCOME SCREEN
-        ========================= */
 
-        .welcome {
+        /* =========================================
+           INVITATION SECTION
+        ========================================= */
+
+        .invitation-section {
+
             min-height: 100vh;
+            min-height: 100dvh;
 
             display: flex;
+
+            flex-direction: column;
 
             align-items: center;
 
@@ -251,49 +305,99 @@
 
             text-align: center;
 
-            padding: 30px;
+            padding: 35px;
 
             background:
+
                 radial-gradient(
                     circle at center,
                     rgba(120, 80, 35, 0.20),
                     #0b0806 70%
                 );
 
-            animation: welcomeFade 1.5s ease forwards;
+            animation:
+                invitationFade 2s ease forwards;
         }
 
-        .welcome-box {
-            max-width: 700px;
-        }
 
-        .welcome h1 {
-            font-size: clamp(32px, 7vw, 60px);
+        /* First line */
 
-            font-weight: normal;
+        .invitation-small {
 
-            line-height: 1.2;
-        }
-
-        .welcome p {
-            margin-top: 20px;
-
-            font-family: Arial, sans-serif;
+            font-family:
+                Arial, sans-serif;
 
             font-size: 12px;
 
-            letter-spacing: 3px;
+            letter-spacing: 1px;
 
-            opacity: 0.65;
+            line-height: 1.8;
+
+            opacity: 0.7;
+
+            margin-bottom: 18px;
+
+            max-width: 650px;
         }
 
-        /* =========================
+
+        /* Second line */
+
+        .invitation-text {
+
+            font-size: 18px;
+
+            line-height: 1.7;
+
+            opacity: 0.9;
+
+            margin-bottom: 45px;
+
+            max-width: 650px;
+        }
+
+
+        /* Couple Names */
+
+        .couple-name {
+
+            font-size:
+                clamp(48px, 10vw, 90px);
+
+            letter-spacing: 3px;
+
+            line-height: 1.1;
+
+            font-weight: normal;
+
+            text-shadow:
+                0 5px 30px rgba(0,0,0,0.8);
+        }
+
+
+        /* & */
+
+        .couple-and {
+
+            font-size: 30px;
+
+            font-style: italic;
+
+            margin:
+                15px 0;
+
+            opacity: 0.7;
+        }
+
+
+        /* =========================================
            ANIMATIONS
-        ========================= */
+        ========================================= */
 
         @keyframes fadeUp {
 
             from {
+
                 opacity: 0;
 
                 transform:
@@ -301,6 +405,7 @@
             }
 
             to {
+
                 opacity: 1;
 
                 transform:
@@ -308,49 +413,64 @@
             }
         }
 
+
         @keyframes glow {
 
             from {
-                transform: scale(0.9);
+
+                transform:
+                    scale(0.9);
 
                 opacity: 0.5;
             }
 
             to {
-                transform: scale(1.1);
+
+                transform:
+                    scale(1.1);
 
                 opacity: 1;
             }
         }
 
-        @keyframes welcomeFade {
+
+        @keyframes invitationFade {
 
             from {
+
                 opacity: 0;
 
-                transform: scale(0.98);
+                transform:
+                    scale(0.97);
             }
 
             to {
+
                 opacity: 1;
 
-                transform: scale(1);
+                transform:
+                    scale(1);
             }
         }
 
-        /* =========================
+
+        /* =========================================
            MOBILE
-        ========================= */
+        ========================================= */
 
         @media (max-width: 600px) {
 
+
             .ganesh {
+
                 font-size: 16px;
 
                 margin-bottom: 16px;
             }
 
+
             .mantra {
+
                 font-size: 13px;
 
                 line-height: 1.8;
@@ -358,19 +478,27 @@
                 margin-bottom: 28px;
             }
 
+
             .invite {
+
                 font-size: 9px;
 
                 letter-spacing: 2px;
+
+                line-height: 1.7;
             }
 
+
             .names {
+
                 font-size: 34px;
 
                 letter-spacing: 1px;
             }
 
+
             .subtitle {
+
                 font-size: 9px;
 
                 letter-spacing: 3px;
@@ -378,149 +506,275 @@
                 margin-bottom: 35px;
             }
 
+
             .open-btn {
-                padding: 14px 25px;
+
+                padding:
+                    14px 25px;
 
                 font-size: 10px;
 
                 letter-spacing: 2px;
             }
 
+
             .bottom-line {
+
                 bottom: 18px;
 
                 font-size: 8px;
 
                 letter-spacing: 2px;
             }
+
+
+            .invitation-section {
+
+                padding:
+                    25px 20px;
+            }
+
+
+            .invitation-small {
+
+                font-size: 11px;
+
+                line-height: 1.7;
+            }
+
+
+            .invitation-text {
+
+                font-size: 16px;
+
+                line-height: 1.7;
+
+                margin-bottom: 38px;
+            }
+
+
+            .couple-name {
+
+                font-size: 50px;
+
+                letter-spacing: 2px;
+            }
+
+
+            .couple-and {
+
+                font-size: 25px;
+
+                margin:
+                    12px 0;
+            }
+
         }
+
     </style>
+
 </head>
 
 
 <body>
 
-    <!-- =========================
+
+    <!-- =========================================
          OPENING
-    ========================= -->
+    ========================================= -->
 
-    <section class="opening" id="opening">
+    <section
+        class="opening"
+        id="opening">
 
-        <div class="opening-content">
+
+        <div
+            class="opening-content">
+
 
             <div class="ganesh">
+
                 ॥ श्री गणेशाय नमः ॥
+
             </div>
+
 
             <div class="mantra">
+
                 वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ।<br>
+
                 निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा॥
+
             </div>
+
 
             <div class="invite">
-                With the blessings of Shri Ganesh and our beloved families
+
+                With the blessings of Shri Ganesh
+                and our beloved families
+
             </div>
+
 
             <div class="names">
-                Shashank Kumar Maurya
-                <span class="ampersand">&</span>
+
+                Shashank
+
+                <span class="ampersand">
+                    &
+                </span>
+
                 Jyoti
+
             </div>
 
+
             <div class="subtitle">
+
                 WEDDING INVITATION
+
             </div>
+
 
             <button
                 class="open-btn"
                 id="openInvitation">
+
                 OPEN INVITATION
+
             </button>
 
+
         </div>
 
+
         <div class="bottom-line">
+
             21 NOVEMBER 2026
+
         </div>
+
 
     </section>
 
 
-    <!-- =========================
+    <!-- =========================================
          JAVASCRIPT
-    ========================= -->
+    ========================================= -->
 
     <script>
 
+
         const openButton =
-            document.getElementById("openInvitation");
+            document.getElementById(
+                "openInvitation"
+            );
+
 
         const opening =
-            document.getElementById("opening");
+            document.getElementById(
+                "opening"
+            );
 
 
         openButton.addEventListener(
             "click",
             function () {
 
-                /* Opening fade */
+
+                /* Opening transition */
 
                 opening.style.transition =
                     "opacity 1.5s ease, transform 1.5s ease";
 
-                opening.style.opacity = "0";
+
+                opening.style.opacity =
+                    "0";
+
 
                 opening.style.transform =
                     "scale(1.04)";
 
 
-                /* Show next screen */
+                /* Show invitation */
 
-                setTimeout(function () {
-
-                    opening.style.display =
-                        "none";
-
-                    document.body.style.overflow =
-                        "auto";
+                setTimeout(
+                    function () {
 
 
-                    const welcome =
-                        document.createElement("section");
+                        opening.style.display =
+                            "none";
 
 
-                    welcome.className =
-                        "welcome";
+                        document.body.style.overflow =
+                            "auto";
 
 
-                    welcome.innerHTML = `
-
-                        <div class="welcome-box">
-
-                            <h1>
-                                Welcome to Our Wedding
-                            </h1>
-
-                            <p>
-                                SHASHANK KUMAR MAURYA & JYOTI
-                            </p>
-
-                        </div>
-
-                    `;
+                        const invitation =
+                            document.createElement(
+                                "section"
+                            );
 
 
-                    document.body.appendChild(
-                        welcome
-                    );
+                        invitation.className =
+                            "invitation-section";
 
 
-                }, 1500);
+                        invitation.innerHTML = `
+
+                            <div class="invitation-small">
+
+                                With the blessings of Shri Ganesh
+                                and our beloved families,
+
+                            </div>
+
+
+                            <div class="invitation-text">
+
+                                we joyfully invite you
+                                to celebrate the union of
+
+                            </div>
+
+
+                            <div class="couple-name">
+
+                                Shashank
+
+                            </div>
+
+
+                            <div class="couple-and">
+
+                                &
+
+                            </div>
+
+
+                            <div class="couple-name">
+
+                                Jyoti
+
+                            </div>
+
+                        `;
+
+
+                        document.body.appendChild(
+                            invitation
+                        );
+
+
+                    },
+                    1500
+                );
 
             }
         );
 
     </script>
+
 
 </body>
 </html>
