@@ -1,17 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 <title>Shashank & Jyoti Wedding</title>
 
 <style>
 
+/* =========================
+   FONTS & COLORS
+========================= */
+
 :root {
     --main-font: "Boring's", "Boring", Georgia, "Times New Roman", serif;
     --event-font: "Brigovin", "Brigovin Regular", Georgia, "Times New Roman", serif;
+
+    --brown-dark: #2b160d;
+    --brown: #4a2615;
+    --brown-light: #6b3b20;
+
+    --gold: #d6ad55;
+    --gold-light: #f1d58a;
+    --cream: #fff3d2;
 }
+
+
+/* =========================
+   RESET
+========================= */
 
 * {
     box-sizing: border-box;
@@ -27,485 +46,929 @@ body {
     width: 100%;
     min-height: 100vh;
     overflow-x: hidden;
-    background: #000;
-    color: #fff;
+
+    background: var(--brown-dark);
+
+    color: var(--cream);
+
     font-family: var(--main-font);
+
     -webkit-font-smoothing: antialiased;
 }
+
+
+/* =========================
+   COMMON SECTION
+========================= */
 
 section {
     width: 100%;
     min-height: 100vh;
+
     display: flex;
     flex-direction: column;
+
     justify-content: center;
     align-items: center;
+
     text-align: center;
+
     padding: 60px 20px;
+
     position: relative;
+
     overflow: hidden;
+
     animation: sectionFade 1.2s ease;
+
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(214,173,85,0.18),
+            transparent 45%
+        ),
+        linear-gradient(
+            135deg,
+            #2b160d,
+            #4a2615,
+            #2b160d
+        );
 }
 
 @keyframes sectionFade {
+
     from {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
+
 
 /* =========================
    OPENING
 ========================= */
 
 .opening {
+
     background:
-        linear-gradient(
-            rgba(0,0,0,0.58),
-            rgba(0,0,0,0.72)
+        radial-gradient(
+            circle at center,
+            rgba(214,173,85,0.20),
+            transparent 45%
         ),
-        #151515;
+        linear-gradient(
+            135deg,
+            #241108,
+            #4a2615,
+            #2b160d
+        );
+
     animation: openingZoom 8s ease-in-out infinite alternate;
 }
 
 @keyframes openingZoom {
+
     from {
         background-size: 100% 100%;
     }
+
     to {
         background-size: 108% 108%;
     }
 }
 
+
+.opening::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 20px;
+
+    border: 1px solid rgba(214,173,85,0.35);
+
+    pointer-events: none;
+}
+
+
 .opening-content {
+
     width: 100%;
     max-width: 650px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    position: relative;
+    z-index: 2;
+
     animation: fadeIn 2s ease forwards;
 }
 
+
 @keyframes fadeIn {
+
     from {
         opacity: 0;
         transform: translateY(25px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
+
+/* =========================
+   GANESH
+========================= */
+
 .ganesh {
+
+    color: var(--gold-light);
+
     font-size: clamp(18px, 4vw, 27px);
+
     line-height: 1.35;
+
     margin-bottom: 12px;
+
     letter-spacing: 1px;
 }
 
+
 .mantra {
+
+    color: var(--cream);
+
     font-size: clamp(14px, 3.5vw, 20px);
+
     line-height: 1.65;
+
     margin-bottom: 22px;
+
     max-width: 600px;
 }
 
-.invite {
-    font-size: clamp(13px, 3.2vw, 18px);
-    line-height: 1.55;
-    margin-bottom: 10px;
-    opacity: 0.95;
-}
-
-.names {
-    font-size: clamp(36px, 10vw, 72px);
-    line-height: 1;
-    margin-bottom: 8px;
-    letter-spacing: 2px;
-}
-
-.names span {
-    display: block;
-    font-size: clamp(18px, 5vw, 30px);
-    margin: 5px 0;
-}
-
-.subtitle {
-    font-size: clamp(13px, 3.5vw, 18px);
-    margin-bottom: 25px;
-    opacity: 0.9;
-}
-
-.open-btn {
-    width: min(230px, 80vw);
-    height: 46px;
-    border: 1px solid rgba(255,255,255,0.8);
-    border-radius: 30px;
-    background: rgba(255,255,255,0.08);
-    color: #fff;
-    font-family: var(--main-font);
-    font-size: 14px;
-    letter-spacing: 2px;
-    cursor: pointer;
-    transition: 0.3s;
-    -webkit-tap-highlight-color: transparent;
-}
-
-.open-btn:hover {
-    background: rgba(255,255,255,0.20);
-    transform: scale(1.04);
-}
-
-.open-btn:active {
-    transform: scale(0.97);
-}
 
 /* =========================
    INVITATION
 ========================= */
 
-.invitation-section {
+.invite {
+
+    color: var(--cream);
+
+    font-size: clamp(13px, 3.2vw, 18px);
+
+    line-height: 1.55;
+
+    margin-bottom: 10px;
+
+    opacity: 0.95;
+}
+
+
+.names {
+
+    color: var(--gold-light);
+
+    font-size: clamp(36px, 10vw, 72px);
+
+    line-height: 1;
+
+    margin-bottom: 8px;
+
+    letter-spacing: 2px;
+
+    text-shadow:
+        0 0 18px rgba(214,173,85,0.25);
+}
+
+
+.names span {
+
+    display: block;
+
+    color: var(--cream);
+
+    font-size: clamp(18px, 5vw, 30px);
+
+    margin: 5px 0;
+}
+
+
+.subtitle {
+
+    color: var(--cream);
+
+    font-size: clamp(13px, 3.5vw, 18px);
+
+    margin-bottom: 25px;
+
+    opacity: 0.9;
+}
+
+
+/* =========================
+   OPEN BUTTON
+========================= */
+
+.open-btn {
+
+    width: min(230px, 80vw);
+
+    height: 46px;
+
+    border: 1px solid var(--gold);
+
+    border-radius: 30px;
+
     background:
         linear-gradient(
-            rgba(0,0,0,0.55),
-            rgba(0,0,0,0.75)
-        ),
-        #171717;
+            135deg,
+            rgba(214,173,85,0.12),
+            rgba(255,255,255,0.04)
+        );
+
+    color: var(--gold-light);
+
+    font-family: var(--main-font);
+
+    font-size: 14px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    -webkit-tap-highlight-color: transparent;
 }
+
+
+.open-btn:hover {
+
+    background: rgba(214,173,85,0.22);
+
+    transform: scale(1.04);
+
+    box-shadow:
+        0 0 20px rgba(214,173,85,0.18);
+}
+
+
+.open-btn:active {
+
+    transform: scale(0.97);
+}
+
+
+/* =========================
+   INVITATION SECTION
+========================= */
+
+.invitation-section {
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(214,173,85,0.14),
+            transparent 48%
+        ),
+        linear-gradient(
+            135deg,
+            #2b160d,
+            #5a301b,
+            #351b0f
+        );
+}
+
+
+.invitation-section::before,
+.save-date-section::before,
+.wedding-section::before,
+.venue-section::before,
+.reception-section::before,
+.closing-section::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 20px;
+
+    border: 1px solid rgba(214,173,85,0.25);
+
+    pointer-events: none;
+}
+
 
 .invitation-small {
+
+    color: var(--gold);
+
     font-size: clamp(13px, 3vw, 18px);
+
     margin-bottom: 10px;
+
     line-height: 1.5;
+
+    letter-spacing: 3px;
 }
 
+
 .invitation-text {
+
     font-size: clamp(15px, 3.5vw, 21px);
+
     line-height: 1.6;
+
     max-width: 650px;
+
     margin-bottom: 25px;
 }
 
+
 .couple-name {
+
+    color: var(--gold-light);
+
     font-size: clamp(38px, 10vw, 70px);
+
     line-height: 1;
+
     margin: 0 0 5px;
+
+    text-shadow:
+        0 0 20px rgba(214,173,85,0.22);
 }
 
+
 .couple-and {
+
+    color: var(--cream);
+
     font-size: 22px;
+
     margin: 8px 0;
 }
 
+
 .family {
+
     font-size: clamp(14px, 3.5vw, 20px);
+
     line-height: 1.7;
+
     margin-top: 20px;
 }
+
 
 /* =========================
    SAVE DATE
 ========================= */
 
 .save-date-section {
+
     background:
-        linear-gradient(
-            rgba(0,0,0,0.58),
-            rgba(0,0,0,0.78)
+        radial-gradient(
+            circle at center,
+            rgba(214,173,85,0.18),
+            transparent 45%
         ),
-        #111;
+        linear-gradient(
+            135deg,
+            #2b160d,
+            #57301a,
+            #30170d
+        );
 }
 
+
 .save-title {
+
+    color: var(--gold-light);
+
     font-size: clamp(30px, 8vw, 55px);
+
     margin-bottom: 15px;
 }
 
+
 .save-subtitle {
+
     font-size: clamp(14px, 3.5vw, 19px);
+
     margin-bottom: 35px;
 }
 
+
 .scratch-box {
+
     width: min(320px, 90vw);
+
     min-height: 170px;
-    border: 1px solid rgba(255,255,255,0.45);
+
+    border: 1px solid var(--gold);
+
     border-radius: 15px;
+
     position: relative;
+
     overflow: hidden;
+
     display: flex;
+
     justify-content: center;
+
     align-items: center;
-    background: rgba(255,255,255,0.05);
+
+    background: rgba(0,0,0,0.18);
+
+    box-shadow:
+        0 0 30px rgba(214,173,85,0.08);
 }
 
+
 .date-reveal {
+
     position: absolute;
+
     width: 100%;
+
     text-align: center;
+
     z-index: 1;
 }
 
+
 .date-month {
+
+    color: var(--gold);
+
     font-size: 22px;
+
     letter-spacing: 3px;
 }
 
+
 .date-day {
+
+    color: var(--gold-light);
+
     font-size: 70px;
+
     line-height: 1;
 }
 
+
 .date-year {
+
     font-size: 20px;
+
     letter-spacing: 4px;
 }
 
+
 .scratch-canvas {
+
     position: absolute;
+
     inset: 0;
+
     width: 100%;
+
     height: 100%;
+
     z-index: 2;
+
     cursor: pointer;
+
     touch-action: none;
 }
+
 
 /* =========================
    EVENTS
 ========================= */
 
 .events-section {
+
     gap: 22px;
+
     justify-content: center;
+
     background:
-        linear-gradient(
-            rgba(0,0,0,0.55),
-            rgba(0,0,0,0.75)
+        radial-gradient(
+            circle at center,
+            rgba(214,173,85,0.16),
+            transparent 45%
         ),
-        #151515;
+        linear-gradient(
+            135deg,
+            #2b160d,
+            #51301c,
+            #2b160d
+        );
 }
 
+
 .events-heading {
+
     font-family: var(--event-font);
+
+    color: var(--gold-light);
+
     font-size: clamp(42px, 10vw, 75px);
+
     margin-bottom: 20px;
 }
 
+
 .event-card {
+
     width: min(500px, 92vw);
+
     padding: 28px 20px;
-    border-top: 1px solid rgba(255,255,255,0.3);
-    border-bottom: 1px solid rgba(255,255,255,0.3);
-    background: rgba(0,0,0,0.18);
+
+    border-top: 1px solid rgba(214,173,85,0.45);
+
+    border-bottom: 1px solid rgba(214,173,85,0.45);
+
+    background: rgba(30,14,7,0.28);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.12);
 }
 
+
 .event-number {
+
+    color: var(--gold);
+
     font-size: 13px;
+
     letter-spacing: 3px;
-    opacity: 0.7;
+
+    opacity: 0.9;
+
     margin-bottom: 8px;
 }
 
+
 .event-title {
+
     font-family: var(--event-font);
+
+    color: var(--gold-light);
+
     font-size: clamp(38px, 9vw, 60px);
+
     margin-bottom: 10px;
 }
 
+
 .event-date {
+
     font-size: clamp(15px, 4vw, 21px);
+
     line-height: 1.6;
 }
+
 
 /* =========================
    WEDDING
 ========================= */
 
 .wedding-section {
+
     background:
-        linear-gradient(
-            rgba(0,0,0,0.55),
-            rgba(0,0,0,0.75)
+        radial-gradient(
+            circle at center,
+            rgba(214,173,85,0.18),
+            transparent 45%
         ),
-        #141414;
+        linear-gradient(
+            135deg,
+            #281309,
+            #58301a,
+            #2b160d
+        );
 }
 
+
 .wedding-small {
+
+    color: var(--gold);
+
     font-size: 14px;
+
     letter-spacing: 2px;
+
     margin-bottom: 15px;
+
     max-width: 650px;
+
     line-height: 1.6;
 }
 
+
 .wedding-title {
+
     font-family: var(--event-font);
+
+    color: var(--gold-light);
+
     font-size: clamp(48px, 12vw, 90px);
+
     margin-bottom: 15px;
 }
 
+
 .wedding-date {
+
     font-size: clamp(18px, 4vw, 25px);
+
     margin-bottom: 35px;
 }
+
 
 /* =========================
    COUNTDOWN
 ========================= */
 
 .countdown {
+
     display: flex;
+
     justify-content: center;
+
     gap: clamp(10px, 4vw, 25px);
+
     flex-wrap: wrap;
 }
 
+
 .count-item {
+
     min-width: 65px;
 }
 
+
 .count-number {
+
+    color: var(--gold-light);
+
     font-size: clamp(27px, 7vw, 45px);
+
     display: block;
 }
 
+
 .count-label {
+
+    color: var(--gold);
+
     font-size: 11px;
+
     letter-spacing: 2px;
-    opacity: 0.7;
+
+    opacity: 0.9;
 }
+
 
 /* =========================
    VENUE
 ========================= */
 
 .venue-section {
+
     background:
-        linear-gradient(
-            rgba(0,0,0,0.55),
-            rgba(0,0,0,0.75)
+        radial-gradient(
+            circle at center,
+            rgba(214,173,85,0.15),
+            transparent 45%
         ),
-        #181818;
+        linear-gradient(
+            135deg,
+            #2b160d,
+            #57301b,
+            #32180d
+        );
 }
 
+
 .venue-small {
+
+    color: var(--gold);
+
     font-size: 14px;
+
     letter-spacing: 4px;
+
     margin-bottom: 15px;
 }
 
+
 .venue-title {
+
     font-family: var(--event-font);
+
+    color: var(--gold-light);
+
     font-size: clamp(45px, 11vw, 80px);
+
     margin-bottom: 20px;
 }
 
+
 .venue-info {
+
     font-size: clamp(15px, 4vw, 21px);
+
     line-height: 1.7;
+
     max-width: 600px;
+
     margin-bottom: 30px;
 }
+
 
 /* =========================
    RECEPTION
 ========================= */
 
 .reception-section {
+
     background:
-        linear-gradient(
-            rgba(0,0,0,0.55),
-            rgba(0,0,0,0.75)
+        radial-gradient(
+            circle at center,
+            rgba(214,173,85,0.18),
+            transparent 45%
         ),
-        #171717;
+        linear-gradient(
+            135deg,
+            #291309,
+            #5b321c,
+            #30170d
+        );
 }
 
+
 .reception-title {
+
     font-family: var(--event-font);
+
+    color: var(--gold-light);
+
     font-size: clamp(48px, 12vw, 85px);
+
     margin-bottom: 25px;
 }
 
+
 .reception-info {
+
     font-size: clamp(15px, 4vw, 21px);
+
     line-height: 1.7;
+
     max-width: 600px;
+
     margin-bottom: 30px;
 }
+
 
 /* =========================
    MAP BUTTON
 ========================= */
 
 .map-btn {
+
     display: inline-flex;
+
     justify-content: center;
+
     align-items: center;
+
     min-width: 190px;
+
     min-height: 46px;
+
     padding: 10px 24px;
-    border: 1px solid rgba(255,255,255,0.75);
+
+    border: 1px solid var(--gold);
+
     border-radius: 30px;
-    color: #fff;
+
+    color: var(--gold-light);
+
     text-decoration: none;
+
     font-family: var(--main-font);
+
     font-size: 13px;
+
     letter-spacing: 2px;
-    background: rgba(255,255,255,0.07);
+
+    background:
+        rgba(214,173,85,0.08);
+
     transition: 0.3s;
+
     -webkit-tap-highlight-color: transparent;
 }
 
+
 .map-btn:hover {
-    background: rgba(255,255,255,0.18);
+
+    background:
+        rgba(214,173,85,0.20);
+
     transform: scale(1.04);
+
+    box-shadow:
+        0 0 20px rgba(214,173,85,0.15);
 }
 
+
 .map-btn:active {
+
     transform: scale(0.97);
 }
+
 
 /* =========================
    CLOSING
 ========================= */
 
 .closing-section {
+
     background:
-        linear-gradient(
-            rgba(0,0,0,0.62),
-            rgba(0,0,0,0.82)
+        radial-gradient(
+            circle at center,
+            rgba(214,173,85,0.20),
+            transparent 45%
         ),
-        #111;
+        linear-gradient(
+            135deg,
+            #241108,
+            #4a2615,
+            #2b160d
+        );
 }
 
+
 .closing-text {
+
     max-width: 650px;
+
     font-size: clamp(15px, 4vw, 21px);
+
     line-height: 1.8;
+
     margin-bottom: 35px;
 }
 
+
 .warm {
+
+    color: var(--gold);
+
     font-size: 14px;
+
     letter-spacing: 4px;
+
     margin-bottom: 15px;
 }
+
 
 .closing-names {
+
+    color: var(--gold-light);
+
     font-size: clamp(25px, 6vw, 40px);
+
     margin-bottom: 15px;
 }
 
+
 .closing-family {
+
     font-size: 15px;
-    opacity: 0.8;
+
+    opacity: 0.85;
 }
+
 
 /* =========================
    MOBILE
@@ -515,6 +978,16 @@ section {
 
     .opening {
         padding: 25px 18px;
+    }
+
+    .opening::before,
+    .invitation-section::before,
+    .save-date-section::before,
+    .wedding-section::before,
+    .venue-section::before,
+    .reception-section::before,
+    .closing-section::before {
+        inset: 12px;
     }
 
     .ganesh {
@@ -547,23 +1020,36 @@ section {
 
 }
 
+
+/* =========================
+   PREVENT HORIZONTAL SCROLL
+========================= */
+
 html,
 body {
+
     max-width: 100%;
+
     overflow-x: hidden;
+
 }
 
 </style>
+
 </head>
 
+
 <body>
+
 
 <!-- =========================
      MUSIC
 ========================= -->
 
 <audio id="weddingMusic" preload="auto" loop>
+
     <source src="music.mp3" type="audio/mpeg">
+
 </audio>
 
 
@@ -580,23 +1066,35 @@ body {
         </div>
 
         <div class="mantra">
+
             वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ।<br>
+
             निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा॥
+
         </div>
 
         <div class="invite">
+
             With the blessings of Shri Ganesh and our beloved families,<br>
+
             we joyfully invite you to celebrate the union of
+
         </div>
 
         <div class="names">
+
             Shashank
+
             <span>&amp;</span>
+
             Jyoti
+
         </div>
 
         <div class="subtitle">
+
             A beautiful beginning to a lifetime together
+
         </div>
 
         <button
@@ -604,7 +1102,9 @@ body {
             id="openInvitation"
             type="button"
         >
+
             OPEN INVITATION
+
         </button>
 
     </div>
@@ -620,20 +1120,33 @@ body {
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    const music = document.getElementById("weddingMusic");
-    const openButton = document.getElementById("openInvitation");
+    const music =
+        document.getElementById("weddingMusic");
+
+    const openButton =
+        document.getElementById("openInvitation");
+
 
     if (!music || !openButton) {
+
         return;
+
     }
+
 
     openButton.addEventListener("click", function () {
 
         music.volume = 0.8;
+
         music.currentTime = 0;
 
         music.play().catch(function (error) {
-            console.log("Music could not start:", error);
+
+            console.log(
+                "Music could not start:",
+                error
+            );
+
         });
 
         showInvitation();
@@ -649,13 +1162,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function showInvitation() {
 
-    if (document.querySelector(".invitation-section")) {
+    if (
+        document.querySelector(".invitation-section")
+    ) {
+
         return;
+
     }
 
-    const invitation = document.createElement("section");
 
-    invitation.className = "invitation-section";
+    const invitation =
+        document.createElement("section");
+
+
+    invitation.className =
+        "invitation-section";
+
 
     invitation.innerHTML = `
 
@@ -664,8 +1186,11 @@ function showInvitation() {
         </div>
 
         <div class="invitation-text">
+
             With the blessings of Shri Ganesh and our beloved families,<br>
+
             we joyfully invite you to celebrate the union of
+
         </div>
 
         <div class="couple-name">
@@ -683,31 +1208,40 @@ function showInvitation() {
         <div class="family">
 
             Shashank Kumar Maurya<br>
+
             Son of Mr. &amp; Mrs. Maurya
 
             <br><br>
 
             Jyoti<br>
+
             Daughter of Mr. &amp; Mrs.Maurya
 
         </div>
 
     `;
 
+
     document.body.appendChild(invitation);
+
 
     setTimeout(function () {
 
         invitation.scrollIntoView({
+
             behavior: "smooth",
+
             block: "start"
+
         });
 
     }, 200);
 
+
     setTimeout(function () {
 
         invitation.remove();
+
         showSaveDate();
 
     }, 6500);
@@ -721,13 +1255,22 @@ function showInvitation() {
 
 function showSaveDate() {
 
-    if (document.querySelector(".save-date-section")) {
+    if (
+        document.querySelector(".save-date-section")
+    ) {
+
         return;
+
     }
 
-    const saveDate = document.createElement("section");
 
-    saveDate.className = "save-date-section";
+    const saveDate =
+        document.createElement("section");
+
+
+    saveDate.className =
+        "save-date-section";
+
 
     saveDate.innerHTML = `
 
@@ -763,37 +1306,82 @@ function showSaveDate() {
 
     `;
 
+
     document.body.appendChild(saveDate);
+
 
     setTimeout(function () {
 
         saveDate.scrollIntoView({
+
             behavior: "smooth",
+
             block: "start"
+
         });
 
     }, 200);
 
-    const canvas = saveDate.querySelector(".scratch-canvas");
-    const box = saveDate.querySelector(".scratch-box");
-    const ctx = canvas.getContext("2d");
+
+    const canvas =
+        saveDate.querySelector(
+            ".scratch-canvas"
+        );
+
+
+    const box =
+        saveDate.querySelector(
+            ".scratch-box"
+        );
+
+
+    const ctx =
+        canvas.getContext("2d");
+
 
     function resizeCanvas() {
 
-        const rect = box.getBoundingClientRect();
-        const dpr = window.devicePixelRatio || 1;
+        const rect =
+            box.getBoundingClientRect();
 
-        canvas.width = rect.width * dpr;
-        canvas.height = rect.height * dpr;
 
-        canvas.style.width = rect.width + "px";
-        canvas.style.height = rect.height + "px";
+        const dpr =
+            window.devicePixelRatio || 1;
 
-        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-        ctx.globalCompositeOperation = "source-over";
+        canvas.width =
+            rect.width * dpr;
 
-        ctx.fillStyle = "#777";
+
+        canvas.height =
+            rect.height * dpr;
+
+
+        canvas.style.width =
+            rect.width + "px";
+
+
+        canvas.style.height =
+            rect.height + "px";
+
+
+        ctx.setTransform(
+            dpr,
+            0,
+            0,
+            dpr,
+            0,
+            0
+        );
+
+
+        ctx.globalCompositeOperation =
+            "source-over";
+
+
+        ctx.fillStyle =
+            "#8a6a43";
+
 
         ctx.fillRect(
             0,
@@ -802,9 +1390,18 @@ function showSaveDate() {
             rect.height
         );
 
-        ctx.fillStyle = "#fff";
-        ctx.font = "16px Arial";
-        ctx.textAlign = "center";
+
+        ctx.fillStyle =
+            "#fff3d2";
+
+
+        ctx.font =
+            "16px Arial";
+
+
+        ctx.textAlign =
+            "center";
+
 
         ctx.fillText(
             "SCRATCH HERE",
@@ -814,40 +1411,78 @@ function showSaveDate() {
 
     }
 
-    setTimeout(resizeCanvas, 100);
 
-    window.addEventListener("resize", resizeCanvas);
+    setTimeout(
+        resizeCanvas,
+        100
+    );
+
+
+    window.addEventListener(
+        "resize",
+        resizeCanvas
+    );
+
 
     let scratching = false;
+
     let completed = false;
+
     let scratchCount = 0;
+
 
     function scratch(e) {
 
         if (completed) {
+
             return;
+
         }
 
-        const rect = canvas.getBoundingClientRect();
+
+        const rect =
+            canvas.getBoundingClientRect();
+
 
         let x;
+
         let y;
 
-        if (e.touches && e.touches.length) {
 
-            x = e.touches[0].clientX - rect.left;
-            y = e.touches[0].clientY - rect.top;
+        if (
+            e.touches &&
+            e.touches.length
+        ) {
+
+            x =
+                e.touches[0].clientX -
+                rect.left;
+
+
+            y =
+                e.touches[0].clientY -
+                rect.top;
 
         } else {
 
-            x = e.clientX - rect.left;
-            y = e.clientY - rect.top;
+            x =
+                e.clientX -
+                rect.left;
+
+
+            y =
+                e.clientY -
+                rect.top;
 
         }
 
-        ctx.globalCompositeOperation = "destination-out";
+
+        ctx.globalCompositeOperation =
+            "destination-out";
+
 
         ctx.beginPath();
+
 
         ctx.arc(
             x,
@@ -857,25 +1492,43 @@ function showSaveDate() {
             Math.PI * 2
         );
 
+
         ctx.fill();
+
 
         scratchCount++;
 
-        if (scratchCount >= 70 && !completed) {
+
+        if (
+            scratchCount >= 70 &&
+            !completed
+        ) {
 
             completed = true;
 
-            canvas.style.transition = "opacity 0.7s ease";
-            canvas.style.opacity = "0";
+
+            canvas.style.transition =
+                "opacity 0.7s ease";
+
+
+            canvas.style.opacity =
+                "0";
+
 
             setTimeout(function () {
 
-                saveDate.style.transition = "opacity 0.8s ease";
-                saveDate.style.opacity = "0";
+                saveDate.style.transition =
+                    "opacity 0.8s ease";
+
+
+                saveDate.style.opacity =
+                    "0";
+
 
                 setTimeout(function () {
 
                     saveDate.remove();
+
                     showEvents();
 
                 }, 800);
@@ -886,45 +1539,86 @@ function showSaveDate() {
 
     }
 
-    canvas.addEventListener("mousedown", function () {
-        scratching = true;
-    });
 
-    canvas.addEventListener("mousemove", function (e) {
+    canvas.addEventListener(
+        "mousedown",
+        function () {
 
-        if (scratching) {
-            scratch(e);
+            scratching = true;
+
         }
+    );
 
-    });
 
-    window.addEventListener("mouseup", function () {
-        scratching = false;
-    });
+    canvas.addEventListener(
+        "mousemove",
+        function (e) {
 
-    canvas.addEventListener("touchstart", function (e) {
+            if (scratching) {
 
-        e.preventDefault();
+                scratch(e);
 
-        scratching = true;
+            }
 
-        scratch(e);
-
-    }, { passive: false });
-
-    canvas.addEventListener("touchmove", function (e) {
-
-        e.preventDefault();
-
-        if (scratching) {
-            scratch(e);
         }
+    );
 
-    }, { passive: false });
 
-    canvas.addEventListener("touchend", function () {
-        scratching = false;
-    });
+    window.addEventListener(
+        "mouseup",
+        function () {
+
+            scratching = false;
+
+        }
+    );
+
+
+    canvas.addEventListener(
+        "touchstart",
+        function (e) {
+
+            e.preventDefault();
+
+            scratching = true;
+
+            scratch(e);
+
+        },
+        {
+            passive: false
+        }
+    );
+
+
+    canvas.addEventListener(
+        "touchmove",
+        function (e) {
+
+            e.preventDefault();
+
+
+            if (scratching) {
+
+                scratch(e);
+
+            }
+
+        },
+        {
+            passive: false
+        }
+    );
+
+
+    canvas.addEventListener(
+        "touchend",
+        function () {
+
+            scratching = false;
+
+        }
+    );
 
 }
 
@@ -935,19 +1629,29 @@ function showSaveDate() {
 
 function showEvents() {
 
-    if (document.querySelector(".events-section")) {
+    if (
+        document.querySelector(".events-section")
+    ) {
+
         return;
+
     }
 
-    const events = document.createElement("section");
 
-    events.className = "events-section";
+    const events =
+        document.createElement("section");
+
+
+    events.className =
+        "events-section";
+
 
     events.innerHTML = `
 
         <div class="events-heading">
             Events
         </div>
+
 
         <div class="event-card">
 
@@ -960,11 +1664,15 @@ function showEvents() {
             </div>
 
             <div class="event-date">
+
                 20 NOVEMBER 2026<br>
+
                 10 AM TO 4 PM
+
             </div>
 
         </div>
+
 
         <div class="event-card">
 
@@ -977,11 +1685,15 @@ function showEvents() {
             </div>
 
             <div class="event-date">
+
                 20 NOVEMBER 2026<br>
+
                 04 PM TO 8 PM
+
             </div>
 
         </div>
+
 
         <div class="event-card">
 
@@ -994,27 +1706,38 @@ function showEvents() {
             </div>
 
             <div class="event-date">
+
                 20 NOVEMBER 2026<br>
+
                 FULL NIGHT
+
             </div>
 
         </div>
 
     `;
 
+
     document.body.appendChild(events);
+
 
     setTimeout(function () {
 
         events.scrollIntoView({
+
             behavior: "smooth",
+
             block: "start"
+
         });
 
     }, 200);
 
+
     setTimeout(function () {
+
         showWedding();
+
     }, 7500);
 
 }
@@ -1026,69 +1749,135 @@ function showEvents() {
 
 function showWedding() {
 
-    if (document.querySelector(".wedding-section")) {
+    if (
+        document.querySelector(".wedding-section")
+    ) {
+
         return;
+
     }
 
-    const wedding = document.createElement("section");
 
-    wedding.className = "wedding-section";
+    const wedding =
+        document.createElement("section");
+
+
+    wedding.className =
+        "wedding-section";
+
 
     wedding.innerHTML = `
 
         <div class="wedding-small">
+
             A LIFETIME OF TOGETHERNESS BEGINS WITH ONE SACRED STEP
+
         </div>
+
 
         <div class="wedding-title">
             The Wedding
         </div>
 
+
         <div class="wedding-date">
             21 NOVEMBER 2026
         </div>
 
+
         <div class="countdown">
 
             <div class="count-item">
-                <span class="count-number" id="days">00</span>
-                <span class="count-label">DAYS</span>
+
+                <span
+                    class="count-number"
+                    id="days"
+                >
+                    00
+                </span>
+
+                <span class="count-label">
+                    DAYS
+                </span>
+
             </div>
 
-            <div class="count-item">
-                <span class="count-number" id="hours">00</span>
-                <span class="count-label">HOURS</span>
-            </div>
 
             <div class="count-item">
-                <span class="count-number" id="mins">00</span>
-                <span class="count-label">MINS</span>
+
+                <span
+                    class="count-number"
+                    id="hours"
+                >
+                    00
+                </span>
+
+                <span class="count-label">
+                    HOURS
+                </span>
+
             </div>
 
+
             <div class="count-item">
-                <span class="count-number" id="secs">00</span>
-                <span class="count-label">SECS</span>
+
+                <span
+                    class="count-number"
+                    id="mins"
+                >
+                    00
+                </span>
+
+                <span class="count-label">
+                    MINS
+                </span>
+
+            </div>
+
+
+            <div class="count-item">
+
+                <span
+                    class="count-number"
+                    id="secs"
+                >
+                    00
+                </span>
+
+                <span class="count-label">
+                    SECS
+                </span>
+
             </div>
 
         </div>
 
     `;
 
+
     document.body.appendChild(wedding);
+
 
     setTimeout(function () {
 
         wedding.scrollIntoView({
+
             behavior: "smooth",
+
             block: "start"
+
         });
 
     }, 200);
 
+
     startCountdown();
 
+
     setTimeout(function () {
+
         showVenue();
+
     }, 7500);
 
 }
@@ -1101,34 +1890,78 @@ function showWedding() {
 function startCountdown() {
 
     const target =
-        new Date("November 21, 2026 00:00:00").getTime();
+        new Date(
+            "November 21, 2026 00:00:00"
+        ).getTime();
+
 
     function updateCountdown() {
 
-        const now = new Date().getTime();
+        const now =
+            new Date().getTime();
 
-        const distance = target - now;
+
+        const distance =
+            target - now;
+
+
+        const daysEl =
+            document.getElementById(
+                "days"
+            );
+
+
+        const hoursEl =
+            document.getElementById(
+                "hours"
+            );
+
+
+        const minsEl =
+            document.getElementById(
+                "mins"
+            );
+
+
+        const secsEl =
+            document.getElementById(
+                "secs"
+            );
+
+
+        if (
+            !daysEl ||
+            !hoursEl ||
+            !minsEl ||
+            !secsEl
+        ) {
+
+            return;
+
+        }
+
 
         if (distance <= 0) {
 
-            const days = document.getElementById("days");
-            const hours = document.getElementById("hours");
-            const mins = document.getElementById("mins");
-            const secs = document.getElementById("secs");
+            daysEl.textContent = "00";
 
-            if (days) days.textContent = "00";
-            if (hours) hours.textContent = "00";
-            if (mins) mins.textContent = "00";
-            if (secs) secs.textContent = "00";
+            hoursEl.textContent = "00";
+
+            minsEl.textContent = "00";
+
+            secsEl.textContent = "00";
 
             return;
+
         }
+
 
         const days =
             Math.floor(
                 distance /
                 (1000 * 60 * 60 * 24)
             );
+
 
         const hours =
             Math.floor(
@@ -1139,6 +1972,7 @@ function startCountdown() {
                 (1000 * 60 * 60)
             );
 
+
         const mins =
             Math.floor(
                 (
@@ -1147,6 +1981,7 @@ function startCountdown() {
                 ) /
                 (1000 * 60)
             );
+
 
         const secs =
             Math.floor(
@@ -1157,36 +1992,44 @@ function startCountdown() {
                 1000
             );
 
-        const daysEl = document.getElementById("days");
-        const hoursEl = document.getElementById("hours");
-        const minsEl = document.getElementById("mins");
-        const secsEl = document.getElementById("secs");
 
-        if (daysEl) {
-            daysEl.textContent =
-                String(days).padStart(2, "0");
-        }
+        daysEl.textContent =
+            String(days).padStart(
+                2,
+                "0"
+            );
 
-        if (hoursEl) {
-            hoursEl.textContent =
-                String(hours).padStart(2, "0");
-        }
 
-        if (minsEl) {
-            minsEl.textContent =
-                String(mins).padStart(2, "0");
-        }
+        hoursEl.textContent =
+            String(hours).padStart(
+                2,
+                "0"
+            );
 
-        if (secsEl) {
-            secsEl.textContent =
-                String(secs).padStart(2, "0");
-        }
+
+        minsEl.textContent =
+            String(mins).padStart(
+                2,
+                "0"
+            );
+
+
+        secsEl.textContent =
+            String(secs).padStart(
+                2,
+                "0"
+            );
 
     }
 
+
     updateCountdown();
 
-    setInterval(updateCountdown, 1000);
+
+    setInterval(
+        updateCountdown,
+        1000
+    );
 
 }
 
@@ -1197,13 +2040,22 @@ function startCountdown() {
 
 function showVenue() {
 
-    if (document.querySelector(".venue-section")) {
+    if (
+        document.querySelector(".venue-section")
+    ) {
+
         return;
+
     }
 
-    const venue = document.createElement("section");
 
-    venue.className = "venue-section";
+    const venue =
+        document.createElement("section");
+
+
+    venue.className =
+        "venue-section";
+
 
     venue.innerHTML = `
 
@@ -1211,19 +2063,26 @@ function showVenue() {
             WHERE
         </div>
 
+
         <div class="venue-title">
             The Venue
         </div>
 
+
         <div class="venue-info">
 
             Santosh Garden<br>
+
             Near Lakshmi Hardware,<br>
+
             Manoj Mobile Wali Gali,<br>
+
             Aman Vihar, Kirari,<br>
+
             Suleman Nagar, Delhi – 110086
 
         </div>
+
 
         <a
             class="map-btn"
@@ -1231,24 +2090,34 @@ function showVenue() {
             target="_blank"
             rel="noopener noreferrer"
         >
+
             VIEW LOCATION
+
         </a>
 
     `;
 
+
     document.body.appendChild(venue);
+
 
     setTimeout(function () {
 
         venue.scrollIntoView({
+
             behavior: "smooth",
+
             block: "start"
+
         });
 
     }, 200);
 
+
     setTimeout(function () {
+
         showReception();
+
     }, 7500);
 
 }
@@ -1260,19 +2129,31 @@ function showVenue() {
 
 function showReception() {
 
-    if (document.querySelector(".reception-section")) {
+    if (
+        document.querySelector(
+            ".reception-section"
+        )
+    ) {
+
         return;
+
     }
 
-    const reception = document.createElement("section");
 
-    reception.className = "reception-section";
+    const reception =
+        document.createElement("section");
+
+
+    reception.className =
+        "reception-section";
+
 
     reception.innerHTML = `
 
         <div class="reception-title">
             Reception
         </div>
+
 
         <div class="reception-info">
 
@@ -1283,10 +2164,13 @@ function showReception() {
             Community Hall at Shahbad Dairy<br><br>
 
             B, Murga Market Rd,<br>
+
             Sahibabad Dairy, Prahladpur,<br>
+
             Rohini, Delhi, 110042
 
         </div>
+
 
         <a
             class="map-btn"
@@ -1294,24 +2178,36 @@ function showReception() {
             target="_blank"
             rel="noopener noreferrer"
         >
+
             VIEW LOCATION
+
         </a>
 
     `;
 
-    document.body.appendChild(reception);
+
+    document.body.appendChild(
+        reception
+    );
+
 
     setTimeout(function () {
 
         reception.scrollIntoView({
+
             behavior: "smooth",
+
             block: "start"
+
         });
 
     }, 200);
 
+
     setTimeout(function () {
+
         showClosing();
+
     }, 6500);
 
 }
@@ -1323,13 +2219,24 @@ function showReception() {
 
 function showClosing() {
 
-    if (document.querySelector(".closing-section")) {
+    if (
+        document.querySelector(
+            ".closing-section"
+        )
+    ) {
+
         return;
+
     }
 
-    const closing = document.createElement("section");
 
-    closing.className = "closing-section";
+    const closing =
+        document.createElement("section");
+
+
+    closing.className =
+        "closing-section";
+
 
     closing.innerHTML = `
 
@@ -1343,27 +2250,41 @@ function showClosing() {
 
         </div>
 
+
         <div class="warm">
             WARM REGARDS,
         </div>
 
+
         <div class="closing-names">
+
             Shashank Kumar Maurya &amp; Jyoti
+
         </div>
 
+
         <div class="closing-family">
+
             Together with our families
+
         </div>
 
     `;
 
-    document.body.appendChild(closing);
+
+    document.body.appendChild(
+        closing
+    );
+
 
     setTimeout(function () {
 
         closing.scrollIntoView({
+
             behavior: "smooth",
+
             block: "start"
+
         });
 
     }, 200);
