@@ -1,65 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
 <title>Shashank & Jyoti | Wedding Invitation</title>
 
+
 <style>
 
-/* ==============================
+/* ==================================================
+   FONT SETTINGS
+================================================== */
+
+:root {
+
+    --main-font:
+        "Boring's",
+        "Boring",
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    --event-font:
+        "Brigovin",
+        "Brigovin Regular",
+        Georgia,
+        "Times New Roman",
+        serif;
+
+}
+
+
+/* ==================================================
    BASIC
-============================== */
+================================================== */
 
 * {
+
     margin: 0;
+
     padding: 0;
+
     box-sizing: border-box;
+
 }
+
 
 html,
 body {
+
     width: 100%;
+
     min-height: 100%;
+
 }
+
 
 body {
+
     background: #0b0806;
+
     color: #ffffff;
-    font-family: Georgia, "Times New Roman", serif;
+
+    font-family: var(--main-font);
+
 }
 
 
-/* ==============================
+/* ==================================================
    OPENING
-============================== */
+================================================== */
 
 .opening {
 
     position: relative;
 
     width: 100%;
+
     height: 100vh;
+
     height: 100dvh;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     text-align: center;
 
     overflow: hidden;
 
-    padding: 30px 20px;
+    padding:
+        20px;
 
     background:
+
         radial-gradient(
             circle at center,
             rgba(120, 80, 35, 0.25),
             rgba(0, 0, 0, 0.96) 75%
         ),
+
         linear-gradient(
             135deg,
             #21160d,
@@ -68,13 +115,15 @@ body {
         );
 
     opacity: 1;
+
     transform: scale(1);
+
 }
 
 
-/* ==============================
+/* ==================================================
    GLOW
-============================== */
+================================================== */
 
 .opening::before {
 
@@ -83,9 +132,11 @@ body {
     position: absolute;
 
     width: 80vw;
+
     height: 80vw;
 
     max-width: 700px;
+
     max-height: 700px;
 
     border-radius: 50%;
@@ -97,12 +148,13 @@ body {
 
     animation:
         glow 5s ease-in-out infinite alternate;
+
 }
 
 
-/* ==============================
+/* ==================================================
    OPENING CONTENT
-============================== */
+================================================== */
 
 .opening-content {
 
@@ -111,75 +163,75 @@ body {
     z-index: 2;
 
     width: 100%;
-    max-width: 720px;
+
+    max-width: 700px;
 
     margin: 0 auto;
 
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
+
     justify-content: center;
 
     text-align: center;
 
     animation:
         fadeUp 1.8s ease forwards;
+
 }
 
 
-/* ==============================
+/* ==================================================
    GANESH
-============================== */
+================================================== */
 
 .ganesh {
 
     font-family:
-        "Noto Serif Devanagari",
-        "Mangal",
-        Georgia,
-        serif;
+        var(--main-font);
 
     font-size:
-        clamp(16px, 2vw, 20px);
+        clamp(17px, 2.5vw, 21px);
 
     font-weight: 400;
 
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
 
-    line-height: 1.5;
+    line-height: 1.35;
 
-    margin-bottom: 18px;
+    margin-bottom: 12px;
 
     opacity: 0.95;
 
     width: 100%;
 
     text-align: center;
+
 }
 
 
-/* ==============================
+/* ==================================================
    MANTRA
-============================== */
+================================================== */
 
 .mantra {
 
     font-family:
-        "Noto Serif Devanagari",
-        "Mangal",
-        Georgia,
-        serif;
+        var(--main-font);
 
     font-size:
         clamp(13px, 1.8vw, 16px);
 
     font-weight: 400;
 
-    line-height: 1.9;
+    letter-spacing: 0;
 
-    letter-spacing: 0.2px;
+    line-height: 1.65;
 
-    margin-bottom: 32px;
+    margin-bottom: 22px;
 
     opacity: 0.85;
 
@@ -188,63 +240,62 @@ body {
     max-width: 650px;
 
     text-align: center;
+
 }
 
 
-/* ==============================
+/* ==================================================
    INVITE
-============================== */
+================================================== */
 
 .invite {
 
     font-family:
-        Arial,
-        sans-serif;
+        var(--main-font);
 
     font-size:
-        clamp(9px, 1.3vw, 11px);
+        clamp(10px, 1.5vw, 12px);
 
     font-weight: 400;
 
-    letter-spacing: 2.8px;
+    letter-spacing: 1.8px;
 
-    line-height: 1.8;
+    line-height: 1.55;
 
     text-transform: uppercase;
 
-    opacity: 0.7;
+    opacity: 0.72;
 
-    margin-bottom: 18px;
+    margin-bottom: 10px;
 
     width: 100%;
 
-    max-width: 600px;
+    max-width: 620px;
 
     text-align: center;
+
 }
 
 
-/* ==============================
-   NAMES
-============================== */
+/* ==================================================
+   COUPLE NAMES
+================================================== */
 
 .names {
 
     font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
+        var(--main-font);
 
     font-size:
-        clamp(42px, 8vw, 70px);
+        clamp(43px, 8vw, 72px);
 
     font-weight: 400;
 
     letter-spacing: 1px;
 
-    line-height: 1.05;
+    line-height: 1;
 
-    margin-bottom: 14px;
+    margin-bottom: 8px;
 
     width: 100%;
 
@@ -252,80 +303,81 @@ body {
 
     text-shadow:
         0 4px 25px rgba(0,0,0,0.8);
+
 }
 
 
-/* ==============================
+/* ==================================================
    AMPERSAND
-============================== */
+================================================== */
 
 .ampersand {
 
     display: inline-block;
 
     font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
+        var(--main-font);
 
     font-style: italic;
 
-    font-size: 0.52em;
+    font-size: 0.48em;
 
     margin:
-        0 10px;
+        0 8px;
 
     opacity: 0.8;
 
     vertical-align: middle;
+
 }
 
 
-/* ==============================
+/* ==================================================
    SUBTITLE
-============================== */
+================================================== */
 
 .subtitle {
 
     font-family:
-        Arial,
-        sans-serif;
+        var(--main-font);
 
     font-size: 10px;
 
     font-weight: 400;
 
-    letter-spacing: 4px;
+    letter-spacing: 3px;
 
-    line-height: 1.5;
+    line-height: 1.3;
 
     opacity: 0.65;
 
-    margin-bottom: 38px;
+    margin-bottom: 25px;
 
     width: 100%;
 
     text-align: center;
+
 }
 
 
-/* ==============================
+/* ==================================================
    OPEN BUTTON
-============================== */
+================================================== */
 
 .open-btn {
 
     display: inline-flex;
 
     align-items: center;
+
     justify-content: center;
 
-    min-width: 190px;
+    min-width: 180px;
 
-    height: 50px;
+    height: 46px;
 
     padding:
-        0 28px;
+        0 25px;
 
     border:
         1px solid rgba(255,255,255,0.5);
@@ -333,17 +385,16 @@ body {
     background:
         rgba(255,255,255,0.05);
 
-    color: white;
+    color: #ffffff;
 
     font-family:
-        Arial,
-        sans-serif;
+        var(--main-font);
 
     font-size: 10px;
 
     font-weight: 400;
 
-    letter-spacing: 3px;
+    letter-spacing: 2.5px;
 
     line-height: 1;
 
@@ -354,7 +405,9 @@ body {
 
     backdrop-filter:
         blur(5px);
+
 }
+
 
 .open-btn:hover {
 
@@ -362,28 +415,31 @@ body {
         rgba(255,255,255,0.15);
 
     border-color:
-        white;
+        #ffffff;
 
     transform:
         scale(1.04);
+
 }
+
 
 .open-btn:active {
 
     transform:
         scale(0.97);
+
 }
 
 
-/* ==============================
+/* ==================================================
    BOTTOM DATE
-============================== */
+================================================== */
 
 .bottom-line {
 
     position: absolute;
 
-    bottom: 24px;
+    bottom: 17px;
 
     left: 50%;
 
@@ -391,14 +447,13 @@ body {
         translateX(-50%);
 
     font-family:
-        Arial,
-        sans-serif;
+        var(--main-font);
 
-    font-size: 9px;
+    font-size: 8px;
 
-    letter-spacing: 3px;
+    letter-spacing: 2.5px;
 
-    line-height: 1.5;
+    line-height: 1.3;
 
     opacity: 0.35;
 
@@ -407,16 +462,18 @@ body {
     white-space: nowrap;
 
     text-align: center;
+
 }
 
 
-/* ==============================
-   INVITATION
-============================== */
+/* ==================================================
+   INVITATION SECTION
+================================================== */
 
 .invitation-section {
 
     min-height: 100vh;
+
     min-height: 100dvh;
 
     display: flex;
@@ -430,7 +487,7 @@ body {
     text-align: center;
 
     padding:
-        40px 25px;
+        25px 20px;
 
     background:
 
@@ -441,103 +498,120 @@ body {
         );
 
     animation:
-        invitationFade 2s ease forwards;
+        invitationFade 1.5s ease forwards;
+
 }
 
+
+/* ==================================================
+   INVITATION SMALL
+================================================== */
 
 .invitation-small {
 
     font-family:
-        Arial,
-        sans-serif;
+        var(--main-font);
 
     font-size: 12px;
 
-    letter-spacing: 1px;
+    letter-spacing: 0.7px;
 
-    line-height: 1.8;
+    line-height: 1.55;
 
-    opacity: 0.7;
+    opacity: 0.72;
 
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 
-    max-width: 650px;
+    max-width: 600px;
 
     text-align: center;
+
 }
 
+
+/* ==================================================
+   INVITATION TEXT
+================================================== */
 
 .invitation-text {
 
     font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
+        var(--main-font);
 
-    font-size: 18px;
+    font-size: 17px;
 
-    line-height: 1.7;
+    line-height: 1.5;
 
     opacity: 0.9;
 
-    margin-bottom: 42px;
+    margin-bottom: 25px;
 
-    max-width: 650px;
+    max-width: 600px;
 
     text-align: center;
+
 }
 
+
+/* ==================================================
+   COUPLE NAME
+================================================== */
 
 .couple-name {
 
     font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
+        var(--main-font);
 
     font-size:
-        clamp(48px, 10vw, 90px);
+        clamp(50px, 10vw, 90px);
 
-    letter-spacing: 3px;
+    letter-spacing: 2px;
 
-    line-height: 1.05;
+    line-height: 0.95;
 
-    font-weight: normal;
+    font-weight: 400;
 
     text-align: center;
 
     text-shadow:
         0 5px 30px rgba(0,0,0,0.8);
+
 }
 
+
+/* ==================================================
+   COUPLE &
+================================================== */
 
 .couple-and {
 
     font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
+        var(--main-font);
 
-    font-size: 30px;
+    font-size: 27px;
 
     font-style: italic;
 
+    line-height: 1;
+
     margin:
-        14px 0;
+        8px 0;
 
     opacity: 0.7;
 
     text-align: center;
+
 }
 
 
-/* ==============================
-   SAVE THE DATE
-============================== */
+/* ==================================================
+   SAVE DATE
+================================================== */
 
 .save-date {
 
     min-height: 100vh;
+
     min-height: 100dvh;
 
     display: flex;
@@ -551,7 +625,7 @@ body {
     text-align: center;
 
     padding:
-        30px 20px;
+        25px 20px;
 
     background:
 
@@ -562,54 +636,63 @@ body {
         );
 
     animation:
-        saveDateFade 1.8s ease forwards;
+        saveDateFade 1.5s ease forwards;
+
 }
 
+
+/* ==================================================
+   SAVE TITLE
+================================================== */
 
 .save-title {
 
     font-family:
-        Arial,
-        sans-serif;
+        var(--event-font);
 
-    font-size: 12px;
+    font-size:
+        clamp(22px, 5vw, 30px);
 
-    letter-spacing: 5px;
+    letter-spacing: 2px;
 
-    line-height: 1.5;
+    line-height: 1;
 
-    opacity: 0.65;
+    opacity: 0.9;
 
-    margin-bottom: 18px;
+    margin-bottom: 10px;
 
     text-align: center;
+
 }
 
+
+/* ==================================================
+   SAVE SUBTITLE
+================================================== */
 
 .save-subtitle {
 
     font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
+        var(--main-font);
 
-    font-size: 18px;
+    font-size: 15px;
 
-    line-height: 1.6;
+    line-height: 1.45;
 
-    opacity: 0.85;
+    opacity: 0.82;
 
-    margin-bottom: 35px;
+    margin-bottom: 22px;
 
-    max-width: 500px;
+    max-width: 420px;
 
     text-align: center;
+
 }
 
 
-/* ==============================
+/* ==================================================
    SCRATCH CARD
-============================== */
+================================================== */
 
 .scratch-container {
 
@@ -618,7 +701,7 @@ body {
     width:
         min(330px, 85vw);
 
-    height: 360px;
+    height: 350px;
 
     overflow: hidden;
 
@@ -628,6 +711,7 @@ body {
     border-radius: 4px;
 
     background:
+
         linear-gradient(
             145deg,
             #17110c,
@@ -637,12 +721,13 @@ body {
 
     box-shadow:
         0 20px 60px rgba(0,0,0,0.55);
+
 }
 
 
-/* ==============================
+/* ==================================================
    DATE REVEAL
-============================== */
+================================================== */
 
 .date-reveal {
 
@@ -661,66 +746,66 @@ body {
     z-index: 1;
 
     text-align: center;
+
 }
 
 
 .date-month {
 
     font-family:
-        Arial,
-        sans-serif;
+        var(--main-font);
 
     font-size: 18px;
 
-    letter-spacing: 7px;
+    letter-spacing: 6px;
 
-    margin-left: 7px;
+    margin-left: 6px;
 
-    line-height: 1.5;
+    line-height: 1.2;
 
     opacity: 0.8;
+
 }
 
 
 .date-day {
 
     font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
+        var(--main-font);
 
-    font-size: 100px;
+    font-size: 95px;
 
-    line-height: 1;
+    line-height: 0.9;
 
     margin:
-        12px 0;
+        10px 0;
 
-    font-weight: normal;
+    font-weight: 400;
+
 }
 
 
 .date-year {
 
     font-family:
-        Arial,
-        sans-serif;
+        var(--main-font);
 
-    font-size: 20px;
+    font-size: 19px;
 
-    letter-spacing: 6px;
+    letter-spacing: 5px;
 
-    margin-left: 6px;
+    margin-left: 5px;
 
-    line-height: 1.5;
+    line-height: 1.2;
 
     opacity: 0.75;
+
 }
 
 
-/* ==============================
+/* ==================================================
    SCRATCH CANVAS
-============================== */
+================================================== */
 
 #scratchCanvas {
 
@@ -729,6 +814,7 @@ body {
     inset: 0;
 
     width: 100%;
+
     height: 100%;
 
     z-index: 5;
@@ -736,18 +822,20 @@ body {
     cursor: crosshair;
 
     touch-action: none;
+
 }
 
 
-/* ==============================
+/* ==================================================
    SCRATCH HINT
-============================== */
+================================================== */
 
 .scratch-hint {
 
     position: absolute;
 
     left: 50%;
+
     top: 50%;
 
     transform:
@@ -758,26 +846,26 @@ body {
     pointer-events: none;
 
     font-family:
-        Arial,
-        sans-serif;
+        var(--main-font);
 
     font-size: 11px;
 
-    letter-spacing: 2px;
+    letter-spacing: 1.8px;
 
-    line-height: 1.5;
+    line-height: 1.3;
 
     opacity: 0.75;
 
     width: 90%;
 
     text-align: center;
+
 }
 
 
-/* ==============================
+/* ==================================================
    ANIMATIONS
-============================== */
+================================================== */
 
 @keyframes fadeUp {
 
@@ -786,7 +874,8 @@ body {
         opacity: 0;
 
         transform:
-            translateY(30px);
+            translateY(25px);
+
     }
 
     to {
@@ -795,7 +884,9 @@ body {
 
         transform:
             translateY(0);
+
     }
+
 }
 
 
@@ -807,6 +898,7 @@ body {
             scale(0.9);
 
         opacity: 0.5;
+
     }
 
     to {
@@ -815,7 +907,9 @@ body {
             scale(1.1);
 
         opacity: 1;
+
     }
+
 }
 
 
@@ -826,7 +920,8 @@ body {
         opacity: 0;
 
         transform:
-            scale(0.97);
+            scale(0.98);
+
     }
 
     to {
@@ -835,7 +930,9 @@ body {
 
         transform:
             scale(1);
+
     }
+
 }
 
 
@@ -846,7 +943,8 @@ body {
         opacity: 0;
 
         transform:
-            scale(0.97);
+            scale(0.98);
+
     }
 
     to {
@@ -855,26 +953,31 @@ body {
 
         transform:
             scale(1);
+
     }
+
 }
 
 
-/* ==============================
+/* ==================================================
    MOBILE
-============================== */
+================================================== */
 
 @media (max-width: 600px) {
+
 
     .opening {
 
         padding:
-            25px 20px;
+            20px 18px;
+
     }
 
 
     .opening-content {
 
-        max-width: 360px;
+        max-width: 350px;
+
     }
 
 
@@ -882,128 +985,131 @@ body {
 
         font-size: 16px;
 
-        letter-spacing: 0.5px;
+        line-height: 1.3;
 
-        line-height: 1.5;
+        margin-bottom: 10px;
 
-        margin-bottom: 16px;
     }
 
 
     .mantra {
 
-        font-size: 13px;
+        font-size: 12.5px;
 
-        line-height: 1.85;
+        line-height: 1.6;
 
-        letter-spacing: 0;
+        margin-bottom: 18px;
 
-        margin-bottom: 28px;
-
-        max-width: 340px;
     }
 
 
     .invite {
 
-        font-size: 9px;
+        font-size: 8.5px;
 
-        letter-spacing: 2px;
+        letter-spacing: 1.4px;
 
-        line-height: 1.75;
+        line-height: 1.5;
 
-        margin-bottom: 16px;
+        margin-bottom: 8px;
 
-        max-width: 330px;
     }
 
 
     .names {
 
-        font-size: 38px;
+        font-size: 37px;
 
         letter-spacing: 0.5px;
 
-        line-height: 1.05;
+        line-height: 0.95;
 
-        margin-bottom: 13px;
+        margin-bottom: 7px;
+
     }
 
 
     .ampersand {
 
-        font-size: 0.50em;
+        font-size: 0.48em;
 
         margin:
-            0 7px;
+            0 6px;
+
     }
 
 
     .subtitle {
 
-        font-size: 9px;
+        font-size: 8px;
 
-        letter-spacing: 3px;
+        letter-spacing: 2.5px;
 
-        line-height: 1.5;
+        line-height: 1.2;
 
-        margin-bottom: 32px;
+        margin-bottom: 22px;
+
     }
 
 
     .open-btn {
 
-        min-width: 180px;
+        min-width: 175px;
 
-        height: 48px;
+        height: 45px;
 
         padding:
-            0 22px;
+            0 20px;
 
-        font-size: 10px;
+        font-size: 9px;
 
-        letter-spacing: 2.5px;
+        letter-spacing: 2px;
+
     }
 
 
     .bottom-line {
 
-        bottom: 17px;
+        bottom: 15px;
 
-        font-size: 8px;
+        font-size: 7.5px;
 
         letter-spacing: 2px;
+
     }
 
 
     .invitation-section {
 
         padding:
-            25px 20px;
+            20px 18px;
+
     }
 
 
     .invitation-small {
 
-        font-size: 11px;
+        font-size: 10.5px;
 
-        line-height: 1.7;
+        line-height: 1.5;
 
-        max-width: 340px;
+        margin-bottom: 8px;
 
-        margin-bottom: 16px;
+        max-width: 330px;
+
     }
 
 
     .invitation-text {
 
-        font-size: 16px;
+        font-size: 15px;
 
-        line-height: 1.7;
+        line-height: 1.45;
 
-        margin-bottom: 34px;
+        margin-bottom: 20px;
 
-        max-width: 340px;
+        max-width: 330px;
+
     }
 
 
@@ -1011,55 +1117,61 @@ body {
 
         font-size: 50px;
 
-        letter-spacing: 2px;
+        letter-spacing: 1.5px;
 
-        line-height: 1.05;
+        line-height: 0.92;
+
     }
 
 
     .couple-and {
 
-        font-size: 25px;
+        font-size: 24px;
 
         margin:
-            11px 0;
+            7px 0;
+
     }
 
 
     .save-date {
 
         padding:
-            25px 20px;
+            20px 18px;
+
     }
 
 
     .save-title {
 
-        font-size: 11px;
+        font-size: 24px;
 
-        letter-spacing: 4px;
+        letter-spacing: 1.5px;
 
-        margin-bottom: 15px;
+        margin-bottom: 8px;
+
     }
 
 
     .save-subtitle {
 
-        font-size: 16px;
+        font-size: 14px;
 
-        line-height: 1.6;
+        line-height: 1.4;
 
-        max-width: 330px;
+        max-width: 310px;
 
-        margin-bottom: 30px;
+        margin-bottom: 20px;
+
     }
 
 
     .scratch-container {
 
-        width: 300px;
+        width: 295px;
 
-        height: 330px;
+        height: 325px;
+
     }
 
 
@@ -1067,35 +1179,40 @@ body {
 
         font-size: 16px;
 
-        letter-spacing: 6px;
+        letter-spacing: 5px;
+
     }
 
 
     .date-day {
 
-        font-size: 90px;
+        font-size: 88px;
 
         margin:
-            10px 0;
+            9px 0;
+
     }
 
 
     .date-year {
 
-        font-size: 18px;
+        font-size: 17px;
 
-        letter-spacing: 5px;
+        letter-spacing: 4px;
+
     }
 
 }
 
 
-/* ==============================
+/* ==================================================
    HIDE
-============================== */
+================================================== */
 
 .hidden {
+
     display: none !important;
+
 }
 
 </style>
@@ -1106,16 +1223,18 @@ body {
 <body>
 
 
-<!-- =========================================
+<!-- ==================================================
      OPENING
-========================================= -->
+================================================== -->
 
 <section
     class="opening"
     id="opening">
 
+
     <div
         class="opening-content">
+
 
         <div class="ganesh">
 
@@ -1146,7 +1265,9 @@ body {
             Shashank
 
             <span class="ampersand">
+
                 &
+
             </span>
 
             Jyoti
@@ -1169,6 +1290,7 @@ body {
 
         </button>
 
+
     </div>
 
 
@@ -1178,20 +1300,21 @@ body {
 
     </div>
 
+
 </section>
 
 
 
-<!-- =========================================
+<!-- ==================================================
      JAVASCRIPT
-========================================= -->
+================================================== -->
 
 <script>
 
 
-/* =========================================
+/* ==================================================
    OPEN INVITATION
-========================================= */
+================================================== */
 
 const openButton =
     document.getElementById(
@@ -1209,6 +1332,7 @@ openButton.addEventListener(
     "click",
     function() {
 
+
         opening.style.transition =
             "opacity 1.5s ease, transform 1.5s ease";
 
@@ -1224,6 +1348,7 @@ openButton.addEventListener(
         setTimeout(
             function() {
 
+
                 opening.style.display =
                     "none";
 
@@ -1234,20 +1359,23 @@ openButton.addEventListener(
 
                 showInvitation();
 
+
             },
             1500
         );
+
 
     }
 );
 
 
 
-/* =========================================
+/* ==================================================
    SHOW INVITATION
-========================================= */
+================================================== */
 
 function showInvitation() {
+
 
     const invitation =
         document.createElement(
@@ -1267,7 +1395,7 @@ function showInvitation() {
 
         <div class="invitation-small">
 
-            With the blessings of Shri Ganesh
+            With the blessings of Shri Ganesh<br>
             and our beloved families,
 
         </div>
@@ -1275,7 +1403,7 @@ function showInvitation() {
 
         <div class="invitation-text">
 
-            we joyfully invite you
+            we joyfully invite you<br>
             to celebrate the union of
 
         </div>
@@ -1312,6 +1440,7 @@ function showInvitation() {
     setTimeout(
         function() {
 
+
             invitation.style.transition =
                 "opacity 1.2s ease";
 
@@ -1323,13 +1452,17 @@ function showInvitation() {
             setTimeout(
                 function() {
 
+
                     invitation.remove();
 
+
                     showSaveDate();
+
 
                 },
                 1200
             );
+
 
         },
         4500
@@ -1339,11 +1472,12 @@ function showInvitation() {
 
 
 
-/* =========================================
+/* ==================================================
    SAVE THE DATE
-========================================= */
+================================================== */
 
 function showSaveDate() {
+
 
     const saveDate =
         document.createElement(
@@ -1377,7 +1511,9 @@ function showSaveDate() {
 
         <div class="scratch-container">
 
+
             <div class="date-reveal">
+
 
                 <div class="date-month">
 
@@ -1399,6 +1535,7 @@ function showSaveDate() {
 
                 </div>
 
+
             </div>
 
 
@@ -1412,6 +1549,7 @@ function showSaveDate() {
                 SCRATCH HERE
 
             </div>
+
 
         </div>
 
@@ -1429,11 +1567,12 @@ function showSaveDate() {
 
 
 
-/* =========================================
+/* ==================================================
    SCRATCH EFFECT
-========================================= */
+================================================== */
 
 function setupScratch() {
+
 
     const canvas =
         document.getElementById(
@@ -1491,7 +1630,9 @@ function setupScratch() {
     );
 
 
-    /* Scratch surface */
+    /* ------------------------------------------
+       SCRATCH SURFACE
+    ------------------------------------------ */
 
     const gradient =
         ctx.createLinearGradient(
@@ -1532,7 +1673,9 @@ function setupScratch() {
     );
 
 
-    /* Decorative text */
+    /* ------------------------------------------
+       DECORATIVE TEXT
+    ------------------------------------------ */
 
     ctx.fillStyle =
         "rgba(255,255,255,0.18)";
@@ -1580,13 +1723,19 @@ function setupScratch() {
         70;
 
 
+    /* ------------------------------------------
+       POSITION
+    ------------------------------------------ */
+
     function getPosition(event) {
+
 
         const bounds =
             canvas.getBoundingClientRect();
 
 
         let clientX;
+
         let clientY;
 
 
@@ -1595,19 +1744,25 @@ function setupScratch() {
             event.touches.length
         ) {
 
+
             clientX =
                 event.touches[0].clientX;
+
 
             clientY =
                 event.touches[0].clientY;
 
+
         } else {
+
 
             clientX =
                 event.clientX;
 
+
             clientY =
                 event.clientY;
+
 
         }
 
@@ -1627,10 +1782,17 @@ function setupScratch() {
     }
 
 
+    /* ------------------------------------------
+       SCRATCH
+    ------------------------------------------ */
+
     function scratch(event) {
 
+
         if (!scratching) {
+
             return;
+
         }
 
 
@@ -1668,6 +1830,7 @@ function setupScratch() {
             totalRequired
         ) {
 
+
             canvas.style.transition =
                 "opacity 0.8s ease";
 
@@ -1684,25 +1847,35 @@ function setupScratch() {
 
             if (hint) {
 
+
                 hint.style.opacity =
                     "0";
 
+
             }
 
+
         }
+
 
     }
 
 
-    /* Mouse */
+    /* ------------------------------------------
+       MOUSE
+    ------------------------------------------ */
 
     canvas.addEventListener(
         "mousedown",
         function(event) {
 
-            scratching = true;
+
+            scratching =
+                true;
+
 
             scratch(event);
+
 
         }
     );
@@ -1718,21 +1891,30 @@ function setupScratch() {
         "mouseup",
         function() {
 
-            scratching = false;
+
+            scratching =
+                false;
+
 
         }
     );
 
 
-    /* Touch */
+    /* ------------------------------------------
+       TOUCH
+    ------------------------------------------ */
 
     canvas.addEventListener(
         "touchstart",
         function(event) {
 
-            scratching = true;
+
+            scratching =
+                true;
+
 
             scratch(event);
+
 
         },
         {
@@ -1754,14 +1936,20 @@ function setupScratch() {
         "touchend",
         function() {
 
-            scratching = false;
+
+            scratching =
+                false;
+
 
         }
     );
+
 
 }
 
 </script>
 
+
 </body>
+
 </html>
