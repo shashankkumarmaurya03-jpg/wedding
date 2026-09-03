@@ -43,23 +43,19 @@
 * {
 
     margin: 0;
-
     padding: 0;
 
     box-sizing: border-box;
 
 }
 
-
 html,
 body {
 
     width: 100%;
-
     min-height: 100%;
 
 }
-
 
 body {
 
@@ -67,7 +63,8 @@ body {
 
     color: #ffffff;
 
-    font-family: var(--main-font);
+    font-family:
+        var(--main-font);
 
 }
 
@@ -83,21 +80,18 @@ body {
     width: 100%;
 
     height: 100vh;
-
     height: 100dvh;
 
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     text-align: center;
 
     overflow: hidden;
 
-    padding:
-        20px;
+    padding: 20px;
 
     background:
 
@@ -121,10 +115,6 @@ body {
 }
 
 
-/* ==================================================
-   GLOW
-================================================== */
-
 .opening::before {
 
     content: "";
@@ -132,11 +122,9 @@ body {
     position: absolute;
 
     width: 80vw;
-
     height: 80vw;
 
     max-width: 700px;
-
     max-height: 700px;
 
     border-radius: 50%;
@@ -151,10 +139,6 @@ body {
 
 }
 
-
-/* ==================================================
-   OPENING CONTENT
-================================================== */
 
 .opening-content {
 
@@ -278,7 +262,7 @@ body {
 
 
 /* ==================================================
-   COUPLE NAMES
+   NAMES
 ================================================== */
 
 .names {
@@ -306,10 +290,6 @@ body {
 
 }
 
-
-/* ==================================================
-   AMPERSAND
-================================================== */
 
 .ampersand {
 
@@ -369,7 +349,6 @@ body {
     display: inline-flex;
 
     align-items: center;
-
     justify-content: center;
 
     min-width: 180px;
@@ -467,13 +446,12 @@ body {
 
 
 /* ==================================================
-   INVITATION SECTION
+   INVITATION
 ================================================== */
 
 .invitation-section {
 
     min-height: 100vh;
-
     min-height: 100dvh;
 
     display: flex;
@@ -481,7 +459,6 @@ body {
     flex-direction: column;
 
     align-items: center;
-
     justify-content: center;
 
     text-align: center;
@@ -502,10 +479,6 @@ body {
 
 }
 
-
-/* ==================================================
-   INVITATION SMALL
-================================================== */
 
 .invitation-small {
 
@@ -529,10 +502,6 @@ body {
 }
 
 
-/* ==================================================
-   INVITATION TEXT
-================================================== */
-
 .invitation-text {
 
     font-family:
@@ -552,10 +521,6 @@ body {
 
 }
 
-
-/* ==================================================
-   COUPLE NAME
-================================================== */
 
 .couple-name {
 
@@ -579,10 +544,6 @@ body {
 }
 
 
-/* ==================================================
-   COUPLE &
-================================================== */
-
 .couple-and {
 
     font-family:
@@ -605,13 +566,12 @@ body {
 
 
 /* ==================================================
-   SAVE DATE
+   SAVE THE DATE
 ================================================== */
 
 .save-date {
 
     min-height: 100vh;
-
     min-height: 100dvh;
 
     display: flex;
@@ -619,7 +579,6 @@ body {
     flex-direction: column;
 
     align-items: center;
-
     justify-content: center;
 
     text-align: center;
@@ -641,10 +600,6 @@ body {
 }
 
 
-/* ==================================================
-   SAVE TITLE
-================================================== */
-
 .save-title {
 
     font-family:
@@ -665,10 +620,6 @@ body {
 
 }
 
-
-/* ==================================================
-   SAVE SUBTITLE
-================================================== */
 
 .save-subtitle {
 
@@ -725,10 +676,6 @@ body {
 }
 
 
-/* ==================================================
-   DATE REVEAL
-================================================== */
-
 .date-reveal {
 
     position: absolute;
@@ -740,7 +687,6 @@ body {
     flex-direction: column;
 
     align-items: center;
-
     justify-content: center;
 
     z-index: 1;
@@ -803,10 +749,6 @@ body {
 }
 
 
-/* ==================================================
-   SCRATCH CANVAS
-================================================== */
-
 #scratchCanvas {
 
     position: absolute;
@@ -814,7 +756,6 @@ body {
     inset: 0;
 
     width: 100%;
-
     height: 100%;
 
     z-index: 5;
@@ -826,16 +767,11 @@ body {
 }
 
 
-/* ==================================================
-   SCRATCH HINT
-================================================== */
-
 .scratch-hint {
 
     position: absolute;
 
     left: 50%;
-
     top: 50%;
 
     transform:
@@ -859,6 +795,301 @@ body {
     width: 90%;
 
     text-align: center;
+
+}
+
+
+/* ==================================================
+   EVENTS SECTION
+================================================== */
+
+.events-section {
+
+    min-height: 100vh;
+
+    width: 100%;
+
+    padding:
+        55px 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(120, 80, 35, 0.22),
+            #090705 72%
+        );
+
+    animation:
+        eventsFade 1.5s ease forwards;
+
+}
+
+
+/* ==================================================
+   EVENTS INTRO
+================================================== */
+
+.events-intro {
+
+    margin-bottom: 25px;
+
+    text-align: center;
+
+}
+
+
+.events-intro-small {
+
+    font-family:
+        var(--main-font);
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    line-height: 1.3;
+
+    opacity: 0.55;
+
+    margin-bottom: 7px;
+
+}
+
+
+.events-intro-title {
+
+    font-family:
+        var(--event-font);
+
+    font-size:
+        clamp(28px, 7vw, 44px);
+
+    font-weight: 400;
+
+    letter-spacing: 1px;
+
+    line-height: 1;
+
+    opacity: 0.95;
+
+}
+
+
+/* ==================================================
+   EVENT CARDS
+================================================== */
+
+.events-list {
+
+    width: 100%;
+
+    max-width: 700px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+}
+
+
+.event-card {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 190px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding:
+        25px 20px;
+
+    overflow: hidden;
+
+    border:
+        1px solid rgba(255,255,255,0.16);
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(70,45,25,0.35),
+            rgba(10,8,6,0.85)
+        );
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,0.35);
+
+    opacity: 0;
+
+    transform:
+        translateY(35px)
+        scale(0.97);
+
+    animation:
+        eventReveal 1s ease forwards;
+
+}
+
+
+.event-card:nth-child(1) {
+
+    animation-delay:
+        0.25s;
+
+}
+
+
+.event-card:nth-child(2) {
+
+    animation-delay:
+        0.55s;
+
+}
+
+
+.event-card:nth-child(3) {
+
+    animation-delay:
+        0.85s;
+
+}
+
+
+/* ==================================================
+   EVENT NUMBER
+================================================== */
+
+.event-number {
+
+    position: absolute;
+
+    top: 12px;
+
+    right: 16px;
+
+    font-family:
+        var(--main-font);
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.3;
+
+}
+
+
+/* ==================================================
+   EVENT NAME
+================================================== */
+
+.event-name {
+
+    font-family:
+        var(--event-font);
+
+    font-size:
+        clamp(35px, 9vw, 55px);
+
+    font-weight: 400;
+
+    letter-spacing: 1px;
+
+    line-height: 0.95;
+
+    margin-bottom: 10px;
+
+    text-align: center;
+
+}
+
+
+/* ==================================================
+   EVENT DATE
+================================================== */
+
+.event-date {
+
+    font-family:
+        var(--main-font);
+
+    font-size: 13px;
+
+    letter-spacing: 1.5px;
+
+    line-height: 1.4;
+
+    opacity: 0.85;
+
+    margin-bottom: 4px;
+
+    text-align: center;
+
+}
+
+
+/* ==================================================
+   EVENT TIME
+================================================== */
+
+.event-time {
+
+    font-family:
+        var(--main-font);
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    line-height: 1.4;
+
+    opacity: 0.6;
+
+    text-transform: uppercase;
+
+    text-align: center;
+
+}
+
+
+/* ==================================================
+   DECORATIVE LINE
+================================================== */
+
+.event-line {
+
+    width: 35px;
+
+    height: 1px;
+
+    background:
+        rgba(255,255,255,0.4);
+
+    margin:
+        0 auto 10px auto;
 
 }
 
@@ -952,6 +1183,54 @@ body {
         opacity: 1;
 
         transform:
+            scale(1);
+
+    }
+
+}
+
+
+@keyframes eventsFade {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(0.98);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1);
+
+    }
+
+}
+
+
+@keyframes eventReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(35px)
+            scale(0.97);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
             scale(1);
 
     }
@@ -1201,6 +1480,90 @@ body {
         letter-spacing: 4px;
 
     }
+
+
+    /* EVENTS MOBILE */
+
+    .events-section {
+
+        min-height: 100vh;
+
+        padding:
+            45px 16px;
+
+    }
+
+
+    .events-intro {
+
+        margin-bottom: 20px;
+
+    }
+
+
+    .events-intro-small {
+
+        font-size: 9px;
+
+        letter-spacing: 2.5px;
+
+        margin-bottom: 6px;
+
+    }
+
+
+    .events-intro-title {
+
+        font-size: 32px;
+
+    }
+
+
+    .events-list {
+
+        max-width: 350px;
+
+        gap: 12px;
+
+    }
+
+
+    .event-card {
+
+        min-height: 175px;
+
+        padding:
+            22px 16px;
+
+    }
+
+
+    .event-name {
+
+        font-size: 42px;
+
+        margin-bottom: 8px;
+
+    }
+
+
+    .event-date {
+
+        font-size: 12px;
+
+        letter-spacing: 1px;
+
+    }
+
+
+    .event-time {
+
+        font-size: 10px;
+
+        letter-spacing: 1.5px;
+
+    }
+
 
 }
 
@@ -1630,9 +1993,7 @@ function setupScratch() {
     );
 
 
-    /* ------------------------------------------
-       SCRATCH SURFACE
-    ------------------------------------------ */
+    /* SCRATCH SURFACE */
 
     const gradient =
         ctx.createLinearGradient(
@@ -1673,9 +2034,7 @@ function setupScratch() {
     );
 
 
-    /* ------------------------------------------
-       DECORATIVE TEXT
-    ------------------------------------------ */
+    /* DECORATIVE TEXT */
 
     ctx.fillStyle =
         "rgba(255,255,255,0.18)";
@@ -1722,10 +2081,6 @@ function setupScratch() {
     const totalRequired =
         70;
 
-
-    /* ------------------------------------------
-       POSITION
-    ------------------------------------------ */
 
     function getPosition(event) {
 
@@ -1781,10 +2136,6 @@ function setupScratch() {
 
     }
 
-
-    /* ------------------------------------------
-       SCRATCH
-    ------------------------------------------ */
 
     function scratch(event) {
 
@@ -1847,23 +2198,31 @@ function setupScratch() {
 
             if (hint) {
 
-
                 hint.style.opacity =
                     "0";
-
 
             }
 
 
-        }
+            /* ----------------------------------
+               SHOW EVENTS AFTER SCRATCH
+            ---------------------------------- */
 
+            setTimeout(
+                function() {
+
+                    showEvents();
+
+                },
+                1200
+            );
+
+        }
 
     }
 
 
-    /* ------------------------------------------
-       MOUSE
-    ------------------------------------------ */
+    /* MOUSE */
 
     canvas.addEventListener(
         "mousedown",
@@ -1900,9 +2259,7 @@ function setupScratch() {
     );
 
 
-    /* ------------------------------------------
-       TOUCH
-    ------------------------------------------ */
+    /* TOUCH */
 
     canvas.addEventListener(
         "touchstart",
@@ -1944,6 +2301,188 @@ function setupScratch() {
         }
     );
 
+}
+
+
+
+/* ==================================================
+   SHOW EVENTS
+================================================== */
+
+function showEvents() {
+
+
+    const events =
+        document.createElement(
+            "section"
+        );
+
+
+    events.className =
+        "events-section";
+
+
+    events.id =
+        "eventsSection";
+
+
+    events.innerHTML = `
+
+        <div class="events-intro">
+
+            <div class="events-intro-small">
+
+                JOIN US FOR
+
+            </div>
+
+
+            <div class="events-intro-title">
+
+                Our Wedding Celebrations
+
+            </div>
+
+        </div>
+
+
+        <div class="events-list">
+
+
+            <!-- HALDI -->
+
+            <div class="event-card">
+
+                <div class="event-number">
+
+                    01
+
+                </div>
+
+
+                <div class="event-name">
+
+                    Haldi
+
+                </div>
+
+
+                <div class="event-line"></div>
+
+
+                <div class="event-date">
+
+                    20 NOVEMBER 2026
+
+                </div>
+
+
+                <div class="event-time">
+
+                    10 AM TO 4 PM
+
+                </div>
+
+            </div>
+
+
+
+            <!-- MEHNDI -->
+
+            <div class="event-card">
+
+                <div class="event-number">
+
+                    02
+
+                </div>
+
+
+                <div class="event-name">
+
+                    Mehndi
+
+                </div>
+
+
+                <div class="event-line"></div>
+
+
+                <div class="event-date">
+
+                    20 NOVEMBER 2026
+
+                </div>
+
+
+                <div class="event-time">
+
+                    04 PM TO 8 PM
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SANGEET -->
+
+            <div class="event-card">
+
+                <div class="event-number">
+
+                    03
+
+                </div>
+
+
+                <div class="event-name">
+
+                    Sangeet
+
+                </div>
+
+
+                <div class="event-line"></div>
+
+
+                <div class="event-date">
+
+                    20 NOVEMBER 2026
+
+                </div>
+
+
+                <div class="event-time">
+
+                    FULL NIGHT
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    `;
+
+
+    document.body.appendChild(
+        events
+    );
+
+
+    setTimeout(
+        function() {
+
+            events.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        },
+        100
+    );
 
 }
 
