@@ -1,21 +1,219 @@
 <!DOCTYPE html>
 <html lang="hi">
-
 <head>
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shashank & Jyoti | Wedding Invitation</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            font-family: Georgia, "Times New Roman", serif;
+        }
+
+        body {
+            background: #0b0806;
+            color: #fff;
+        }
+
+        .opening {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            height: 100dvh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(100, 70, 35, 0.25),
+                    rgba(0, 0, 0, 0.95) 75%
+                ),
+                linear-gradient(
+                    135deg,
+                    #21160d,
+                    #080706 55%,
+                    #160e08
+                );
+        }
+
+        /* Cinematic light */
+        .opening::before {
+            content: "";
+            position: absolute;
+            width: 80vw;
+            height: 80vw;
+            max-width: 700px;
+            max-height: 700px;
+            border-radius: 50%;
+            background: rgba(180, 130, 70, 0.08);
+            filter: blur(80px);
+            animation: glow 5s ease-in-out infinite alternate;
+        }
+
+        .opening-content {
+            position: relative;
+            z-index: 2;
+            width: 90%;
+            max-width: 700px;
+            animation: fadeUp 1.8s ease forwards;
+        }
+
+        .ganesh {
+            font-size: 18px;
+            letter-spacing: 2px;
+            margin-bottom: 22px;
+            opacity: 0.95;
+        }
+
+        .mantra {
+            font-size: 15px;
+            line-height: 2;
+            letter-spacing: 0.5px;
+            margin-bottom: 35px;
+            opacity: 0.85;
+        }
+
+        .invite {
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            opacity: 0.7;
+            margin-bottom: 20px;
+        }
+
+        .names {
+            font-size: clamp(32px, 8vw, 68px);
+            font-weight: normal;
+            letter-spacing: 2px;
+            line-height: 1.15;
+            margin-bottom: 15px;
+            text-shadow: 0 4px 25px rgba(0,0,0,0.8);
+        }
+
+        .ampersand {
+            font-style: italic;
+            font-size: 0.55em;
+            margin: 0 8px;
+            opacity: 0.8;
+        }
+
+        .subtitle {
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            letter-spacing: 4px;
+            opacity: 0.65;
+            margin-bottom: 45px;
+        }
+
+        .open-btn {
+            border: 1px solid rgba(255,255,255,0.5);
+            background: rgba(255,255,255,0.05);
+            color: white;
+            padding: 15px 32px;
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .open-btn:hover {
+            background: rgba(255,255,255,0.15);
+            border-color: white;
+            transform: scale(1.04);
+        }
+
+        .bottom-line {
+            position: absolute;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: Arial, sans-serif;
+            font-size: 9px;
+            letter-spacing: 3px;
+            opacity: 0.35;
+            z-index: 2;
+            white-space: nowrap;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes glow {
+            from {
+                transform: scale(0.9);
+                opacity: 0.5;
+            }
+            to {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>Shashank Kumar Maurya & Jyoti</h1>
+    <section class="opening">
 
-    <p>Wedding Invitation</p>
+        <div class="opening-content">
+
+            <div class="ganesh">
+                ॥ श्री गणेशाय नमः ॥
+            </div>
+
+            <div class="mantra">
+                वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ।<br>
+                निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा॥
+            </div>
+
+            <div class="invite">
+                With the blessings of Shri Ganesh and our beloved families
+            </div>
+
+            <div class="names">
+                Shashank Kumar Maurya
+                <span class="ampersand">&</span>
+                Jyoti
+            </div>
+
+            <div class="subtitle">
+                WEDDING INVITATION
+            </div>
+
+            <button class="open-btn">
+                OPEN INVITATION
+            </button>
+
+        </div>
+
+        <div class="bottom-line">
+            21 NOVEMBER 2026
+        </div>
+
+    </section>
 
 </body>
-
 </html>
