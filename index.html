@@ -14,31 +14,38 @@
 
         html, body {
             width: 100%;
-            height: 100%;
+            min-height: 100%;
             overflow: hidden;
-            font-family: Georgia, "Times New Roman", serif;
         }
 
         body {
             background: #0b0806;
             color: #fff;
+            font-family: Georgia, "Times New Roman", serif;
         }
+
+        /* =========================
+           OPENING SCREEN
+        ========================= */
 
         .opening {
             position: relative;
             width: 100%;
             height: 100vh;
             height: 100dvh;
+
             display: flex;
             align-items: center;
             justify-content: center;
+
             text-align: center;
             overflow: hidden;
+
             background:
                 radial-gradient(
                     circle at center,
-                    rgba(100, 70, 35, 0.25),
-                    rgba(0, 0, 0, 0.95) 75%
+                    rgba(120, 80, 35, 0.25),
+                    rgba(0, 0, 0, 0.96) 75%
                 ),
                 linear-gradient(
                     135deg,
@@ -46,137 +53,358 @@
                     #080706 55%,
                     #160e08
                 );
+
+            opacity: 1;
+            transform: scale(1);
         }
 
-        /* Cinematic light */
+        /* Cinematic glowing light */
+
         .opening::before {
             content: "";
+
             position: absolute;
+
             width: 80vw;
             height: 80vw;
+
             max-width: 700px;
             max-height: 700px;
+
             border-radius: 50%;
+
             background: rgba(180, 130, 70, 0.08);
+
             filter: blur(80px);
+
             animation: glow 5s ease-in-out infinite alternate;
         }
+
+        /* Opening Content */
 
         .opening-content {
             position: relative;
             z-index: 2;
+
             width: 90%;
-            max-width: 700px;
+            max-width: 750px;
+
             animation: fadeUp 1.8s ease forwards;
         }
 
+        /* Ganesh */
+
         .ganesh {
             font-size: 18px;
+
             letter-spacing: 2px;
+
             margin-bottom: 22px;
+
             opacity: 0.95;
         }
 
+        /* Mantra */
+
         .mantra {
             font-size: 15px;
+
             line-height: 2;
+
             letter-spacing: 0.5px;
+
             margin-bottom: 35px;
+
             opacity: 0.85;
         }
 
+        /* Invitation text */
+
         .invite {
             font-family: Arial, sans-serif;
+
             font-size: 11px;
+
             letter-spacing: 3px;
+
             text-transform: uppercase;
+
             opacity: 0.7;
+
             margin-bottom: 20px;
         }
 
+        /* Couple Names */
+
         .names {
             font-size: clamp(32px, 8vw, 68px);
+
             font-weight: normal;
+
             letter-spacing: 2px;
+
             line-height: 1.15;
+
             margin-bottom: 15px;
-            text-shadow: 0 4px 25px rgba(0,0,0,0.8);
+
+            text-shadow:
+                0 4px 25px rgba(0,0,0,0.8);
         }
 
         .ampersand {
             font-style: italic;
+
             font-size: 0.55em;
+
             margin: 0 8px;
+
             opacity: 0.8;
         }
 
+        /* Subtitle */
+
         .subtitle {
             font-family: Arial, sans-serif;
+
             font-size: 10px;
+
             letter-spacing: 4px;
+
             opacity: 0.65;
+
             margin-bottom: 45px;
         }
 
+        /* Open Button */
+
         .open-btn {
             border: 1px solid rgba(255,255,255,0.5);
+
             background: rgba(255,255,255,0.05);
+
             color: white;
+
             padding: 15px 32px;
+
             font-family: Arial, sans-serif;
+
             font-size: 11px;
+
             letter-spacing: 3px;
+
             cursor: pointer;
-            transition: all 0.4s ease;
+
+            transition:
+                all 0.4s ease;
+
             backdrop-filter: blur(5px);
         }
 
         .open-btn:hover {
             background: rgba(255,255,255,0.15);
+
             border-color: white;
+
             transform: scale(1.04);
         }
 
+        .open-btn:active {
+            transform: scale(0.97);
+        }
+
+        /* Bottom Date */
+
         .bottom-line {
             position: absolute;
+
             bottom: 25px;
+
             left: 50%;
+
             transform: translateX(-50%);
+
             font-family: Arial, sans-serif;
+
             font-size: 9px;
+
             letter-spacing: 3px;
+
             opacity: 0.35;
+
             z-index: 2;
+
             white-space: nowrap;
         }
 
+        /* =========================
+           WELCOME SCREEN
+        ========================= */
+
+        .welcome {
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 30px;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(120, 80, 35, 0.20),
+                    #0b0806 70%
+                );
+
+            animation: welcomeFade 1.5s ease forwards;
+        }
+
+        .welcome-box {
+            max-width: 700px;
+        }
+
+        .welcome h1 {
+            font-size: clamp(32px, 7vw, 60px);
+
+            font-weight: normal;
+
+            line-height: 1.2;
+        }
+
+        .welcome p {
+            margin-top: 20px;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 12px;
+
+            letter-spacing: 3px;
+
+            opacity: 0.65;
+        }
+
+        /* =========================
+           ANIMATIONS
+        ========================= */
+
         @keyframes fadeUp {
+
             from {
                 opacity: 0;
-                transform: translateY(30px);
+
+                transform:
+                    translateY(30px);
             }
+
             to {
                 opacity: 1;
-                transform: translateY(0);
+
+                transform:
+                    translateY(0);
             }
         }
 
         @keyframes glow {
+
             from {
                 transform: scale(0.9);
+
                 opacity: 0.5;
             }
+
             to {
                 transform: scale(1.1);
+
                 opacity: 1;
+            }
+        }
+
+        @keyframes welcomeFade {
+
+            from {
+                opacity: 0;
+
+                transform: scale(0.98);
+            }
+
+            to {
+                opacity: 1;
+
+                transform: scale(1);
+            }
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            .ganesh {
+                font-size: 16px;
+
+                margin-bottom: 16px;
+            }
+
+            .mantra {
+                font-size: 13px;
+
+                line-height: 1.8;
+
+                margin-bottom: 28px;
+            }
+
+            .invite {
+                font-size: 9px;
+
+                letter-spacing: 2px;
+            }
+
+            .names {
+                font-size: 34px;
+
+                letter-spacing: 1px;
+            }
+
+            .subtitle {
+                font-size: 9px;
+
+                letter-spacing: 3px;
+
+                margin-bottom: 35px;
+            }
+
+            .open-btn {
+                padding: 14px 25px;
+
+                font-size: 10px;
+
+                letter-spacing: 2px;
+            }
+
+            .bottom-line {
+                bottom: 18px;
+
+                font-size: 8px;
+
+                letter-spacing: 2px;
             }
         }
     </style>
 </head>
 
+
 <body>
 
-    <section class="opening">
+    <!-- =========================
+         OPENING
+    ========================= -->
+
+    <section class="opening" id="opening">
 
         <div class="opening-content">
 
@@ -203,7 +431,9 @@
                 WEDDING INVITATION
             </div>
 
-            <button class="open-btn">
+            <button
+                class="open-btn"
+                id="openInvitation">
                 OPEN INVITATION
             </button>
 
@@ -214,6 +444,83 @@
         </div>
 
     </section>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+        const openButton =
+            document.getElementById("openInvitation");
+
+        const opening =
+            document.getElementById("opening");
+
+
+        openButton.addEventListener(
+            "click",
+            function () {
+
+                /* Opening fade */
+
+                opening.style.transition =
+                    "opacity 1.5s ease, transform 1.5s ease";
+
+                opening.style.opacity = "0";
+
+                opening.style.transform =
+                    "scale(1.04)";
+
+
+                /* Show next screen */
+
+                setTimeout(function () {
+
+                    opening.style.display =
+                        "none";
+
+                    document.body.style.overflow =
+                        "auto";
+
+
+                    const welcome =
+                        document.createElement("section");
+
+
+                    welcome.className =
+                        "welcome";
+
+
+                    welcome.innerHTML = `
+
+                        <div class="welcome-box">
+
+                            <h1>
+                                Welcome to Our Wedding
+                            </h1>
+
+                            <p>
+                                SHASHANK KUMAR MAURYA & JYOTI
+                            </p>
+
+                        </div>
+
+                    `;
+
+
+                    document.body.appendChild(
+                        welcome
+                    );
+
+
+                }, 1500);
+
+            }
+        );
+
+    </script>
 
 </body>
 </html>
