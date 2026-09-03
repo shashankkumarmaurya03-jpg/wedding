@@ -1,254 +1,144 @@
 ```javascript
 document.addEventListener("DOMContentLoaded", function () {
 
+    const opening = document.getElementById("opening");
+    const mainContent = document.getElementById("mainContent");
+    const openButton = document.getElementById("openInvitation");
 
-    /* ==================================================
-       ELEMENTS
-    ================================================== */
-
-    const opening =
-        document.getElementById("opening");
-
-    const mainContent =
-        document.getElementById("mainContent");
-
-    const openButton =
-        document.getElementById("openInvitation");
-
-    const music =
-        document.getElementById("backgroundMusic");
-
-    const musicToggle =
-        document.getElementById("musicToggle");
+    const music = document.getElementById("backgroundMusic");
+    const musicToggle = document.getElementById("musicToggle");
 
 
-    /* ==================================================
-       MUSIC
-    ================================================== */
-
-    if (music) {
-
-        music.loop = true;
-
-        music.volume = 0.7;
-
-    }
-
-
-    /* ==================================================
+    /* ===============================
        OPEN INVITATION
-    ================================================== */
+    =============================== */
 
     if (openButton) {
 
-        openButton.addEventListener(
-            "click",
-            function () {
+        openButton.onclick = function () {
+
+            console.log("OPEN INVITATION clicked");
 
 
-                openButton.disabled = true;
+            /* MUSIC */
+
+            if (music) {
+
+                music.play().catch(function () {
+                    console.log("Music could not autoplay");
+                });
+
+            }
 
 
-                /* START MUSIC */
+            /* OPENING ANIMATION */
 
-                if (music) {
+            if (opening) {
 
-                    music.play()
-                        .then(function () {
+                opening.style.transition =
+                    "opacity 1.5s ease, transform 1.5s ease";
 
-                            if (musicToggle) {
+                opening.style.opacity = "0";
 
-                                musicToggle.innerHTML =
-                                    "♫";
+                opening.style.transform = "scale(1.05)";
 
-                            }
-
-                        })
-                        .catch(function (error) {
-
-                            console.log(
-                                "Music waiting for interaction:",
-                                error
-                            );
-
-                        });
-
-                }
+            }
 
 
-                /* CINEMATIC EXIT */
+            /* SHOW MAIN PAGE */
+
+            setTimeout(function () {
 
                 if (opening) {
 
-                    opening.classList.add(
-                        "opening-exit"
-                    );
-
-                    opening.style.transition =
-                        "opacity 1.8s ease, transform 1.8s ease";
-
-                    opening.style.opacity = "0";
-
-                    opening.style.transform =
-                        "scale(1.06)";
+                    opening.style.display = "none";
 
                 }
 
 
-                /* SHOW MAIN */
+                if (mainContent) {
 
-                setTimeout(
-                    function () {
+                    mainContent.style.visibility = "visible";
 
+                    mainContent.style.opacity = "1";
 
-                        if (opening) {
-
-                            opening.style.display =
-                                "none";
-
-                        }
+                }
 
 
-                        if (mainContent) {
+                /* PAGE TOP */
 
-                            mainContent.style.visibility =
-                                "visible";
-
-
-                            mainContent.style.transition =
-                                "opacity 1.8s ease";
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
 
 
-                            setTimeout(
-                                function () {
+            }, 1500);
 
-                                    mainContent.style.opacity =
-                                        "1";
-
-                                },
-                                100
-                            );
-
-                        }
-
-
-                    },
-                    1800
-                );
-
-            }
-        );
+        };
 
     }
 
 
 
-    /* ==================================================
+    /* ===============================
        MUSIC BUTTON
-    ================================================== */
+    =============================== */
 
-    if (musicToggle) {
+    if (musicToggle && music) {
 
-        musicToggle.addEventListener(
-            "click",
-            function () {
+        musicToggle.onclick = function () {
 
+            if (music.paused) {
 
-                if (!music) {
-                    return;
-                }
+                music.play();
 
+                musicToggle.innerHTML = "♫";
 
-                if (music.paused) {
+            } else {
 
+                music.pause();
 
-                    music.play()
-                        .then(function () {
-
-                            musicToggle.innerHTML =
-                                "♫";
-
-                        });
-
-
-                } else {
-
-
-                    music.pause();
-
-                    musicToggle.innerHTML =
-                        "🔇";
-
-                }
+                musicToggle.innerHTML = "🔇";
 
             }
-        );
+
+        };
 
     }
 
 
 
-    /* ==================================================
+    /* ===============================
        COUNTDOWN
-    ================================================== */
+    =============================== */
 
     const weddingDate =
-        new Date(
-            "November 21, 2026 00:00:00"
-        ).getTime();
+        new Date("November 21, 2026 00:00:00").getTime();
 
 
     function updateCountdown() {
 
-
         const now =
             new Date().getTime();
-
 
         const distance =
             weddingDate - now;
 
 
-        const days =
-            document.getElementById("days");
-
-        const hours =
-            document.getElementById("hours");
-
-        const minutes =
-            document.getElementById("minutes");
-
-        const seconds =
-            document.getElementById("seconds");
-
-
         if (distance <= 0) {
-
-            if (days)
-                days.innerText = "00";
-
-            if (hours)
-                hours.innerText = "00";
-
-            if (minutes)
-                minutes.innerText = "00";
-
-            if (seconds)
-                seconds.innerText = "00";
-
             return;
-
         }
 
 
-        const d =
+        const days =
             Math.floor(
                 distance /
                 (1000 * 60 * 60 * 24)
             );
 
 
-        const h =
+        const hours =
             Math.floor(
                 (distance %
                     (1000 * 60 * 60 * 24)) /
@@ -256,7 +146,7 @@ document.addEventListener("DOMContentLoaded", function () {
             );
 
 
-        const m =
+        const minutes =
             Math.floor(
                 (distance %
                     (1000 * 60 * 60)) /
@@ -264,7 +154,7 @@ document.addEventListener("DOMContentLoaded", function () {
             );
 
 
-        const s =
+        const seconds =
             Math.floor(
                 (distance %
                     (1000 * 60)) /
@@ -272,118 +162,85 @@ document.addEventListener("DOMContentLoaded", function () {
             );
 
 
-        if (days)
-            days.innerText =
-                String(d).padStart(2, "0");
+        const d = document.getElementById("days");
+        const h = document.getElementById("hours");
+        const m = document.getElementById("minutes");
+        const s = document.getElementById("seconds");
 
 
-        if (hours)
-            hours.innerText =
-                String(h).padStart(2, "0");
+        if (d)
+            d.innerText = String(days).padStart(2, "0");
 
+        if (h)
+            h.innerText = String(hours).padStart(2, "0");
 
-        if (minutes)
-            minutes.innerText =
-                String(m).padStart(2, "0");
+        if (m)
+            m.innerText = String(minutes).padStart(2, "0");
 
-
-        if (seconds)
-            seconds.innerText =
-                String(s).padStart(2, "0");
+        if (s)
+            s.innerText = String(seconds).padStart(2, "0");
 
     }
 
 
     updateCountdown();
 
-    setInterval(
-        updateCountdown,
-        1000
-    );
+    setInterval(updateCountdown, 1000);
 
 
 
-    /* ==================================================
+    /* ===============================
        SCROLL REVEAL
-    ================================================== */
+    =============================== */
 
-    const revealElements =
+    const reveals =
         document.querySelectorAll(".reveal");
 
 
-    if (revealElements.length > 0) {
+    const observer =
+        new IntersectionObserver(function (entries) {
 
+            entries.forEach(function (entry) {
 
-        const observer =
-            new IntersectionObserver(
-                function (entries) {
+                if (entry.isIntersecting) {
 
+                    entry.target.classList.add("active");
 
-                    entries.forEach(
-                        function (entry) {
-
-
-                            if (
-                                entry.isIntersecting
-                            ) {
-
-
-                                entry.target.classList.add(
-                                    "active"
-                                );
-
-
-                                observer.unobserve(
-                                    entry.target
-                                );
-
-                            }
-
-                        }
-                    );
-
-                },
-                {
-                    threshold: 0.15
                 }
-            );
+
+            });
+
+        }, {
+            threshold: 0.15
+        });
 
 
-        revealElements.forEach(
-            function (element) {
+    reveals.forEach(function (element) {
 
-                observer.observe(element);
+        observer.observe(element);
 
-            }
-        );
-
-    }
+    });
 
 
 
-    /* ==================================================
+    /* ===============================
        SCRATCH CARD
-    ================================================== */
+    =============================== */
 
     const canvas =
-        document.getElementById(
-            "scratchCanvas"
-        );
+        document.getElementById("scratchCanvas");
 
 
     if (canvas) {
-
 
         const ctx =
             canvas.getContext("2d");
 
 
-        function setupScratch() {
-
+        function resizeCanvas() {
 
             const rect =
                 canvas.getBoundingClientRect();
-
 
             const ratio =
                 window.devicePixelRatio || 1;
@@ -392,18 +249,23 @@ document.addEventListener("DOMContentLoaded", function () {
             canvas.width =
                 rect.width * ratio;
 
-
             canvas.height =
                 rect.height * ratio;
 
 
-            ctx.scale(
+            ctx.setTransform(
                 ratio,
-                ratio
+                0,
+                0,
+                ratio,
+                0,
+                0
             );
 
 
-            /* SCRATCH COVER */
+            ctx.globalCompositeOperation =
+                "source-over";
+
 
             ctx.fillStyle =
                 "#b28a5c";
@@ -416,8 +278,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 rect.height
             );
 
-
-            /* COVER TEXT */
 
             ctx.fillStyle =
                 "#fffaf2";
@@ -448,77 +308,62 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        setupScratch();
+        resizeCanvas();
 
 
         window.addEventListener(
             "resize",
-            setupScratch
+            resizeCanvas
         );
 
 
         let scratching = false;
 
 
-        function scratch(x, y) {
-
-
-            ctx.beginPath();
-
-
-            ctx.arc(
-                x,
-                y,
-                24,
-                0,
-                Math.PI * 2
-            );
-
-
-            ctx.fill();
-
-        }
-
-
-        function getPosition(event) {
-
+        function scratch(event) {
 
             const rect =
                 canvas.getBoundingClientRect();
 
 
-            if (
-                event.touches &&
-                event.touches.length
-            ) {
+            let x;
+            let y;
 
 
-                return {
+            if (event.touches) {
 
-                    x:
-                        event.touches[0].clientX -
-                        rect.left,
+                x =
+                    event.touches[0].clientX -
+                    rect.left;
 
-                    y:
-                        event.touches[0].clientY -
-                        rect.top
+                y =
+                    event.touches[0].clientY -
+                    rect.top;
 
-                };
+            } else {
+
+                x =
+                    event.clientX -
+                    rect.left;
+
+                y =
+                    event.clientY -
+                    rect.top;
 
             }
 
 
-            return {
+            ctx.beginPath();
 
-                x:
-                    event.clientX -
-                    rect.left,
+            ctx.arc(
+                x,
+                y,
+                25,
+                0,
+                Math.PI * 2
+            );
 
-                y:
-                    event.clientY -
-                    rect.top
-
-            };
+            ctx.fill();
 
         }
 
@@ -529,13 +374,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 scratching = true;
 
-                const pos =
-                    getPosition(event);
-
-                scratch(
-                    pos.x,
-                    pos.y
-                );
+                scratch(event);
 
             }
         );
@@ -545,17 +384,11 @@ document.addEventListener("DOMContentLoaded", function () {
             "mousemove",
             function (event) {
 
-                if (!scratching) {
-                    return;
+                if (scratching) {
+
+                    scratch(event);
+
                 }
-
-                const pos =
-                    getPosition(event);
-
-                scratch(
-                    pos.x,
-                    pos.y
-                );
 
             }
         );
@@ -579,13 +412,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 scratching = true;
 
-                const pos =
-                    getPosition(event);
-
-                scratch(
-                    pos.x,
-                    pos.y
-                );
+                scratch(event);
 
             },
             {
@@ -600,17 +427,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 event.preventDefault();
 
-                if (!scratching) {
-                    return;
+                if (scratching) {
+
+                    scratch(event);
+
                 }
-
-                const pos =
-                    getPosition(event);
-
-                scratch(
-                    pos.x,
-                    pos.y
-                );
 
             },
             {
@@ -629,7 +450,6 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
     }
-
 
 });
 ```
