@@ -1,477 +1,794 @@
+```html
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <meta name="theme-color"
-          content="#f8f1e7">
-
     <title>Shashank & Jyoti | Wedding Invitation</title>
 
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
-    <!-- ==========================================
-         BACKGROUND MUSIC
-    ========================================== -->
 
-    <audio id="backgroundMusic"
-           loop
-           preload="auto">
-        <source src="music.mp3" type="audio/mpeg">
-    </audio>
+<!-- ==================================================
+     BACKGROUND MUSIC
+================================================== -->
 
-
-    <!-- ==========================================
-         MUSIC BUTTON
-    ========================================== -->
-
-    <button id="musicToggle"
-            class="music-toggle"
-            type="button"
-            aria-label="Music">
-
-        🎵
-
-    </button>
+<audio id="backgroundMusic"
+       src="music.mp3"
+       loop
+       preload="auto">
+</audio>
 
 
-    <!-- ==========================================
-         OPENING SCREEN
-    ========================================== -->
+<!-- ==================================================
+     MUSIC BUTTON
+================================================== -->
 
-    <section class="opening" id="opening">
+<button id="musicToggle"
+        class="music-toggle"
+        aria-label="Music">
 
-        <div class="opening-decoration decoration-one"></div>
-        <div class="opening-decoration decoration-two"></div>
+    ♫
 
-        <div class="opening-content">
-
-            <!-- GANESH -->
-
-            <div class="ganesh">
-
-                <div class="ganesh-symbol">
-                    ॐ
-                </div>
-
-                <h3>
-                    ॥ श्री गणेशाय नमः ॥
-                </h3>
-
-                <p class="mantra">
-                    वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ।<br>
-                    निर्विघ्नं कुरु मे देव<br>
-                    सर्वकार्येषु सर्वदा॥
-                </p>
-
-            </div>
+</button>
 
 
-            <!-- INVITATION TEXT -->
 
-            <div class="invitation-text">
+<!-- ==================================================
+     CINEMATIC OPENING
+================================================== -->
 
-                <p>
-                    With the blessings of Shri Ganesh
-                    and our beloved families,
-                </p>
-
-                <p>
-                    we joyfully invite you to celebrate
-                    the union of
-                </p>
-
-            </div>
+<section class="cinematic-opening"
+         id="opening">
 
 
-            <!-- COUPLE -->
+    <!-- BACKGROUND IMAGE -->
 
-            <div class="couple-name">
-
-                <h1>
-                    Shashank Kumar Maurya
-                </h1>
-
-                <span>
-                    &
-                </span>
-
-                <h2>
-                    Jyoti
-                </h2>
-
-            </div>
+    <div class="cinematic-bg"></div>
 
 
-            <!-- SAVE DATE -->
+    <!-- DARK / LIGHT OVERLAY -->
 
-            <div class="save-date">
-
-                <p>
-                    SAVE THE DATE
-                </p>
-
-                <strong>
-                    21 NOVEMBER 2026
-                </strong>
-
-            </div>
+    <div class="cinematic-overlay"></div>
 
 
-            <!-- OPEN BUTTON -->
+    <!-- CINEMATIC GLOW -->
 
-            <button class="open-button"
-                    id="openInvitation"
-                    type="button">
+    <div class="cinematic-glow"></div>
 
-                OPEN INVITATION
 
-            </button>
+    <!-- FILM GRAIN -->
+
+    <div class="film-grain"></div>
+
+
+    <!-- CONTENT -->
+
+    <div class="cinematic-content">
+
+
+        <p class="cinematic-top-text">
+
+            A BEAUTIFUL BEGINNING
+
+        </p>
+
+
+        <div class="cinematic-line"></div>
+
+
+        <p class="ganesh-opening">
+
+            ॥ श्री गणेशाय नमः ॥
+
+        </p>
+
+
+        <p class="cinematic-mantra">
+
+            वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ।<br>
+
+            निर्विघ्नं कुरु मे देव
+            सर्वकार्येषु सर्वदा॥
+
+        </p>
+
+
+        <p class="cinematic-invite">
+
+            With the blessings of Shri Ganesh<br>
+
+            and our beloved families
+
+        </p>
+
+
+        <!-- COUPLE NAME -->
+
+        <div class="cinematic-names">
+
+            <h1>
+                Shashank Kumar Maurya
+            </h1>
+
+
+            <span>
+                &
+            </span>
+
+
+            <h2>
+                Jyoti
+            </h2>
 
         </div>
 
-    </section>
+
+        <p class="cinematic-date">
+
+            21 · NOVEMBER · 2026
+
+        </p>
+
+
+        <!-- OPEN BUTTON -->
+
+        <button id="openInvitation"
+                class="cinematic-button">
+
+            <span>
+                OPEN INVITATION
+            </span>
+
+            <i></i>
+
+        </button>
+
+
+    </div>
+
+
+    <!-- SCROLL INDICATOR -->
+
+    <div class="scroll-indicator">
+
+        <span></span>
+
+        <small>
+            SCROLL TO EXPLORE
+        </small>
+
+    </div>
+
+
+</section>
 
 
 
-    <!-- ==========================================
-         MAIN CONTENT
-    ========================================== -->
+<!-- ==================================================
+     MAIN CONTENT
+================================================== -->
 
-    <main id="mainContent">
+<main id="mainContent">
 
-        <!-- WELCOME -->
 
-        <section class="welcome-section">
 
-            <p class="small-heading">
-                TOGETHER WITH OUR FAMILIES
+<!-- ==================================================
+     GANESH
+================================================== -->
+
+<section class="section ganesh-section reveal">
+
+    <div class="section-inner">
+
+
+        <div class="ornament">
+            ✦
+        </div>
+
+
+        <h2 class="hindi-title">
+
+            ॥ श्री गणेशाय नमः ॥
+
+        </h2>
+
+
+        <p class="mantra">
+
+            वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ।<br>
+
+            निर्विघ्नं कुरु मे देव
+            सर्वकार्येषु सर्वदा॥
+
+        </p>
+
+
+        <div class="divider">
+            ❦
+        </div>
+
+
+        <p class="invitation-text">
+
+            With the blessings of Shri Ganesh
+            and our beloved families,
+
+            <br><br>
+
+            we joyfully invite you to celebrate
+            the union of
+
+        </p>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     COUPLE
+================================================== -->
+
+<section class="section couple-section reveal">
+
+    <div class="section-inner">
+
+
+        <p class="section-label">
+            TOGETHER FOREVER
+        </p>
+
+
+        <h1 class="couple-name">
+            Shashank Kumar Maurya
+        </h1>
+
+
+        <p>
+            Son of Mr. & Mrs. Maurya
+        </p>
+
+
+        <div class="big-and">
+            &
+        </div>
+
+
+        <h1 class="couple-name">
+            Jyoti
+        </h1>
+
+
+        <p>
+            Daughter of Mr. & Mrs. Maurya
+        </p>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     SCRATCH DATE
+================================================== -->
+
+<section class="section scratch-section reveal">
+
+
+    <div class="section-inner">
+
+
+        <p class="section-label">
+            SAVE THE DATE
+        </p>
+
+
+        <h2 class="section-title">
+            Scratch below to reveal
+            <br>
+            our wedding date
+        </h2>
+
+
+        <div class="scratch-wrapper">
+
+
+            <div class="date-reveal">
+
+
+                <div class="date-box">
+
+                    <span>
+                        MONTH
+                    </span>
+
+                    <strong>
+                        NOVEMBER
+                    </strong>
+
+                </div>
+
+
+                <div class="date-box">
+
+                    <span>
+                        DAY
+                    </span>
+
+                    <strong>
+                        21
+                    </strong>
+
+                </div>
+
+
+                <div class="date-box">
+
+                    <span>
+                        YEAR
+                    </span>
+
+                    <strong>
+                        2026
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+            <canvas id="scratchCanvas"></canvas>
+
+
+        </div>
+
+
+        <p class="scratch-hint">
+
+            Scratch to reveal ✦
+
+        </p>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     EVENTS
+================================================== -->
+
+<section class="section events-section">
+
+
+    <div class="section-inner">
+
+
+        <p class="section-label reveal">
+            CELEBRATIONS
+        </p>
+
+
+        <h2 class="section-title reveal">
+            Wedding Festivities
+        </h2>
+
+
+
+        <!-- HALDI -->
+
+        <div class="event-card reveal">
+
+            <div class="event-number">
+                01
+            </div>
+
+            <div class="event-icon">
+                ✿
+            </div>
+
+            <h2>
+                Haldi
+            </h2>
+
+            <p>
+                20 November 2026
             </p>
 
-            <h1>
-                Shashank
+            <strong>
+                10 AM to 4 PM
+            </strong>
+
+        </div>
+
+
+
+        <!-- MEHNDI -->
+
+        <div class="event-card reveal">
+
+            <div class="event-number">
+                02
+            </div>
+
+            <div class="event-icon">
+                ❀
+            </div>
+
+            <h2>
+                Mehndi
+            </h2>
+
+            <p>
+                20 November 2026
+            </p>
+
+            <strong>
+                04 PM to 8 PM
+            </strong>
+
+        </div>
+
+
+
+        <!-- SANGEET -->
+
+        <div class="event-card reveal">
+
+            <div class="event-number">
+                03
+            </div>
+
+            <div class="event-icon">
+                ♫
+            </div>
+
+            <h2>
+                Sangeet
+            </h2>
+
+            <p>
+                20 November 2026
+            </p>
+
+            <strong>
+                Full Night
+            </strong>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     WEDDING
+================================================== -->
+
+<section class="section wedding-section reveal">
+
+
+    <div class="section-inner">
+
+
+        <p class="wedding-quote">
+
+            A lifetime of togetherness begins
+            with one sacred step
+
+        </p>
+
+
+        <p class="section-label">
+            THE
+        </p>
+
+
+        <h1 class="wedding-title">
+            Wedding
+        </h1>
+
+
+        <div class="wedding-date-big">
+            21 November 2026
+        </div>
+
+
+
+        <!-- COUNTDOWN -->
+
+        <div class="countdown">
+
+
+            <div class="count-box">
+
+                <span id="days">
+                    00
+                </span>
+
+                <small>
+                    DAYS
+                </small>
+
+            </div>
+
+
+            <div class="count-box">
+
+                <span id="hours">
+                    00
+                </span>
+
+                <small>
+                    HOURS
+                </small>
+
+            </div>
+
+
+            <div class="count-box">
+
+                <span id="minutes">
+                    00
+                </span>
+
+                <small>
+                    MINS
+                </small>
+
+            </div>
+
+
+            <div class="count-box">
+
+                <span id="seconds">
+                    00
+                </span>
+
+                <small>
+                    SECS
+                </small>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     WEDDING VENUE
+================================================== -->
+
+<section class="section venue-section reveal">
+
+
+    <div class="section-inner">
+
+
+        <p class="section-label">
+            WHERE
+        </p>
+
+
+        <h1 class="venue-title">
+            The Venue
+        </h1>
+
+
+        <h2>
+            Santosh Garden
+        </h2>
+
+
+        <p class="address">
+
+            Near Lakshmi Hardware,<br>
+
+            Manoj Mobile Wali Gali,<br>
+
+            Aman Vihar, Kirari,<br>
+
+            Suleman Nagar,<br>
+
+            Delhi – 110086
+
+        </p>
+
+
+        <a
+            class="map-button"
+            href="https://www.google.com/maps/search/?api=1&query=Santosh+Garden+Aman+Vihar+Kirari+Delhi+110086"
+            target="_blank">
+
+            GET DIRECTIONS
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     RECEPTION
+================================================== -->
+
+<section class="section reception-section reveal">
+
+
+    <div class="section-inner">
+
+
+        <p class="section-label">
+            CELEBRATE WITH US
+        </p>
+
+
+        <h1 class="venue-title">
+            Reception
+        </h1>
+
+
+        <div class="reception-info">
+
+
+            <div>
 
                 <span>
-                    &
+                    DATE
                 </span>
-
-                Jyoti
-            </h1>
-
-            <p>
-                We invite you to celebrate
-                our beautiful beginning.
-            </p>
-
-        </section>
-
-
-        <!-- DATE -->
-
-        <section class="date-section">
-
-            <p class="small-heading">
-                SAVE THE DATE
-            </p>
-
-            <h2>
-                21
-            </h2>
-
-            <h3>
-                NOVEMBER 2026
-            </h3>
-
-            <p>
-                A new chapter begins...
-            </p>
-
-        </section>
-
-
-        <!-- EVENTS -->
-
-        <section class="events-section">
-
-            <p class="small-heading">
-                OUR CELEBRATIONS
-            </p>
-
-            <h2>
-                Wedding Events
-            </h2>
-
-
-            <div class="event-card">
-
-                <span class="event-number">
-                    01
-                </span>
-
-                <h3>
-                    HALDI
-                </h3>
-
-                <p class="event-date">
-                    20 NOVEMBER 2026
-                </p>
-
-                <p>
-                    10 AM TO 4 PM
-                </p>
-
-            </div>
-
-
-            <div class="event-card">
-
-                <span class="event-number">
-                    02
-                </span>
-
-                <h3>
-                    MEHNDI
-                </h3>
-
-                <p class="event-date">
-                    20 NOVEMBER 2026
-                </p>
-
-                <p>
-                    4 PM TO 8 PM
-                </p>
-
-            </div>
-
-
-            <div class="event-card">
-
-                <span class="event-number">
-                    03
-                </span>
-
-                <h3>
-                    SANGEET
-                </h3>
-
-                <p class="event-date">
-                    20 NOVEMBER 2026
-                </p>
-
-                <p>
-                    FULL NIGHT
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <!-- WEDDING -->
-
-        <section class="wedding-section">
-
-            <p class="small-heading">
-                A LIFETIME OF TOGETHERNESS
-            </p>
-
-            <h2>
-                Begins With One Sacred Step
-            </h2>
-
-            <div class="wedding-date">
-
-                <p>
-                    THE WEDDING
-                </p>
 
                 <strong>
-                    21 NOVEMBER 2026
+                    23 November 2026
                 </strong>
 
             </div>
 
 
-            <div class="countdown">
+            <div>
 
-                <div class="count-box">
+                <span>
+                    TIME
+                </span>
 
-                    <strong id="days">
-                        00
-                    </strong>
-
-                    <span>
-                        DAYS
-                    </span>
-
-                </div>
-
-
-                <div class="count-box">
-
-                    <strong id="hours">
-                        00
-                    </strong>
-
-                    <span>
-                        HOURS
-                    </span>
-
-                </div>
-
-
-                <div class="count-box">
-
-                    <strong id="minutes">
-                        00
-                    </strong>
-
-                    <span>
-                        MINS
-                    </span>
-
-                </div>
-
-
-                <div class="count-box">
-
-                    <strong id="seconds">
-                        00
-                    </strong>
-
-                    <span>
-                        SECS
-                    </span>
-
-                </div>
+                <strong>
+                    5 PM to 11 PM
+                </strong>
 
             </div>
 
-        </section>
+
+        </div>
 
 
-        <!-- VENUE -->
-
-        <section class="venue-section">
-
-            <p class="small-heading">
-                WHERE
-            </p>
-
-            <h2>
-                The Venue
-            </h2>
-
-            <h3>
-                Santosh Garden
-            </h3>
-
-            <p class="address">
-                Near Lakshmi Hardware,<br>
-                Manoj Mobile Wali Gali,<br>
-                Aman Vihar, Kirari,<br>
-                Suleman Nagar, Delhi – 110086
-            </p>
-
-            <a class="map-button"
-               href="https://www.google.com/maps/search/?api=1&query=Santosh+Garden+Near+Lakshmi+Hardware+Aman+Vihar+Kirari+Delhi+110086"
-               target="_blank"
-               rel="noopener">
-
-                VIEW ON GOOGLE MAP
-
-            </a>
-
-        </section>
+        <h2>
+            Community Hall at Shahbad Dairy
+        </h2>
 
 
-        <!-- RECEPTION -->
+        <p class="address">
 
-        <section class="reception-section">
+            Near B, Murga Market Rd,<br>
 
-            <p class="small-heading">
-                AND THE CELEBRATION CONTINUES
-            </p>
+            Sahibabad Dairy,<br>
 
-            <h2>
-                Reception
-            </h2>
+            Prahladpur, Rohini,<br>
 
-            <p>
-                23 NOVEMBER 2026
-            </p>
+            Delhi – 110042
 
-            <p>
-                5 PM TO 11 PM
-            </p>
-
-            <h3>
-                Community Hall at Shahbad Dairy
-            </h3>
-
-            <p class="address">
-                Near MCD Primary School Block B
-            </p>
-
-            <a class="map-button"
-               href="https://www.google.com/maps/search/?api=1&query=Community+Hall+Shahbad+Dairy+Near+MCD+Primary+School+Block+B+Delhi"
-               target="_blank"
-               rel="noopener">
-
-                VIEW ON GOOGLE MAP
-
-            </a>
-
-        </section>
+        </p>
 
 
-        <!-- CLOSING -->
+        <a
+            class="map-button"
+            href="https://www.google.com/maps/search/?api=1&query=Community+Hall+at+Shahbad+Dairy+Near+B+Murga+Market+Rd+Sahibabad+Dairy+Prahladpur+Rohini+Delhi+110042"
+            target="_blank">
 
-        <section class="closing-section">
+            GET DIRECTIONS
 
-            <p>
-                Your presence will make our special day
-                even more memorable.
-            </p>
-
-            <p>
-                Come, join us to dance, laugh,
-                and celebrate the beginning
-                of our beautiful journey together!
-            </p>
-
-            <span>
-                WARM REGARDS,
-            </span>
-
-            <h2>
-                Shashank Kumar Maurya
-                <br>
-                &
-                <br>
-                Jyoti
-            </h2>
-
-            <p>
-                Together with our families
-            </p>
-
-        </section>
-
-    </main>
+        </a>
 
 
-    <!-- JAVASCRIPT -->
+    </div>
 
-    <script src="script.js"></script>
+</section>
+
+
+
+<!-- ==================================================
+     FINAL
+================================================== -->
+
+<section class="section closing-section reveal">
+
+
+    <div class="section-inner">
+
+
+        <p>
+
+            Your presence will make our special day
+            even more memorable.
+
+        </p>
+
+
+        <p>
+
+            Come, join us to dance, laugh,
+            and celebrate the beginning
+            of our beautiful journey together!
+
+        </p>
+
+
+        <span>
+            WARM REGARDS
+        </span>
+
+
+        <h2>
+
+            Shashank Kumar Maurya
+
+            <br>
+
+            &
+
+            <br>
+
+            Jyoti
+
+        </h2>
+
+
+        <p>
+            Together with our families
+        </p>
+
+
+    </div>
+
+</section>
+
+
+
+</main>
+
+
+<script src="script.js"></script>
+
 
 </body>
 
 </html>
+```
