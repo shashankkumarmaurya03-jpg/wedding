@@ -1,43 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
-
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 <title>Shashank & Jyoti Wedding</title>
 
 <style>
 
-/* =========================
-   FONT
-========================= */
-
 :root {
-
-    --main-font:
-        "Boring's",
-        "Boring",
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    --event-font:
-        "Brigovin",
-        "Brigovin Regular",
-        Georgia,
-        "Times New Roman",
-        serif;
+    --main-font: "Boring's", "Boring", Georgia, "Times New Roman", serif;
+    --event-font: "Brigovin", "Brigovin Regular", Georgia, "Times New Roman", serif;
 }
-
-
-/* =========================
-   BASIC RESET
-========================= */
 
 * {
     box-sizing: border-box;
@@ -50,267 +24,152 @@ html {
 }
 
 body {
-
     width: 100%;
     min-height: 100vh;
-
     overflow-x: hidden;
-
     background: #000;
-
     color: #fff;
-
     font-family: var(--main-font);
-
     -webkit-font-smoothing: antialiased;
 }
 
+section {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
+    position: relative;
+    overflow: hidden;
+    animation: sectionFade 1.2s ease;
+}
+
+@keyframes sectionFade {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 /* =========================
    OPENING
 ========================= */
 
 .opening {
-
-    width: 100%;
-    min-height: 100vh;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    position: relative;
-
     background:
         linear-gradient(
             rgba(0,0,0,0.58),
-            rgba(0,0,0,0.70)
+            rgba(0,0,0,0.72)
         ),
         #151515;
-
-    text-align: center;
-
-    padding: 30px 20px;
-
     animation: openingZoom 8s ease-in-out infinite alternate;
 }
 
-
 @keyframes openingZoom {
-
     from {
         background-size: 100% 100%;
     }
-
     to {
         background-size: 108% 108%;
     }
 }
 
-
 .opening-content {
-
     width: 100%;
     max-width: 650px;
-
     display: flex;
     flex-direction: column;
     align-items: center;
-
     animation: fadeIn 2s ease forwards;
 }
 
-
 @keyframes fadeIn {
-
     from {
         opacity: 0;
         transform: translateY(25px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-
-/* =========================
-   GANESH
-========================= */
-
 .ganesh {
-
     font-size: clamp(18px, 4vw, 27px);
-
     line-height: 1.35;
-
     margin-bottom: 12px;
-
     letter-spacing: 1px;
 }
 
-
 .mantra {
-
     font-size: clamp(14px, 3.5vw, 20px);
-
     line-height: 1.65;
-
     margin-bottom: 22px;
-
     max-width: 600px;
 }
 
-
-/* =========================
-   INVITATION TEXT
-========================= */
-
 .invite {
-
     font-size: clamp(13px, 3.2vw, 18px);
-
     line-height: 1.55;
-
     margin-bottom: 10px;
-
     opacity: 0.95;
 }
 
-
 .names {
-
     font-size: clamp(36px, 10vw, 72px);
-
     line-height: 1;
-
     margin-bottom: 8px;
-
-    font-family: var(--main-font);
-
     letter-spacing: 2px;
 }
 
-
 .names span {
-
     display: block;
-
     font-size: clamp(18px, 5vw, 30px);
-
     margin: 5px 0;
 }
 
-
 .subtitle {
-
     font-size: clamp(13px, 3.5vw, 18px);
-
     margin-bottom: 25px;
-
     opacity: 0.9;
 }
 
-
-/* =========================
-   OPEN BUTTON
-========================= */
-
 .open-btn {
-
     width: min(230px, 80vw);
-
     height: 46px;
-
     border: 1px solid rgba(255,255,255,0.8);
-
     border-radius: 30px;
-
     background: rgba(255,255,255,0.08);
-
     color: #fff;
-
     font-family: var(--main-font);
-
     font-size: 14px;
-
     letter-spacing: 2px;
-
     cursor: pointer;
-
     transition: 0.3s;
-
     -webkit-tap-highlight-color: transparent;
 }
 
-
 .open-btn:hover {
-
     background: rgba(255,255,255,0.20);
-
     transform: scale(1.04);
 }
 
-
 .open-btn:active {
-
     transform: scale(0.97);
 }
-
-
-/* =========================
-   COMMON SECTION
-========================= */
-
-section:not(.opening) {
-
-    width: 100%;
-    min-height: 100vh;
-
-    display: flex;
-    flex-direction: column;
-
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-
-    padding: 60px 20px;
-
-    position: relative;
-
-    background:
-        linear-gradient(
-            rgba(0,0,0,0.48),
-            rgba(0,0,0,0.68)
-        ),
-        #151515;
-
-    animation: sectionFade 1.5s ease;
-}
-
-
-@keyframes sectionFade {
-
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 
 /* =========================
    INVITATION
 ========================= */
 
 .invitation-section {
-
     background:
         linear-gradient(
             rgba(0,0,0,0.55),
@@ -319,63 +178,41 @@ section:not(.opening) {
         #171717;
 }
 
-
 .invitation-small {
-
     font-size: clamp(13px, 3vw, 18px);
-
     margin-bottom: 10px;
-
     line-height: 1.5;
 }
 
-
 .invitation-text {
-
     font-size: clamp(15px, 3.5vw, 21px);
-
     line-height: 1.6;
-
     max-width: 650px;
-
     margin-bottom: 25px;
 }
 
-
 .couple-name {
-
     font-size: clamp(38px, 10vw, 70px);
-
     line-height: 1;
-
     margin: 0 0 5px;
 }
 
-
 .couple-and {
-
     font-size: 22px;
-
     margin: 8px 0;
 }
 
-
 .family {
-
     font-size: clamp(14px, 3.5vw, 20px);
-
     line-height: 1.7;
-
     margin-top: 20px;
 }
-
 
 /* =========================
    SAVE DATE
 ========================= */
 
 .save-date-section {
-
     background:
         linear-gradient(
             rgba(0,0,0,0.58),
@@ -384,170 +221,113 @@ section:not(.opening) {
         #111;
 }
 
-
 .save-title {
-
     font-size: clamp(30px, 8vw, 55px);
-
     margin-bottom: 15px;
 }
 
-
 .save-subtitle {
-
     font-size: clamp(14px, 3.5vw, 19px);
-
     margin-bottom: 35px;
 }
 
-
 .scratch-box {
-
     width: min(320px, 90vw);
-
     min-height: 170px;
-
     border: 1px solid rgba(255,255,255,0.45);
-
     border-radius: 15px;
-
     position: relative;
-
     overflow: hidden;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     background: rgba(255,255,255,0.05);
 }
 
-
 .date-reveal {
-
     position: absolute;
-
     width: 100%;
-
     text-align: center;
-
     z-index: 1;
 }
 
-
 .date-month {
-
     font-size: 22px;
-
     letter-spacing: 3px;
 }
 
-
 .date-day {
-
     font-size: 70px;
-
     line-height: 1;
 }
 
-
 .date-year {
-
     font-size: 20px;
-
     letter-spacing: 4px;
 }
 
-
 .scratch-canvas {
-
     position: absolute;
-
     inset: 0;
-
     width: 100%;
     height: 100%;
-
     z-index: 2;
-
     cursor: pointer;
-
     touch-action: none;
 }
-
 
 /* =========================
    EVENTS
 ========================= */
 
 .events-section {
-
     gap: 22px;
-
     justify-content: center;
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.55),
+            rgba(0,0,0,0.75)
+        ),
+        #151515;
 }
 
-
 .events-heading {
-
     font-family: var(--event-font);
-
     font-size: clamp(42px, 10vw, 75px);
-
     margin-bottom: 20px;
 }
 
-
 .event-card {
-
     width: min(500px, 92vw);
-
     padding: 28px 20px;
-
     border-top: 1px solid rgba(255,255,255,0.3);
-
     border-bottom: 1px solid rgba(255,255,255,0.3);
-
     background: rgba(0,0,0,0.18);
 }
 
-
 .event-number {
-
     font-size: 13px;
-
     letter-spacing: 3px;
-
     opacity: 0.7;
-
     margin-bottom: 8px;
 }
 
-
 .event-title {
-
     font-family: var(--event-font);
-
     font-size: clamp(38px, 9vw, 60px);
-
     margin-bottom: 10px;
 }
 
-
 .event-date {
-
     font-size: clamp(15px, 4vw, 21px);
-
     line-height: 1.6;
 }
-
 
 /* =========================
    WEDDING
 ========================= */
 
 .wedding-section {
-
     background:
         linear-gradient(
             rgba(0,0,0,0.55),
@@ -556,81 +336,56 @@ section:not(.opening) {
         #141414;
 }
 
-
 .wedding-small {
-
     font-size: 14px;
-
     letter-spacing: 2px;
-
     margin-bottom: 15px;
+    max-width: 650px;
+    line-height: 1.6;
 }
-
 
 .wedding-title {
-
     font-family: var(--event-font);
-
     font-size: clamp(48px, 12vw, 90px);
-
     margin-bottom: 15px;
 }
 
-
 .wedding-date {
-
     font-size: clamp(18px, 4vw, 25px);
-
     margin-bottom: 35px;
 }
-
 
 /* =========================
    COUNTDOWN
 ========================= */
 
 .countdown {
-
     display: flex;
-
     justify-content: center;
-
     gap: clamp(10px, 4vw, 25px);
-
     flex-wrap: wrap;
 }
 
-
 .count-item {
-
     min-width: 65px;
 }
 
-
 .count-number {
-
     font-size: clamp(27px, 7vw, 45px);
-
     display: block;
 }
 
-
 .count-label {
-
     font-size: 11px;
-
     letter-spacing: 2px;
-
     opacity: 0.7;
 }
-
 
 /* =========================
    VENUE
 ========================= */
 
 .venue-section {
-
     background:
         linear-gradient(
             rgba(0,0,0,0.55),
@@ -639,45 +394,30 @@ section:not(.opening) {
         #181818;
 }
 
-
 .venue-small {
-
     font-size: 14px;
-
     letter-spacing: 4px;
-
     margin-bottom: 15px;
 }
 
-
 .venue-title {
-
     font-family: var(--event-font);
-
     font-size: clamp(45px, 11vw, 80px);
-
     margin-bottom: 20px;
 }
 
-
 .venue-info {
-
     font-size: clamp(15px, 4vw, 21px);
-
     line-height: 1.7;
-
     max-width: 600px;
-
     margin-bottom: 30px;
 }
-
 
 /* =========================
    RECEPTION
 ========================= */
 
 .reception-section {
-
     background:
         linear-gradient(
             rgba(0,0,0,0.55),
@@ -686,90 +426,56 @@ section:not(.opening) {
         #171717;
 }
 
-
 .reception-title {
-
     font-family: var(--event-font);
-
     font-size: clamp(48px, 12vw, 85px);
-
     margin-bottom: 25px;
 }
 
-
 .reception-info {
-
     font-size: clamp(15px, 4vw, 21px);
-
     line-height: 1.7;
-
     max-width: 600px;
-
     margin-bottom: 30px;
 }
-
 
 /* =========================
    MAP BUTTON
 ========================= */
 
 .map-btn {
-
     display: inline-flex;
-
     justify-content: center;
     align-items: center;
-
     min-width: 190px;
-
     min-height: 46px;
-
     padding: 10px 24px;
-
     border: 1px solid rgba(255,255,255,0.75);
-
     border-radius: 30px;
-
     color: #fff;
-
     text-decoration: none;
-
     font-family: var(--main-font);
-
     font-size: 13px;
-
     letter-spacing: 2px;
-
     background: rgba(255,255,255,0.07);
-
     transition: 0.3s;
-
     -webkit-tap-highlight-color: transparent;
 }
 
-
 .map-btn:hover {
-
     background: rgba(255,255,255,0.18);
-
     transform: scale(1.04);
 }
 
-
 .map-btn:active {
-
     transform: scale(0.97);
 }
-
 
 /* =========================
    CLOSING
 ========================= */
 
 .closing-section {
-
-    text-align: center;
-
     background:
         linear-gradient(
             rgba(0,0,0,0.62),
@@ -778,44 +484,28 @@ section:not(.opening) {
         #111;
 }
 
-
 .closing-text {
-
     max-width: 650px;
-
     font-size: clamp(15px, 4vw, 21px);
-
     line-height: 1.8;
-
     margin-bottom: 35px;
 }
 
-
 .warm {
-
     font-size: 14px;
-
     letter-spacing: 4px;
-
     margin-bottom: 15px;
 }
-
 
 .closing-names {
-
     font-size: clamp(25px, 6vw, 40px);
-
     margin-bottom: 15px;
 }
 
-
 .closing-family {
-
     font-size: 15px;
-
     opacity: 0.8;
 }
-
 
 /* =========================
    MOBILE
@@ -824,82 +514,55 @@ section:not(.opening) {
 @media (max-width: 600px) {
 
     .opening {
-
         padding: 25px 18px;
     }
 
     .ganesh {
-
         margin-bottom: 10px;
     }
 
     .mantra {
-
         margin-bottom: 18px;
     }
 
     .invite {
-
         margin-bottom: 8px;
     }
 
     .names {
-
         margin-bottom: 7px;
     }
 
     .subtitle {
-
         margin-bottom: 22px;
     }
 
-    .open-btn {
-
-        height: 46px;
-    }
-
-    section:not(.opening) {
-
+    section {
         padding: 50px 18px;
     }
 
     .event-card {
-
         padding: 24px 15px;
     }
 
 }
 
-
-/* =========================
-   PREVENT HORIZONTAL SCROLL
-========================= */
-
 html,
 body {
-
     max-width: 100%;
-
     overflow-x: hidden;
 }
 
 </style>
-
 </head>
 
-
 <body>
-
 
 <!-- =========================
      MUSIC
 ========================= -->
 
-<audio
-    id="weddingMusic"
-    preload="auto"
-    loop
->
+<audio id="weddingMusic" preload="auto" loop>
     <source src="music.mp3" type="audio/mpeg">
 </audio>
 
@@ -917,35 +580,23 @@ body {
         </div>
 
         <div class="mantra">
-
             वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ।<br>
-
             निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा॥
-
         </div>
 
         <div class="invite">
-
             With the blessings of Shri Ganesh and our beloved families,<br>
-
             we joyfully invite you to celebrate the union of
-
         </div>
 
         <div class="names">
-
             Shashank
-
             <span>&amp;</span>
-
             Jyoti
-
         </div>
 
         <div class="subtitle">
-
             A beautiful beginning to a lifetime together
-
         </div>
 
         <button
@@ -953,9 +604,7 @@ body {
             id="openInvitation"
             type="button"
         >
-
             OPEN INVITATION
-
         </button>
 
     </div>
@@ -966,45 +615,26 @@ body {
 <script>
 
 /* =========================
-   MUSIC
+   MUSIC + OPEN
 ========================= */
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    const music =
-        document.getElementById("weddingMusic");
-
-    const openButton =
-        document.getElementById("openInvitation");
-
+    const music = document.getElementById("weddingMusic");
+    const openButton = document.getElementById("openInvitation");
 
     if (!music || !openButton) {
-
         return;
-
     }
-
 
     openButton.addEventListener("click", function () {
 
         music.volume = 0.8;
-
         music.currentTime = 0;
 
-        const playPromise = music.play();
-
-        if (playPromise !== undefined) {
-
-            playPromise.catch(function (error) {
-
-                console.log(
-                    "Music could not start:",
-                    error
-                );
-
-            });
-
-        }
+        music.play().catch(function (error) {
+            console.log("Music could not start:", error);
+        });
 
         showInvitation();
 
@@ -1019,12 +649,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function showInvitation() {
 
-    const invitation =
-        document.createElement("section");
+    if (document.querySelector(".invitation-section")) {
+        return;
+    }
 
-    invitation.className =
-        "invitation-section";
+    const invitation = document.createElement("section");
 
+    invitation.className = "invitation-section";
 
     invitation.innerHTML = `
 
@@ -1033,11 +664,8 @@ function showInvitation() {
         </div>
 
         <div class="invitation-text">
-
             With the blessings of Shri Ganesh and our beloved families,<br>
-
             we joyfully invite you to celebrate the union of
-
         </div>
 
         <div class="couple-name">
@@ -1066,9 +694,7 @@ function showInvitation() {
 
     `;
 
-
     document.body.appendChild(invitation);
-
 
     setTimeout(function () {
 
@@ -1079,11 +705,9 @@ function showInvitation() {
 
     }, 200);
 
-
     setTimeout(function () {
 
         invitation.remove();
-
         showSaveDate();
 
     }, 6500);
@@ -1092,17 +716,18 @@ function showInvitation() {
 
 
 /* =========================
-   SAVE THE DATE
+   SAVE DATE
 ========================= */
 
 function showSaveDate() {
 
-    const saveDate =
-        document.createElement("section");
+    if (document.querySelector(".save-date-section")) {
+        return;
+    }
 
-    saveDate.className =
-        "save-date-section";
+    const saveDate = document.createElement("section");
 
+    saveDate.className = "save-date-section";
 
     saveDate.innerHTML = `
 
@@ -1138,9 +763,7 @@ function showSaveDate() {
 
     `;
 
-
     document.body.appendChild(saveDate);
-
 
     setTimeout(function () {
 
@@ -1151,48 +774,26 @@ function showSaveDate() {
 
     }, 200);
 
-
-    const canvas =
-        saveDate.querySelector(".scratch-canvas");
-
-    const box =
-        saveDate.querySelector(".scratch-box");
-
-    const ctx =
-        canvas.getContext("2d");
-
+    const canvas = saveDate.querySelector(".scratch-canvas");
+    const box = saveDate.querySelector(".scratch-box");
+    const ctx = canvas.getContext("2d");
 
     function resizeCanvas() {
 
-        const rect =
-            box.getBoundingClientRect();
+        const rect = box.getBoundingClientRect();
+        const dpr = window.devicePixelRatio || 1;
 
-        const dpr =
-            window.devicePixelRatio || 1;
+        canvas.width = rect.width * dpr;
+        canvas.height = rect.height * dpr;
 
-        canvas.width =
-            rect.width * dpr;
+        canvas.style.width = rect.width + "px";
+        canvas.style.height = rect.height + "px";
 
-        canvas.height =
-            rect.height * dpr;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-        canvas.style.width =
-            rect.width + "px";
+        ctx.globalCompositeOperation = "source-over";
 
-        canvas.style.height =
-            rect.height + "px";
-
-        ctx.setTransform(
-            dpr,
-            0,
-            0,
-            dpr,
-            0,
-            0
-        );
-
-        ctx.fillStyle =
-            "#777";
+        ctx.fillStyle = "#777";
 
         ctx.fillRect(
             0,
@@ -1201,14 +802,9 @@ function showSaveDate() {
             rect.height
         );
 
-        ctx.fillStyle =
-            "#fff";
-
-        ctx.font =
-            "16px Arial";
-
-        ctx.textAlign =
-            "center";
+        ctx.fillStyle = "#fff";
+        ctx.font = "16px Arial";
+        ctx.textAlign = "center";
 
         ctx.fillText(
             "SCRATCH HERE",
@@ -1218,25 +814,13 @@ function showSaveDate() {
 
     }
 
+    setTimeout(resizeCanvas, 100);
 
-    setTimeout(
-        resizeCanvas,
-        100
-    );
-
-
-    window.addEventListener(
-        "resize",
-        resizeCanvas
-    );
-
+    window.addEventListener("resize", resizeCanvas);
 
     let scratching = false;
-
     let completed = false;
-
     let scratchCount = 0;
-
 
     function scratch(e) {
 
@@ -1244,41 +828,24 @@ function showSaveDate() {
             return;
         }
 
-
-        const rect =
-            canvas.getBoundingClientRect();
-
+        const rect = canvas.getBoundingClientRect();
 
         let x;
         let y;
 
-
         if (e.touches && e.touches.length) {
 
-            x =
-                e.touches[0].clientX -
-                rect.left;
-
-            y =
-                e.touches[0].clientY -
-                rect.top;
+            x = e.touches[0].clientX - rect.left;
+            y = e.touches[0].clientY - rect.top;
 
         } else {
 
-            x =
-                e.clientX -
-                rect.left;
-
-            y =
-                e.clientY -
-                rect.top;
+            x = e.clientX - rect.left;
+            y = e.clientY - rect.top;
 
         }
 
-
-        ctx.globalCompositeOperation =
-            "destination-out";
-
+        ctx.globalCompositeOperation = "destination-out";
 
         ctx.beginPath();
 
@@ -1292,38 +859,23 @@ function showSaveDate() {
 
         ctx.fill();
 
-
         scratchCount++;
 
-
-        if (
-            scratchCount >= 70 &&
-            !completed
-        ) {
+        if (scratchCount >= 70 && !completed) {
 
             completed = true;
 
-
-            canvas.style.transition =
-                "opacity 0.7s ease";
-
-            canvas.style.opacity =
-                "0";
-
+            canvas.style.transition = "opacity 0.7s ease";
+            canvas.style.opacity = "0";
 
             setTimeout(function () {
 
-                saveDate.style.transition =
-                    "opacity 0.8s ease";
-
-                saveDate.style.opacity =
-                    "0";
-
+                saveDate.style.transition = "opacity 0.8s ease";
+                saveDate.style.opacity = "0";
 
                 setTimeout(function () {
 
                     saveDate.remove();
-
                     showEvents();
 
                 }, 800);
@@ -1334,81 +886,45 @@ function showSaveDate() {
 
     }
 
+    canvas.addEventListener("mousedown", function () {
+        scratching = true;
+    });
 
-    canvas.addEventListener(
-        "mousedown",
-        function () {
+    canvas.addEventListener("mousemove", function (e) {
 
-            scratching = true;
-
-        }
-    );
-
-
-    canvas.addEventListener(
-        "mousemove",
-        function (e) {
-
-            if (scratching) {
-
-                scratch(e);
-
-            }
-
-        }
-    );
-
-
-    window.addEventListener(
-        "mouseup",
-        function () {
-
-            scratching = false;
-
-        }
-    );
-
-
-    canvas.addEventListener(
-        "touchstart",
-        function (e) {
-
-            e.preventDefault();
-
-            scratching = true;
-
+        if (scratching) {
             scratch(e);
-
-        },
-        { passive: false }
-    );
-
-
-    canvas.addEventListener(
-        "touchmove",
-        function (e) {
-
-            e.preventDefault();
-
-            if (scratching) {
-
-                scratch(e);
-
-            }
-
-        },
-        { passive: false }
-    );
-
-
-    canvas.addEventListener(
-        "touchend",
-        function () {
-
-            scratching = false;
-
         }
-    );
+
+    });
+
+    window.addEventListener("mouseup", function () {
+        scratching = false;
+    });
+
+    canvas.addEventListener("touchstart", function (e) {
+
+        e.preventDefault();
+
+        scratching = true;
+
+        scratch(e);
+
+    }, { passive: false });
+
+    canvas.addEventListener("touchmove", function (e) {
+
+        e.preventDefault();
+
+        if (scratching) {
+            scratch(e);
+        }
+
+    }, { passive: false });
+
+    canvas.addEventListener("touchend", function () {
+        scratching = false;
+    });
 
 }
 
@@ -1419,28 +935,19 @@ function showSaveDate() {
 
 function showEvents() {
 
-    if (
-        document.querySelector(".events-section")
-    ) {
-
+    if (document.querySelector(".events-section")) {
         return;
-
     }
 
+    const events = document.createElement("section");
 
-    const events =
-        document.createElement("section");
-
-    events.className =
-        "events-section";
-
+    events.className = "events-section";
 
     events.innerHTML = `
 
         <div class="events-heading">
             Events
         </div>
-
 
         <div class="event-card">
 
@@ -1453,15 +960,11 @@ function showEvents() {
             </div>
 
             <div class="event-date">
-
                 20 NOVEMBER 2026<br>
-
                 10 AM TO 4 PM
-
             </div>
 
         </div>
-
 
         <div class="event-card">
 
@@ -1474,15 +977,11 @@ function showEvents() {
             </div>
 
             <div class="event-date">
-
                 20 NOVEMBER 2026<br>
-
                 04 PM TO 8 PM
-
             </div>
 
         </div>
-
 
         <div class="event-card">
 
@@ -1495,20 +994,15 @@ function showEvents() {
             </div>
 
             <div class="event-date">
-
                 20 NOVEMBER 2026<br>
-
                 FULL NIGHT
-
             </div>
 
         </div>
 
     `;
 
-
     document.body.appendChild(events);
-
 
     setTimeout(function () {
 
@@ -1519,11 +1013,8 @@ function showEvents() {
 
     }, 200);
 
-
     setTimeout(function () {
-
         showWedding();
-
     }, 7500);
 
 }
@@ -1535,21 +1026,13 @@ function showEvents() {
 
 function showWedding() {
 
-    if (
-        document.querySelector(".wedding-section")
-    ) {
-
+    if (document.querySelector(".wedding-section")) {
         return;
-
     }
 
+    const wedding = document.createElement("section");
 
-    const wedding =
-        document.createElement("section");
-
-    wedding.className =
-        "wedding-section";
-
+    wedding.className = "wedding-section";
 
     wedding.innerHTML = `
 
@@ -1568,51 +1051,30 @@ function showWedding() {
         <div class="countdown">
 
             <div class="count-item">
-                <span class="count-number" id="days">
-                    00
-                </span>
-                <span class="count-label">
-                    DAYS
-                </span>
+                <span class="count-number" id="days">00</span>
+                <span class="count-label">DAYS</span>
             </div>
 
-
             <div class="count-item">
-                <span class="count-number" id="hours">
-                    00
-                </span>
-                <span class="count-label">
-                    HOURS
-                </span>
+                <span class="count-number" id="hours">00</span>
+                <span class="count-label">HOURS</span>
             </div>
 
-
             <div class="count-item">
-                <span class="count-number" id="mins">
-                    00
-                </span>
-                <span class="count-label">
-                    MINS
-                </span>
+                <span class="count-number" id="mins">00</span>
+                <span class="count-label">MINS</span>
             </div>
 
-
             <div class="count-item">
-                <span class="count-number" id="secs">
-                    00
-                </span>
-                <span class="count-label">
-                    SECS
-                </span>
+                <span class="count-number" id="secs">00</span>
+                <span class="count-label">SECS</span>
             </div>
 
         </div>
 
     `;
 
-
     document.body.appendChild(wedding);
-
 
     setTimeout(function () {
 
@@ -1623,14 +1085,10 @@ function showWedding() {
 
     }, 200);
 
-
     startCountdown();
 
-
     setTimeout(function () {
-
         showVenue();
-
     }, 7500);
 
 }
@@ -1643,46 +1101,34 @@ function showWedding() {
 function startCountdown() {
 
     const target =
-        new Date(
-            "November 21, 2026 00:00:00"
-        ).getTime();
-
+        new Date("November 21, 2026 00:00:00").getTime();
 
     function updateCountdown() {
 
-        const now =
-            new Date().getTime();
+        const now = new Date().getTime();
 
-
-        const distance =
-            target - now;
-
+        const distance = target - now;
 
         if (distance <= 0) {
 
-            document.getElementById("days").textContent =
-                "00";
+            const days = document.getElementById("days");
+            const hours = document.getElementById("hours");
+            const mins = document.getElementById("mins");
+            const secs = document.getElementById("secs");
 
-            document.getElementById("hours").textContent =
-                "00";
-
-            document.getElementById("mins").textContent =
-                "00";
-
-            document.getElementById("secs").textContent =
-                "00";
+            if (days) days.textContent = "00";
+            if (hours) hours.textContent = "00";
+            if (mins) mins.textContent = "00";
+            if (secs) secs.textContent = "00";
 
             return;
-
         }
-
 
         const days =
             Math.floor(
                 distance /
                 (1000 * 60 * 60 * 24)
             );
-
 
         const hours =
             Math.floor(
@@ -1693,7 +1139,6 @@ function startCountdown() {
                 (1000 * 60 * 60)
             );
 
-
         const mins =
             Math.floor(
                 (
@@ -1702,7 +1147,6 @@ function startCountdown() {
                 ) /
                 (1000 * 60)
             );
-
 
         const secs =
             Math.floor(
@@ -1713,28 +1157,36 @@ function startCountdown() {
                 1000
             );
 
+        const daysEl = document.getElementById("days");
+        const hoursEl = document.getElementById("hours");
+        const minsEl = document.getElementById("mins");
+        const secsEl = document.getElementById("secs");
 
-        document.getElementById("days").textContent =
-            String(days).padStart(2, "0");
+        if (daysEl) {
+            daysEl.textContent =
+                String(days).padStart(2, "0");
+        }
 
-        document.getElementById("hours").textContent =
-            String(hours).padStart(2, "0");
+        if (hoursEl) {
+            hoursEl.textContent =
+                String(hours).padStart(2, "0");
+        }
 
-        document.getElementById("mins").textContent =
-            String(mins).padStart(2, "0");
+        if (minsEl) {
+            minsEl.textContent =
+                String(mins).padStart(2, "0");
+        }
 
-        document.getElementById("secs").textContent =
-            String(secs).padStart(2, "0");
+        if (secsEl) {
+            secsEl.textContent =
+                String(secs).padStart(2, "0");
+        }
 
     }
 
-
     updateCountdown();
 
-    setInterval(
-        updateCountdown,
-        1000
-    );
+    setInterval(updateCountdown, 1000);
 
 }
 
@@ -1745,21 +1197,13 @@ function startCountdown() {
 
 function showVenue() {
 
-    if (
-        document.querySelector(".venue-section")
-    ) {
-
+    if (document.querySelector(".venue-section")) {
         return;
-
     }
 
+    const venue = document.createElement("section");
 
-    const venue =
-        document.createElement("section");
-
-    venue.className =
-        "venue-section";
-
+    venue.className = "venue-section";
 
     venue.innerHTML = `
 
@@ -1774,17 +1218,12 @@ function showVenue() {
         <div class="venue-info">
 
             Santosh Garden<br>
-
             Near Lakshmi Hardware,<br>
-
             Manoj Mobile Wali Gali,<br>
-
             Aman Vihar, Kirari,<br>
-
             Suleman Nagar, Delhi – 110086
 
         </div>
-
 
         <a
             class="map-btn"
@@ -1797,9 +1236,7 @@ function showVenue() {
 
     `;
 
-
     document.body.appendChild(venue);
-
 
     setTimeout(function () {
 
@@ -1810,11 +1247,8 @@ function showVenue() {
 
     }, 200);
 
-
     setTimeout(function () {
-
         showReception();
-
     }, 7500);
 
 }
@@ -1826,28 +1260,19 @@ function showVenue() {
 
 function showReception() {
 
-    if (
-        document.querySelector(".reception-section")
-    ) {
-
+    if (document.querySelector(".reception-section")) {
         return;
-
     }
 
+    const reception = document.createElement("section");
 
-    const reception =
-        document.createElement("section");
-
-    reception.className =
-        "reception-section";
-
+    reception.className = "reception-section";
 
     reception.innerHTML = `
 
         <div class="reception-title">
             Reception
         </div>
-
 
         <div class="reception-info">
 
@@ -1858,13 +1283,10 @@ function showReception() {
             Community Hall at Shahbad Dairy<br><br>
 
             B, Murga Market Rd,<br>
-
             Sahibabad Dairy, Prahladpur,<br>
-
             Rohini, Delhi, 110042
 
         </div>
-
 
         <a
             class="map-btn"
@@ -1877,9 +1299,7 @@ function showReception() {
 
     `;
 
-
     document.body.appendChild(reception);
-
 
     setTimeout(function () {
 
@@ -1890,11 +1310,8 @@ function showReception() {
 
     }, 200);
 
-
     setTimeout(function () {
-
         showClosing();
-
     }, 6500);
 
 }
@@ -1906,21 +1323,13 @@ function showReception() {
 
 function showClosing() {
 
-    if (
-        document.querySelector(".closing-section")
-    ) {
-
+    if (document.querySelector(".closing-section")) {
         return;
-
     }
 
+    const closing = document.createElement("section");
 
-    const closing =
-        document.createElement("section");
-
-    closing.className =
-        "closing-section";
-
+    closing.className = "closing-section";
 
     closing.innerHTML = `
 
@@ -1934,30 +1343,21 @@ function showClosing() {
 
         </div>
 
-
         <div class="warm">
             WARM REGARDS,
         </div>
 
-
         <div class="closing-names">
-
             Shashank Kumar Maurya &amp; Jyoti
-
         </div>
 
-
         <div class="closing-family">
-
             Together with our families
-
         </div>
 
     `;
 
-
     document.body.appendChild(closing);
-
 
     setTimeout(function () {
 
